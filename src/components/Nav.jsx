@@ -1,4 +1,5 @@
 import React from 'react'
+import '../css/Nav.css'
 
 function Nav() {
   return (
@@ -6,16 +7,16 @@ function Nav() {
       <p>artsy.</p>
 
       <ul>
-        <li>home</li>
+        <li className='active'>home</li>
         <li>marketplace</li>
         <li>auctions</li>
         <li>drop</li>
       </ul>
 
       <div className="nav__icons">
-        <img src="./public/assets/Search icon.png" alt="" />
-        <img src="./public/assets/Cart icon.png" alt="" />
-        <img src="./public/assets/Vector (1).png" alt="" />
+        <img src="../../assets/Vector (3).png" alt="" />
+        <img src="../../assets/Vector (1).png" alt="" />
+        <img src="../../assets/Vector (2).png" alt="" />
       </div>
     </nav>
   )
