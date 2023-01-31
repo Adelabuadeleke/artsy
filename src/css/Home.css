@@ -147,6 +147,264 @@
  align-items: center;
 }
 
+.auction {
+ padding: 20px;
+ background: linear-gradient(99.99deg, #4693ED -26.21%, #79C2D2 22.16%, rgba(192, 86, 9, 0.49) 111.62%);
+}
+
+.auction__title {
+ display: flex;
+ justify-content: center;
+ flex-direction: column;
+ width: 667px;
+}
+
+.auction__title> h2 {
+ font-family: 'Satoshi';
+ font-style: normal;
+ font-weight: 500;
+ font-size: 40px;
+ line-height: 54px;
+ color: #FFFFFF;
+ margin-bottom: 2px;
+}
+
+.auction__slider {
+ background: url('../../public/assets/Rectangle\ 91.png');
+ height: 546px;
+ margin: 20px 0;
+ display: flex;
+ color: #FFFFFF;
+}
+.slider__div{
+ display: flex;
+ align-items: flex-end;
+ justify-content: space-between;
+ width: 100%;
+ padding: 30px;
+}
+
+.slider_first{
+ width: 600px;
+ display: flex;
+ align-items: center;
+}
+
+.first_contents{
+ margin-left: 10px;
+}
+
+.first_contents>h2{
+ font-family: 'Bellefair';
+ font-style: normal;
+ font-weight: 400;
+ font-size: 29.2313px;
+ line-height: 33px;
+ text-transform: uppercase;
+ color: #FFFFFF;
+ margin-left: -22px;
+}
+
+.first_contents>small {
+ font-family: 'Poppins';
+ font-style: normal;
+ font-weight: 400;
+ font-size: 13.46px;
+ line-height: 20px;
+ text-transform: uppercase;
+ color: #FFFFFF;
+}
+
+.slider_first>span {
+ font-family: 'Bellefair';
+ font-style: normal;
+ font-weight: 400;
+ font-size: 67.6122px;
+ line-height: 77px;
+ text-transform: uppercase;
+ color: #E1E1E1;
+}
+
+.slider_first>p{
+ font-family: 'Satoshi';
+ font-style: normal;
+ font-weight: 500;
+ font-size: 15.8576px;
+ line-height: 21px;
+ letter-spacing: 0.065em;
+ text-transform: uppercase
+}
+
+.slider__second {
+ display: flex;
+ justify-content: space-between;
+ min-width: 300px;
+}
+
+.see_more>a>p {
+ font-family: 'Satoshi';
+ font-style: normal;
+ font-weight: 400;
+ font-size: 24px;
+ line-height: 32px;
+ text-decoration-line: underline;
+ color: #FFFFFF;
+}
+
+.slider__second> button {
+ width: 181px;
+ height: 62px;
+ border: 1px solid #FFFFFF;
+ border-radius: 10px;
+ background: transparent;
+ font-family: 'Satoshi';
+ font-style: normal;
+ font-weight: 400;
+ font-size: 24px;
+ line-height: 32px;
+ color: #FFFFFF;
+}
+
+.btns {
+ display:  flex;
+ align-items: center;
+ justify-content: flex-end;
+}
+
+.btn {
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ border-radius: 50%;
+ height: 70px;
+ width: 70px;
+ margin: 0 10px;
+ background: rgba(255, 255, 255, 0.2);
+ box-shadow: 7.77035px 7.77035px 11.6555px rgba(0, 0, 0, 0.15);
+ backdrop-filter: blur(7.77035px);
+}
+
+.explore {
+ padding: 200px 0;
+}
+.explore_item {
+ display: flex;
+ padding: 20px;
+ border-bottom:1px solid #333333;
+ justify-content: space-between;
+ align-items: center;
+}
+
+.explore_item.first {
+ border-top: 1px solid #333333;
+}
+
+.explore_item>h2 {
+ font-family: 'Satoshi';
+ font-style: normal;
+ font-weight: 500;
+ font-size: 48px;
+ line-height: 65px;
+ color: #333333;
+}
+
+.explore_item>img {
+ margin-right: 50px;
+}
+
+.top_creator {
+ background: #E2E2E2;
+ padding: 50px;
+}
+
+.top_creator_first {
+ display: flex;
+ justify-content: space-between;
+}
+
+.creator_title {
+ margin-left: 20px;
+}
+.creator_title> p {
+ font-family: 'Clash Display';
+ font-style: normal;
+ font-weight: 600;
+ font-size: 55px;
+ line-height: 86px;
+ margin: 3px;
+ color: #161616;
+}
+
+.creator_segments {
+ margin-right: 20px;
+}
+
+.creator_segments>p {
+ font-family: 'Clash Display';
+ font-style: normal;
+ font-weight: 400;
+ font-size: 40px;
+ line-height: 62px;
+ color: #333333;
+ 
+}
+
+.top_creator_second{
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ width: 100%;
+ 
+}
+
+.top_creator_second>p{
+ max-width: 1000px;
+ font-family: 'Clash Display';
+ font-style: normal;
+ font-weight: 200;
+ font-size: 32px;
+ line-height: 42px;
+ color: rgba(0, 0, 0, 0.57);
+}
+
+
+.text_over {
+ display: flex;
+ justify-content: flex-end;
+ position: absolute;
+ z-index: 2;
+ right: 30px;
+}
+
+.over_conts>h2 {
+ font-family: 'Clash Display';
+ font-style: normal;
+ font-weight: 700;
+ font-size: 48px;
+ /* line-height: 155.5%; */
+ color: #333333;
+ text-transform: uppercase;
+ margin-left: 100px;
+}
+
+.over_conts>h1{
+ font-family: 'Clash Display';
+ font-style: normal;
+ font-weight: 700;
+ font-size: 170px;
+ text-decoration-line: line-through;
+ color: #161616;
+ margin: 10px;
+}
+
+
+.woman {
+ position: absolute;
+ z-index: 3;
+ height: 500px;
+ right: 150px;
+ margin-bottom: 0px;
+}
 /* animation */
 @keyframes scroll__right {
  0% {
