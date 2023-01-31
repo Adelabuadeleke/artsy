@@ -155,6 +155,98 @@ function Home() {
       </div>
       {/* featuered  item end*/}
     </section>
+    <section className="auction">
+      <div className="auction__title">
+        <h2>See Upcoming Auctions and Exhibitions</h2>
+        <img src="../../assets/Arrow 3.png" alt="" />
+      </div>
+
+      <div className="auction__slider">
+        <div className="slider__div">
+          
+          <div className="slider_first"><span>01</span>
+          <div className="first_contents">
+            <h2><span> <img src="../../assets/Ellipse 6.png" alt="" /> </span>MONALISA REDEFINED IN STYLE.</h2>
+            <small> Start on : 08:00 GTS . Monday</small>
+            <p>
+              GET EXCLUSIVE VIEWING OF CONTEMPORARY 
+              ART AND CONNECT WITH INVESTORS AND AUCTIONEERS ACROSS THE 
+              WORLD BRINGING THEIR HIGHEST AND LOWEST BIDS.
+            </p>
+          </div>
+            
+          </div>
+          <div className="slider__second">
+            <div className="see_more">
+              <a href=""><p>See more</p></a>
+            </div>
+            
+
+            <button>Set a reminder</button>
+          </div>
+        </div>
+      </div>
+
+      <div className="auction__bottom">
+        <div className="btns">
+          <div className="btn">
+            <img src="../../assets/Vector (7).png" alt="" />
+          </div>
+
+           <div className="btn">
+            <img src="../../assets/Vector (5).png" alt="" />
+          </div>
+        </div>
+      </div>
+    </section>
+    <section className="explore">
+      <div className="explore_item first">
+        <h2>Explore marketplace</h2>
+        <img src="../../assets/Vector (6).png" alt="" />
+      </div>
+
+       <div className="explore_item">
+        <h2>See auctions </h2>
+        <img src="../../assets/Vector (6).png" alt="" />
+      </div>
+    </section>
+    <section className="top_creator">
+      <div className="top_creator_first">
+        <div className="creator_title">
+          <p>TOP CREATORS OF </p>
+          <p>THE WEEK</p>
+        </div>
+        
+        <div className="creator_segments">
+          <p>Editorials</p>
+          <p>Fashion</p>
+          <p>Lifestyle</p>
+          <p>Blueprint</p>
+        </div>
+
+      </div>
+
+      <div className="top_creator_second">
+        <p> “Everything always looked better in black and white. 
+        Everything always  as if it were the first time; 
+        there’s always more people in a black and white photograph. 
+        It just makes it seem that there were more people at a gig, 
+        more people at a football match, than with colour photography. 
+        Everything looks more exciting.”– Jack Lowden</p>
+        <div className="text_over">
+          <div className="over_conts">
+            <h2>circa</h2>
+            <h1>1985</h1>
+          </div>
+    
+        </div>
+     <img src="../../assets/Rectangle 299 (3).png" alt="" className="woman" />
+      </div>
+      
+    </section>
+    <footer>
+
+    </footer>
    </div>
   )
 }
