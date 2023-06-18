@@ -245,15 +245,46 @@ function Home() {
       
     </section>
     <section className="newsletter">
-      <h2>NewsLetter</h2>
-      <p>Subscribe to get daily updates on new drops & exciting deals </p>
-      <div className="newsletter_input">
-        <input type="email" name="" id="" placeholder='Enter your Email'/>
-        <button>Subscribe</button>
+      <div className="newsletter_inner">
+        <h2>NewsLetter</h2>
+        <p>Subscribe to get daily updates on new drops & exciting deals </p>
+        <div className="newsletter_input">
+          <input type="email" name="" id="" placeholder='Enter your Email'/>
+          <button>Subscribe</button>
+        </div>
       </div>
+     
     </section>
     <footer>
+      <div className="footer__inner">
+        <div className="footer_inner_one">
+          <h1>
+            ARTSY.
+          </h1>
+        </div>
 
+        <div className="footer_inner_two">
+          <p>Home</p>
+          <p>Marketplace</p>
+          <p>Auctions</p>
+          <p>Drops</p>
+        </div>
+
+        <div className="footer_inner_three">
+          <p>Blog</p>
+          <p>Wallets</p>
+          <p>Rates</p>
+          <p>High bids</p>
+        </div>
+
+        <div className="footer_inner_four">
+          <p> <img src="../../assets/email_icon.png" alt="" /> artsystudios@gmail.com</p>
+          <p> <img src="../../assets/location_icon.png" alt="" /> Lagos, Nigeria</p>
+        </div>
+      </div>
+      <div className="footer_end">
+        <p>Artsystudios © 2022. All Rights Reserved.</p>
+      </div>
     </footer>
    </div>
   )
