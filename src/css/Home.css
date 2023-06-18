@@ -405,6 +405,139 @@
  right: 150px;
  margin-bottom: 0px;
 }
+
+.newsletter{
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ flex-direction: column;
+ padding: 7rem;
+}
+
+
+.newsletter_inner{
+ border: 1px solid #000000;
+ width: 100%;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ flex-direction: column;
+ padding: 2rem;
+}
+
+.newsletter_inner>h2{
+ font-family: 'Baskervville';
+  font-size: 30px;
+  font-weight: 400;
+  line-height: 39px;
+  letter-spacing: 0em;
+  text-align: left;
+  text-transform: uppercase;
+}
+
+
+
+.newsletter_inner>p{
+ font-family: 'Satoshi';
+ font-style: normal;
+ font-weight: 400;
+ font-size: 32px;
+ line-height: 43px;
+}
+
+.newsletter_input>input{
+ width: 446px;
+ height: 60px;
+}
+
+.newsletter_input>button{
+ width: 181.63px;
+ height: 60px;
+ margin-left: 1rem;
+ font-family: 'Baskervville';
+ font-style: normal;
+ font-weight: 400;
+ font-size: 16px;
+ line-height: 21px;
+ /* identical to box height */
+ background: #272727;
+  border: 1px solid #333333;
+  text-transform: uppercase;
+  color: #FFFFFF;
+}
+
+footer{
+ display: flex;
+ flex-direction: column;
+ /* align-items: center; */
+ /* justify-content: center; */
+ padding: 7rem;
+}
+
+.footer__inner{
+ width: 100%;
+ display: flex;
+ align-items: center;
+ justify-content: space-between;
+}
+
+.footer_inner_one>h1{
+ font-family: 'Clash Display';
+ font-style: normal;
+ font-weight: 600;
+ font-size: 48px;
+ line-height: 59px;
+ /* identical to box height */
+ color: #292929;
+}
+
+.footer_inner_four>p,
+.footer_inner_two>p,
+.footer_inner_three>p{
+ font-family: 'Satoshi';
+ font-style: normal;
+ font-weight: 400;
+ font-size: 26px;
+ line-height: 35px;
+ color: #333333;
+}
+
+.footer_inner_four>p{
+ display: flex;
+ align-items: center;
+ /* justify-content: center; */
+}
+
+.footer_inner_four>p>img{
+ margin-right: 20px;
+}
+
+.footer_inner_one,
+.footer_inner_two,
+.footer_inner_three,
+.footer_inner_four{
+ width: 350px;
+}
+
+.footer_end{
+ margin-top: 3rem;
+}
+
+.footer_end>p{
+ text-align: center;
+ font-family: 'Rubik';
+ font-style: normal;
+ font-weight: 500;
+ font-size: 24px;
+ line-height: 21px;
+ /* identical to box height, or 88% */
+
+ letter-spacing: -0.02em;
+
+ color: #333333;
+
+ opacity: 0.5;
+}
 /* animation */
 @keyframes scroll__right {
  0% {
