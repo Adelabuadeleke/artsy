@@ -1,0 +1,103 @@
+import React from 'react'
+import Nav from '../components/Nav'
+import'../css/Marketplace.css'
+
+function Marketplace() {
+  return (
+    <div className='marketplace'>
+     <Nav />
+     <div className="marketplace_body">
+      <div className="marketplace_one">
+        <div className="marketplace_one_body">
+          <div className="search_outter">
+            <img src='../../assets/search_icon.png' alt='' />
+            <input type="text" placeholder='Search' />
+          </div> 
+          
+          <div className="marketplace_filter">
+            <div className="marketplace_filter_top">
+              <img src="../../assets/filter_icon.png" alt="" />
+              <p>Filter</p>
+            </div>
+            <div className="marketplace_filter_bottom">
+              <div className="filter_underline">
+
+              </div>
+            </div>
+            
+          </div>
+
+          <div className="by_category">
+            <div className="by_category_inner">
+              <p>By category</p>
+              <img src="../../assets/arrow_top.png" alt="" />
+            </div>
+            
+            <div className="category_options">
+              <div className="category_item">
+               <input type="checkbox" name="category" id=""  value='Editorials'/><label>Editorials</label>
+              </div>
+              <div className="category_item">
+                <input type="checkbox" name="category" id=""  value='Fashion'/><label>Fashion</label>
+              </div>
+              <div className="category_item">
+                <input type="checkbox" name="category" id=""  value='Optics'/><label>Optics</label>
+              </div>
+              <div className="category_item">
+               <input type="checkbox" name="category" id=""  value='Art&Museum'/><label>Art & Museum</label>
+              </div>
+              <div className="category_item">
+               <input type="checkbox" name="category" id=""  value='Nature'/><label>Nature</label>
+              </div>
+            </div>
+          </div>
+
+          <div className="by_price">
+            <div className="by_category_inner">
+              <p>By price</p>
+              <img src="../../assets/arrow_top.png" alt="" />
+            </div>
+            <div className="by_price_body">
+              <p>$100.00 - $150.00</p>
+              <input type="range" name="" id="" />
+            </div>
+          </div>
+
+          <div className="by_artist">
+            <div className="by_category_inner">
+                <p>By artist</p>
+                <img src="../../assets/arrow_top.png" alt="" />
+            </div>
+
+            <div className="by_artist_body">
+              <h2>All</h2>
+              <p>Below $100.00</p>
+              <p>$100.00 - $150.00</p>
+              <p>$150.00 - $200.00</p>
+              <p>Above $200.00</p>
+            </div>
+          </div>
+
+          <div className="by_colllection_year">
+              <div className="by_category_inner">
+                <p>By collection year</p>
+                <img src="../../assets/arrow_down.png" alt="" />
+            </div>
+          </div>
+        </div>
+
+       
+
+       
+       
+      </div>
+
+      <div className="marketplace_two">
+       
+      </div>
+     </div>
+    </div>
+  )
+}
+
+export default Marketplace
