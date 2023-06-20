@@ -24,7 +24,7 @@ ul {
  margin: 0;
 }
 
-ul>li {
+ul>a {
  margin-left: 20px;
  list-style-type: none;
  text-transform: capitalize;
@@ -47,8 +47,10 @@ ul>li {
  object-fit: contain
 }
 
-li.active {
+a.active {
  text-decoration: underline;
-
  text-underline-position: below;
+}
+.toggle{
+ text-decoration: none;
 }
