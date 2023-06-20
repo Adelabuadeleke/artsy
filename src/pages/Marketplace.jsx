@@ -80,7 +80,7 @@ function Marketplace() {
 
           <div className="by_colllection_year">
               <div className="by_category_inner">
-                <p>By collection year</p>
+                <p>Collection year</p>
                 <img src="../../assets/arrow_down.png" alt="" />
             </div>
           </div>
@@ -93,7 +93,107 @@ function Marketplace() {
       </div>
 
       <div className="marketplace_two">
-       
+       <div className="market_two_body">
+          <div className="result_sort">
+            <p>See 1-6 of 15 results</p>
+
+            <select name="" id="">
+              <option value="">Sort by</option>
+              <option value="price">Price</option>
+              <option value="new">New</option>
+            </select>
+          </div>
+
+          <div className="all_arts">
+            <div className="art_item">
+              <div className="art_item_body">
+                <img src="../../assets/Rectangle 251.png" alt="" />
+                <p>PHILOMENA ‘22</p>
+                <h3>$3.90</h3>
+              </div>
+              
+            </div>
+
+            <div className="art_item">
+              <div className="art_item_body">
+                <img src="../../assets/Rectangle 299 (4).png" alt="" />
+                <p>BOOLEAN EGYPTIAN</p>
+                <h3>$3.90</h3>
+              </div>
+              
+            </div>
+
+            <div className="art_item">
+              <div className="art_item_body">
+                <img src="../../assets/Rectangle 49 (1).png" alt="" />
+                <p>BLANC</p>
+                <h3>$3.90</h3>
+              </div>
+              
+            </div>
+
+
+            <div className="art_item">
+              <div className="art_item_body">
+                <img src="../../assets/Rectangle 53.png" alt="" />
+                <p>ELLIPSIA</p>
+                <h3>$3.90</h3>
+              </div>
+              
+            </div>
+
+
+            <div className="art_item">
+              <div className="art_item_body">
+                <img src="../../assets/Rectangle 54.png" alt="" />
+                <p>THE LAWMAKERS </p>
+                <h3>$3.90</h3>
+              </div>
+              
+            </div>
+
+
+            <div className="art_item">
+              <div className="art_item_body">
+                <img src="../../assets/Rectangle 50.png" alt="" />
+                <p>VEIL</p>
+                <h3>$3.90</h3>
+              </div>
+              
+            </div>
+
+            <div className="art_item">
+              <div className="art_item_body">
+                <img src="../../assets/Rectangle 48.png" alt="" />
+                <p>ALTERNATING</p>
+                <h3>$3.90</h3>
+              </div>
+              
+            </div>
+
+            <div className="art_item">
+              <div className="art_item_body">
+                <img src="../../assets/Rectangle 52 (5).png" alt="" />
+                <p>ROSEMARY ‘22</p>
+                <h3>$3.90</h3>
+              </div>
+              
+            </div>
+
+            <div className="art_item">
+              <div className="art_item_body">
+                <img src="../../assets/Rectangle 55.png" alt="" />
+                <p>BEVERLY</p>
+                <h3>$3.90</h3>
+              </div>
+              
+            </div>
+          </div>
+
+          <div className="see_more">
+            <button>See more</button>
+          </div>
+       </div>
       </div>
      </div>
     </div>
