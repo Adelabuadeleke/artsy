@@ -1,5 +1,6 @@
 import React from 'react'
 import '../css/Nav.css'
+import { NavLink } from 'react-router-dom'
 
 function Nav() {
   return (
@@ -7,10 +8,11 @@ function Nav() {
       <p>artsy.</p>
 
       <ul>
-        <li className='active'>home</li>
-        <li>marketplace</li>
-        <li>auctions</li>
-        <li>drop</li>
+        <NavLink to="/" className={({isActive}) =>(isActive)?'active':'toggle'}>home</NavLink> 
+        <NavLink to="/marketplace" className={({isActive}) =>(isActive)?'active':'toggle'}>marketplace</NavLink> 
+        <NavLink to="/auctions" className={({isActive}) =>(isActive)?'active':'toggle'}>auctions</NavLink> 
+        <NavLink to="/drop" className={({isActive}) =>(isActive)?'active':'toggle'}>drop</NavLink> 
+      
       </ul>
 
       <div className="nav__icons">
