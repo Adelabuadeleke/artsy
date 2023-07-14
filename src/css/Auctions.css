@@ -1,0 +1,229 @@
+.auctions_body{
+ padding: 1rem 7rem;
+ margin-bottom: 10rem;
+}
+
+.auctions_body>h1{
+ color: #BCB7B7;
+ font-family: Satoshi;
+ font-size: 24px;
+ font-style: normal;
+ font-weight: 500;
+ margin: 40px 0;
+}
+
+.auctions_body>h2{
+ color: #000;
+ font-family: Satoshi;
+ font-size: 28px;
+ font-style: normal;
+ font-weight: 500;
+ line-height: normal;
+ margin-bottom: 100px;
+}
+
+.auctions_body>h1>span{
+ color: #333;
+ font-family: Satoshi;
+ font-size: 24px;
+ font-style: normal;
+ font-weight: 500;
+}
+
+/* swiper style */
+.swiper {
+ width: 100%;
+ height: 100%;
+}
+
+.swiper-slide.slide{
+ width: 485px;
+ height: 396px;
+
+}
+
+
+.swiper-slide {
+ text-align: center;
+ font-size: 18px;
+ /* background: #333; */
+ 
+ /* Center slide text vertically */
+ display: flex;
+ justify-content: center;
+ align-items: center;
+}
+
+.swiper-slide img {
+ display: block;
+ width: 485px;
+ height: 396px;
+ object-fit: cover;
+}
+
+.swiper-custom-pagination{
+ width: 100%;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+ margin: 40px 0;
+}
+
+.top-bids{
+ color: #000;
+ font-family: Satoshi;
+ font-size: 36px;
+ font-style: normal;
+ font-weight: 700;
+ line-height: 64px
+}
+
+.outer{
+ height: 100%;
+ width: 100%;
+ /* background: url("../../public/assets/Auctions/Rectangle\ 247.png"); */
+ object-fit: cover;
+ background-size: cover;
+ /* background-repeat: no-repeat; */
+  border-radius: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+.timer{
+ color: #FFF;
+ font-family: STIX Two Math;
+ font-size: 40px;
+ font-style: normal;
+ font-weight: 400;
+ line-height: 64px;
+ width: 80%;
+ padding: 5px 15px;
+ border-radius: 8px;
+ border: 0.5px solid #FFF;
+ background: rgba(245, 244, 244, 0.24);
+ backdrop-filter: blur(1.5px);
+ margin-bottom: 30px;
+}
+
+.auction_top_bids{
+ display: flex;
+ justify-content: space-between;
+}
+
+.top_bid_item{
+ width: 500px;
+}
+
+.top_bid_display{
+ border-radius: 15px;
+ background: #FFF;
+ box-shadow: 0px 0px 9px -1px rgba(0, 0, 0, 0.25);
+}
+
+.top_bid_heart{
+ display: flex;
+ justify-content: flex-end;
+}
+
+.top_bid_heart>img {
+ border: 1px solid #000;
+ padding: 15px;
+ width: 40px;
+ height: 30px;
+ border-radius: 50%;
+ margin: 10px  20px 10px 0;
+}
+
+.top_bid_img>img{
+ width: 100%;
+}
+
+.top_bid_title{
+ display: flex;
+ align-items: center;
+}
+
+.top_bid_title>h2{
+ color: #000;
+ font-family: Satoshi;
+ font-size: 40px;
+ font-style: normal;
+ font-weight: 700;
+ line-height: 64px;
+ margin-left: 20px;
+}
+
+.top_bid_texts>p{
+ color: #616161;
+ font-family: Satoshi;
+ font-size: 32px;
+ font-style: normal;
+ font-weight: 500;
+ line-height: 64px;
+}
+
+.top_bid_texts>p>span{
+ color: #333;
+ font-family: Satoshi;
+ font-size: 30px;
+ font-style: normal;
+ font-weight: 700;
+ line-height: 64px;
+}
+
+.current_bid{
+ border-radius: 10px;
+ background: #F6F4F4;
+ padding: 20px;
+ display: flex;
+ align-items: center;
+ justify-content: space-between;
+}
+
+.current_bid_text{
+ color: #616161;
+ font-family: Satoshi;
+ font-size: 30px;
+ font-style: normal;
+ font-weight: 700;
+ line-height: 64px;
+}
+
+.current_bid_eth{
+ color: #000;
+ font-family: Satoshi;
+ font-size: 30px;
+ font-style: normal;
+ font-weight: 700;
+ line-height: 64px;
+}
+
+.current_bid_two{
+ display: flex;
+ justify-content: center;
+ align-items: center;
+}
+
+.current_bid_two>button{
+ display: inline-flex;
+ padding: 19.049px 69.648px;
+ justify-content: center;
+ align-items: center;
+ gap: 5.953px;
+ border-radius: 3.682px;
+ background: #272727;
+ border: 1px solid #272727;
+ color: #FFF;
+ font-family: Satoshi;
+ font-size: 25.775px;
+ font-style: normal;
+ font-weight: 500;
+ line-height: normal;
+
+}
+
+.current_bid{
+ display: flex;
+}
