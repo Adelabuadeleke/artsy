@@ -11,7 +11,7 @@ function Nav() {
         <NavLink to="/" className={({isActive}) =>(isActive)?'active':'toggle'}>home</NavLink> 
         <NavLink to="/marketplace" className={({isActive}) =>(isActive)?'active':'toggle'}>marketplace</NavLink> 
         <NavLink to="/auctions" className={({isActive}) =>(isActive)?'active':'toggle'}>auctions</NavLink> 
-        <NavLink to="/drop" className={({isActive}) =>(isActive)?'active':'toggle'}>drop</NavLink> 
+        <NavLink to="/drops" className={({isActive}) =>(isActive)?'active':'toggle'}>drop</NavLink> 
       
       </ul>
 
