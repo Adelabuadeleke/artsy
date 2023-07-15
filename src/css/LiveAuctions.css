@@ -1,0 +1,229 @@
+.liveauctions{
+ padding: 100px;
+}
+
+.liveauctions>h2{
+ color: #BCB7B7;
+ font-family: Satoshi;
+ font-size: 24px;
+ font-style: normal;
+ font-weight: 500;
+ line-height: 51.5px;
+}
+
+.liveauctions>h2>span{
+ color: #333;
+ font-family: Satoshi;
+ font-size: 24px;
+ font-style: normal;
+ font-weight: 500;
+ line-height: 51.5px;
+}
+
+.liveauctions_contents{
+ display: flex;
+ width: 100%;
+ height: 90vh;
+ flex: 1;
+ border: 1px solid #000;
+}
+
+.liveauction_display{
+ display: flex;
+ flex-direction: column;
+ justify-content: space-between;
+ flex: 0.5;
+ /* width: 100%; */
+ height: 100%;
+ /* background: blue; */
+ background-repeat: no-repeat;
+ background-size: cover;
+ object-fit: cover;
+ background-position: center;
+}
+
+.liveauction_comments{
+ flex: 0.5;
+ height: 100%;
+ /* background: red; */
+ display: flex;
+ justify-content: space-between;
+ flex-direction: column;
+ /* padding: 20px 0 20px 20px; */
+ padding: 0 20px;
+}
+
+.display_live{
+ display: flex;
+ align-items: center;
+ justify-content: space-between;
+ padding: 20px 30px;
+}
+
+.cancel{
+ width: 49px;
+ height: 49px;
+ flex-shrink: 0;
+ background-color: rgba(184, 180, 180, 0.49);
+ display: flex;
+ justify-content: center;
+ align-items: center;
+ border-radius: 50%;
+}
+
+.live{
+ width: 104px;
+ height: 39px;
+ flex-shrink: 0;
+ border-radius: 20px;
+ background: #4693ED;
+ color: #FFF;
+ font-family: Inter;
+ font-size: 20px;
+ font-style: normal;
+ font-weight: 500;
+ line-height: normal;
+ text-transform: uppercase;
+ display: flex;
+ justify-content: center;
+ align-items: center;
+}
+
+.display_bid{
+ color: #FFF;
+ font-family: Inter;
+ font-size: 48px;
+ font-style: normal;
+ font-weight: 600;
+ line-height: 75px;
+ /* 75.648px */
+}
+
+.display_tag>span{
+ color: #FFF;
+ font-family: Inter;
+ font-size: 24px;
+ font-style: normal;
+ font-weight: 400;
+ line-height: 37px;
+  /* 37.824px */
+}
+
+.display_tag{
+ color: #FFF;
+ font-family: Inter;
+ font-size: 24px;
+ font-style: normal;
+ font-weight: 500;
+ line-height: 37px;
+ padding: 50px;
+}
+
+.display_bid{
+ display: flex;
+ justify-content: center;
+ align-items: center;
+}
+
+.comments_display{
+ height: 80%;
+ width: 100%;
+ overflow-y: scroll;
+ /* background: red; */
+}
+
+.comments_display::-webkit-scrollbar{
+ display: none;
+}
+
+.bid_all{
+ display: flex;
+ align-items: center;
+ justify-content: space-between;
+}
+
+.place_bid{
+ margin-bottom: 20px;
+ display: flex;
+ flex-direction: column;
+ width: 100%;
+}
+
+.bid_all>img{
+ border: 1px solid #000;
+ border-radius: 50%;
+}
+.place_bid>small{
+ color: #BAB9B9;
+ font-family: Inter;
+ font-size: 20px;
+ font-style: italic;
+ font-weight: 500;
+ line-height: 31px;
+  /* 31.52px */
+}
+
+.place_bid_input{
+ display: flex;
+ align-items: center;
+ width: 70%;
+ justify-content: space-between;
+ flex: 1;
+ padding: 5px;
+ border: 1px solid black;
+ border-radius: 25px;
+}
+
+.place_bid_input>input{
+ width: 83%;
+ height: 31px;
+ margin-left: 10px;
+ border: none;
+ display: flex;
+ align-items: center;
+ outline: none;
+}
+
+.place_bid_input>img{
+ width: 34px;
+ height: 31px;
+ margin-right: 10px;
+}
+
+.place_bid_input>input::placeholder{
+ color: #616161;
+ font-family: Satoshi;
+ font-size: 22px;
+ font-style: normal;
+ font-weight: 500;
+ line-height: 34px;
+ /* 34.672px */
+}
+
+.comment_display_item{
+ display: flex;
+ align-items: center;
+}
+
+.commenter_img{
+ margin-right: 25px;
+}
+
+.commenter_name{
+ color: #333;
+ font-family: Satoshi;
+ font-size: 22px;
+ font-style: normal;
+ font-weight: 400;
+ line-height: 34px;
+  /* 34.672px */
+}
+
+.comment_text{
+ color: #333;
+ font-family: Satoshi;
+ font-size: 22px;
+ font-style: normal;
+ font-weight: 500;
+ line-height: 34px;
+}
