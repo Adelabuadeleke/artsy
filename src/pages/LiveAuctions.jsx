@@ -129,6 +129,12 @@ function LiveAuctions() {
          
        </div>
       </div>
+     <a href="/drops">
+      <div className="auctions_upcoming">
+       <p>See upcoming drops</p>
+       <img src="../assets/Liveauctions/arrow_upcoming.png" alt="" />
+      </div>
+     </a>
     </div>
   )
 }
