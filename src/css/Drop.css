@@ -1,0 +1,260 @@
+.drop_body{
+ padding: 1rem 7rem;
+}
+
+.drop_body>h2{
+ color: #BCB7B7;
+ font-family: Satoshi;
+ font-size: 24px;
+ font-style: normal;
+ font-weight: 500;
+ line-height: 51.5px;
+}
+
+.drop_body>h2>span{
+ color: #333;
+ font-family: Satoshi;
+ font-size: 24px;
+ font-style: normal;
+ font-weight: 500;
+ line-height: 51.5px;
+}
+
+.drop_intro{
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ justify-content: center;
+}
+
+.drop_body>.drop_intro>h1{
+ color: #000;
+ font-family: Satoshi;
+ font-size: 48px;
+ font-style: normal;
+ font-weight: 500;
+ line-height: 84.24px
+ /* 84.24px */
+}
+
+.drop_body>.drop_intro>p{
+ color: #616161;
+ font-family: Satoshi;
+ font-size: 32px;
+ font-style: normal;
+ font-weight: 400;
+ line-height: 64px;
+}
+
+button.notify{
+ width: 420px;
+ height: 84px;
+ border-radius: 10px;
+ border: 1px solid #000;
+ color: #000;
+ font-family: Satoshi;
+ font-size: 36px;
+ font-style: normal;
+ font-weight: 500;
+ line-height: 64px;
+
+ color: #000;
+ font-family: Satoshi;
+ font-size: 36px;
+ font-style: normal;
+ font-weight: 500;
+ line-height: 64px;
+ background: transparent;
+}
+
+.drop_items{
+ margin: 3rem 0;
+}
+
+.drops_item{
+ display: flex;
+ justify-content: space-between;
+ margin-bottom: 5rem;
+}
+
+.item_first{
+ height: 400px;
+ width: 550px;
+ border-radius: 10px;
+ display: flex;
+ align-items: flex-end;
+ justify-content: center;
+}
+
+.drop_timer{
+ padding: 10px;
+ width: 80%;
+ /* height: 15%; */
+ /* flex-shrink: 0; */
+ border-radius: 8px;
+ border: 0.5px solid #FFF;
+ background: linear-gradient(0deg, rgba(0, 0, 0, 0.20) 0%, rgba(0, 0, 0, 0.20) 100%), rgba(245, 244, 244, 0.24);
+ backdrop-filter: blur(1.5px);
+ margin-bottom: 10px;
+}
+
+.item_second{
+ display: flex;
+ flex-direction: column;
+}
+
+.second_tag{
+ width: 189px;
+ height: 43px;
+ color: #FFF;
+ font-family: Inter;
+ font-size: 18px;
+ font-style: normal;
+ font-weight: 500;
+ line-height: normal;
+ text-transform: uppercase;
+ display: flex;
+ align-items: center;
+ justify-content: center;
+}
+
+.upcoming{
+ border-radius: 10px;
+ background: #4693ED;
+}
+
+.ended{
+ background: #999EA5;
+ border-radius: 10px;
+}
+
+.live_drop{
+ background: #3EA03B;
+ border-radius: 10px;
+}
+
+
+.drop_timer>small{
+ color: #FFF;
+ font-family: Satoshi;
+ font-size: 22px;
+ font-style: normal;
+ font-weight: 400;
+ /* line-height: 49px; */
+ /* 49.14px */
+
+}
+
+.time_details>p{
+ color: #FFF;
+ font-family: STIX Two Math;
+ font-size: 36px;
+ font-style: normal;
+ font-weight: 400;
+ margin: 0;
+ /* line-height: 54px; */
+ /* 54.4px */
+}
+
+.time_details{
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+}
+
+.time_details>button{
+ border-radius: 15px;
+ background: #4693ED;
+ border:  1px solid #4693ED;
+ color: #FFF;
+ font-family: Satoshi;
+ font-size: 24px;
+ font-style: normal;
+ font-weight: 500;
+ line-height: 22.92px;
+ width: 107px;
+ height: 35px;
+ /* 22.92px */
+}
+
+.item_second{
+ width: 550px;
+}
+
+.item_second>p{
+ color: #000;
+ font-family: Satoshi;
+ font-size: 20px;
+ font-style: normal;
+ font-weight: 400;
+ line-height: normal;
+}
+
+.item_second>h2{
+ color: #000;
+ font-family: Satoshi;
+ font-size: 36px;
+ font-style: normal;
+ font-weight: 500;
+ line-height: normal;
+}
+
+.item_second>small{
+ color: #616161;
+ font-family: Satoshi;
+ font-size: 20px;
+ font-style: normal;
+ font-weight: 400;
+ line-height: 31px;
+ /* 31.4px */
+}
+
+.item_first>h2{
+ color: #000;
+ font-family: Satoshi;
+ font-size: 24px;
+ font-style: normal;
+ font-weight: 500;
+ line-height: 30px;
+ /* 37.68px */
+}
+
+.item_second>h2>span{
+ color: #006CA2;
+  font-family: Satoshi;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 30px;
+}
+
+.item_second>a{
+ color: #006CA2;
+ font-family: Satoshi;
+ font-size: 20px;
+ font-style: normal;
+ font-weight: 400;
+ line-height: 31px;
+ /* 31.4px */
+ text-decoration-line: underline;
+}
+
+.see_more_drops>button{
+ width: 249px;
+ height: 73px;
+ color: #333;
+ font-family: Satoshi;
+ font-size: 30px;
+ font-style: normal;
+ font-weight: 500;
+ line-height: normal;
+ border-radius: 10px;
+ border: 1px solid #333;
+ background: transparent;
+}
+
+.see_more_drops{
+ display: flex;
+ align-items: center;
+ justify-content: center;
+}
