@@ -3,6 +3,7 @@ import Marketplace from './pages/Marketplace';
 import Auctions from './pages/Auctions';
 import Drop from './pages/Drop';
 import ItemDetails from './pages/ItemDetails';
+import LiveAuctions from './pages/LiveAuctions';
 
 import {
   Navigate,
@@ -21,7 +22,8 @@ function App() {
           <Route path='/marketplace' element={<Marketplace/>}/>
           <Route path='/marketplace/item' element={<ItemDetails />}/>
           <Route path='/auctions' element={<Auctions/>}/>
-          <Route path='/drop' element={<Drop/>}/>
+          <Route path='/auctions/live' element={<LiveAuctions/>}/>
+          <Route path='/drops' element={<Drop/>}/>
         </Routes>
       </Router>
     </div>
