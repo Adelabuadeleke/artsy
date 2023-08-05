@@ -4,6 +4,7 @@ import Auctions from './pages/Auctions';
 import Drop from './pages/Drop';
 import ItemDetails from './pages/ItemDetails';
 import LiveAuctions from './pages/LiveAuctions';
+import ShoppingTab from './pages/Shopping_tab'
 
 import {
   Navigate,
@@ -24,6 +25,7 @@ function App() {
           <Route path='/auctions' element={<Auctions/>}/>
           <Route path='/auctions/live' element={<LiveAuctions/>}/>
           <Route path='/drops' element={<Drop/>}/>
+          <Route path='/checkout' element={<ShoppingTab/>}/>
         </Routes>
       </Router>
     </div>
