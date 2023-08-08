@@ -397,6 +397,26 @@ function Shopping_tab() {
        </div>
        <div className="payment_summary">
 
+        <div className="summary_heading">
+         <h2>Payment summary</h2>
+        </div>
+        
+        <div className="summary_wallet">
+          <h3>Metamask wallet : 002345KJi90pzzz3</h3>
+          <p>Actively linked to Yaba, Lagos Nigeria.</p>
+        </div>
+
+        <div className="summary_arrival">
+         <p>Expected arrival date: Between 22nd </p> 
+         <p>September and 26th September 20222</p> 
+        </div>
+        
+
+        <div className="cart_items_total">
+          <p> <span className="name">Products in cart:</span>  <span className="name_content"><span className='product_count'>3</span> items</span></p>
+          <p> <span className="name">Shipping:</span>  <span className="name_content">$2.50</span></p>
+          <p> <span className="name">Total in cart:</span>  <span className="name_content">$114.00</span></p>
+        </div>
        </div>
       </div>
      </div>
