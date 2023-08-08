@@ -396,6 +396,7 @@ button.payment{
 .payment_method_body{
  display: flex;
  flex: 1;
+ justify-content: space-between;
 }
 
 .select_payment_method,
@@ -478,4 +479,59 @@ button.confirm{
  margin-top: 70px;
 }
 
+.summary_heading{
+ border-bottom: 0.3px solid #747474;
+ padding-bottom: 41px;
+}
 
+.summary_heading>h2{
+ color: #292929;
+ font-family: Satoshi;
+ font-size: 28px;
+ font-style: normal;
+ font-weight: 500;
+ line-height: normal;
+}
+
+.summary_wallet{
+ border-bottom: 0.3px solid #747474;
+ padding-top: 39px;
+ padding-bottom: 30px;
+}
+
+.summary_wallet>h3{
+ color: #292929;
+ font-family: Satoshi;
+ font-size: 26px;
+ font-style: normal;
+ font-weight: 400;
+ line-height: 40.976px;
+ /* 40.976px */
+}
+
+.summary_wallet>p{
+ color: #616161;
+ font-family: Satoshi;
+ font-size: 24px;
+ font-style: normal;
+ font-weight: 400;
+ line-height: 37.824px;
+ /* 37.824px */
+}
+
+
+.summary_arrival{
+ border-bottom: 0.3px solid #747474;
+ padding-top: 47px;
+ padding-bottom: 56px;
+}
+
+.summary_arrival>p{
+ color: #292929;
+ font-family: Satoshi;
+ font-size: 24px;
+ font-style: normal;
+ font-weight: 400;
+ line-height: 37.824px;
+ /* 37.824px */
+}
