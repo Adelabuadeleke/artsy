@@ -197,7 +197,7 @@
  text-decoration-line: underline;
 }
 
-button.checkout{
+button.checkout-btn{
  display: inline-flex;
  padding: 32px 117px;
  align-items: flex-start;
@@ -227,3 +227,255 @@ button.checkout{
 .cart_items_total>p>span.name_content{
  color: #292929;
 }
+
+/* shipping details style */
+.shipping_details{
+ display: flex;
+ flex: 1;
+ justify-content: space-between;
+}
+
+.shipping_details_first,
+.shipping_details_second{
+ flex: 0.48;
+ 
+}
+
+.shipping_input{
+ margin-bottom: 60px;
+}
+
+.postal,
+.country,
+.shipping_input{
+ display: flex;
+ flex-direction: column;
+}
+
+.postal>label,
+.country>label,
+.shipping_input>label,
+.shipping_input>.email_checkbox{
+ color: #888;
+ font-family: Satoshi;
+ font-size: 26px;
+ font-style: normal;
+ font-weight: 400;
+ line-height: normal;
+ margin-bottom: 17px;
+}
+
+.email_checkbox{
+ margin-top: 17px;
+ display: flex;
+ /* justify-content: center; */
+ align-items: center;
+}
+
+.email_checkbox>input{
+ margin-right: 13px;
+ height: 26px;
+ width: 26px;
+}
+
+.shipping_input>input,
+.shipping_input>select,
+.country>select,
+.country>input,
+.postal>input,
+.wallet_key_input{
+ border-radius: 10px;
+ border: 0.5px solid #747474;
+ background: #F2F2F2;
+ height: 76px;
+}
+
+.wallet_key_input{
+ display: flex;
+}
+
+.wallet_key_input>input{
+ flex-grow: 1;
+ border: 0.5px solid transparent;
+ /* border: none; */
+ background: #F2F2F2;
+
+}
+
+.shipping_input>input::placeholder,
+.postal>input::placeholder,
+.shipping_input>select>option{
+ color: #888;
+ /* text-align: right; */
+ font-family: Satoshi;
+ font-size: 26px;
+ font-style: normal;
+ font-weight: 400;
+ line-height: normal;
+}
+
+.shipping_input>select{
+
+}
+
+.shipping_input_split{
+ display: flex;
+ flex: 1;
+ justify-content: space-between;
+ margin-bottom: 60px;
+}
+
+/* .country{
+ margin-right: 2px;
+} */
+
+.country,
+.postal{
+ flex: 0.48;
+}
+
+.payment_btn{
+ display: flex;
+ align-items: center;
+ align-items: center;
+}
+
+button.payment{
+ border-radius: 8px;
+ border: 1px solid #272727;
+ background: #272727;
+ color: #FFF;
+ font-family: Satoshi;
+ font-size: 32.729px;
+ font-style: normal;
+ font-weight: 500;
+ display: flex;
+ width: 610px;
+ padding: 32.729px 119.664px;
+ justify-content: center;
+ align-items: center;
+ gap: 10.228px;
+}
+
+.payment_method{
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+}
+
+.payment_method>h2{
+ color: #292929;
+ font-family: Satoshi;
+ font-size: 28px;
+ font-style: normal;
+ font-weight: 500;
+ line-height: 44.128px;
+ /* 44.128px */
+}
+
+.secure{
+ display: flex;
+ /* justify-content: center; */
+ align-items: center;
+}
+
+.secure>img{
+ margin-right: 10px;
+}
+
+.secure>small{
+ color: #747474;
+ font-family: Satoshi;
+ font-size: 24px;
+ font-style: normal;
+ font-weight: 400;
+ line-height: 37.824px;
+ /* 37.824px */
+}
+
+.payment_method_body{
+ display: flex;
+ flex: 1;
+}
+
+.select_payment_method,
+.payment_summary{
+ flex: 0.48;
+}
+
+.select_wallet{
+ display: flex;
+ justify-content: space-between;
+ align-items: center;
+}
+
+.save{
+ display: flex;
+ /* justify-content: center; */
+ align-items: center;
+ color: #747474;
+ font-family: Satoshi;
+ font-size: 20px;
+ font-style: normal;
+ font-weight: 400;
+ line-height: normal;
+}
+
+.select_text{
+ color: #292929;
+ font-family: Satoshi;
+ font-size: 28px;
+ font-style: normal;
+ font-weight: 500;
+ line-height: normal;
+}
+
+.save>input{
+ width: 26px;
+ height: 26px;
+ border-radius: 5px;
+ background: #D9D9D9;
+}
+
+.brief_text{
+ display: flex;
+ justify-content: center;
+ align-items: center;
+}
+
+.brief_text_content>p{
+ color: #616161;
+ font-family: Satoshi;
+ font-size: 24px;
+ font-style: normal;
+ font-weight: 400;
+ line-height: 37.824px;
+ /* text-align: center; */
+  /* 37.824px */
+}
+
+.select_payment_body{
+ padding: 30px;
+ border-radius: 8px;
+ background: #FFF;
+ box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.25);
+}
+
+button.confirm{
+ display: flex;
+ width: 668px;
+ padding: 32px 117px;
+ justify-content: center;
+ align-items: center;
+ gap: 10px;
+ border-radius: 4px;
+ background: #272727;
+ color: #FFF;
+ font-family: Satoshi;
+ font-size: 32px;
+ font-style: normal;
+ font-weight: 500;
+ margin-top: 70px;
+}
+
+
