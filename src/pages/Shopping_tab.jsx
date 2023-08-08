@@ -391,9 +391,9 @@ function Shopping_tab() {
           
          
         </div>
-        <button className="confirm">
+        <a  href='/checkout/thankyou' className="confirm">
           Confirm
-         </button>
+         </a>
        </div>
        <div className="payment_summary">
 
