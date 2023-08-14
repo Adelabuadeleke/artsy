@@ -6,7 +6,7 @@ nav{
  display: flex;
  align-items: center;
  justify-content: space-between;
- padding: 2rem 7rem;
+ 
 }
 
 nav> p{
@@ -53,4 +53,24 @@ a.active {
 }
 .toggle{
  text-decoration: none;
+}
+
+@media screen and (min-width: 320px) {
+ nav{
+  padding: 1.5rem;
+ }
+
+ nav> ul{
+  display: none;
+ }
+}
+
+@media screen and (min-width: 1200px ) {
+ nav{
+  padding: 2rem 7rem;
+ }
+
+ nav>ul {
+  display: flex;
+ }
 }
