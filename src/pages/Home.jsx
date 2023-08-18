@@ -10,22 +10,22 @@ function Home() {
 
 useEffect(()=>{
   const infiniteScroll = () => {
-    const imgContainer = document.querySelector('.slides')
-    let imgs =  document.querySelectorAll('.slide')
+  const imgContainer = document.querySelector('.slides')
+  let imgs =  document.querySelectorAll('.slide')
 
-    const interval = 3000
-    let index = 1
+  const interval = 3000
+  let index = 1
 
-    const firstClone = imgs[0].cloneNode(true);
-    const lastClone = imgs[imgs.length - 1].cloneNode(true);
+  const firstClone = imgs[0].cloneNode(true);
+  const lastClone = imgs[imgs.length - 1].cloneNode(true);
 
-    firstClone.id = 'first-clone'
-    lastClone.id = 'last-clone'
+  firstClone.id = 'first-clone'
+  lastClone.id = 'last-clone'
 
-    imgContainer.append(firstClone)
-    imgContainer.prepend(lastClone)
+  imgContainer.append(firstClone)
+  imgContainer.prepend(lastClone)
 
-    imgContainer.style.transform = `translate(${-300 * index}px)`;
+  imgContainer.style.transform = `translate(${-300 * index}px)`;
 
     const startSlide = () => {
       setInterval(() => {
@@ -72,27 +72,27 @@ useEffect(()=>{
     imgContainerLeft.append(firstCloneLeft)
     imgContainerLeft.prepend(lastCloneLeft)
 
-    imgContainerLeft.style.transform = `translate(${300 * indexLeft}px)`;
+    imgContainerLeft.style.transform = `translateX(${-300 * indexLeft}px)`;
 
     const startSlide = () => {
       setInterval(() => {
       // console.log(imgs)
 
-        indexLeft = indexLeft + 1
-        imgContainerLeft.style.transform = `translate(${300 * indexLeft}px)`;
+        indexLeft = indexLeft - 1
+        imgContainerLeft.style.transform = `translateX(${-300 * indexLeft}px)`;
         imgContainerLeft.style.transition ='.7s'
 
       }, interval);
       
-    }
+    } 
     imgContainerLeft.addEventListener('transitionend', ()=>{
       // console.log('trans...')
-      imgsLeft = document.querySelectorAll('.slide')
+      imgsLeft = document.querySelectorAll('.slide_left')
       // console.log(imgs)
-      if(imgsLeft[indexLeft].id === firstCloneLeft.id){
+      if(imgsLeft[indexLeft].id === lastCloneLeft.id){
         imgContainerLeft.style.transition = 'none';
-        indexLeft = 1
-        imgContainerLeft.style.transform = `translate(${300 * indexLeft}px)`;
+        indexLeft = imgsLeft.length - 2
+        imgContainerLeft.style.transform = `translateX(${-300 * indexLeft}px)`;
         // imgContainer.style.transition ='.7s'
       }
     })
@@ -102,8 +102,8 @@ useEffect(()=>{
 
  
   }
-// infiniteScroll()
-// infiniteScrollLeft()
+infiniteScroll()
+infiniteScrollLeft()
 }, [])
  
   
@@ -174,20 +174,20 @@ useEffect(()=>{
       
 
 
-       <div className="scroll__right "> 
+       {/* <div className="scroll__right "> 
         <img src="../../assets/Rectangle 233.png" alt="" />
         <img src="../../assets/Rectangle 234.png" alt="" />
          <img src="../../assets/Rectangle 231.png" alt="" />
         <img src="../../assets/Rectangle 232.png" alt="" />
        
-      </div>
+      </div> */}
 
-        <div className="scroll__right second">
+        {/* <div className="scroll__right second">
         <img src="../../assets/Rectangle 231.png" alt="" />
         <img src="../../assets/Rectangle 232.png" alt="" />
         <img src="../../assets/Rectangle 233.png" alt="" />
         <img src="../../assets/Rectangle 234.png" alt="" />
-      </div>
+      </div> */}
       
 
 
