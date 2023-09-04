@@ -104,12 +104,36 @@ function Marketplace() {
             </select>
           </div>
 
+          <div className="marketplace_heading_title">
+            <h2>Home/ <span>Marketplace</span> </h2>
+            <p>Showing 1-5  of 18 results</p>
+          </div>
+
+          <div className="filter_mobile">
+            <select name="" id="">
+              <option value="">Filters</option>
+              <option value="editorials">Editorials</option>
+              <option value="fashion">Fashion</option>
+              <option value="optics">Optics</option>
+              <option value="artsandmuseum">Arts & Museum</option>
+              <option value="nature">Nature</option>
+            </select>
+
+            <select name="" id="">
+              <option value="">Sort by</option>
+              <option value="price">By Price</option>
+              <option value="new">New</option>
+            </select>
+          </div>
+
           <div className="all_arts">
             <div className="art_item">
               <div className="art_item_body">
                 <img src="../../assets/Rectangle 251.png" alt="" />
-                <p>PHILOMENA ‘22</p>
-                <h3>$3.90</h3>
+                <div className="art_item_text">
+                  <p>PHILOMENA ‘22</p>
+                  <h3>$3.90</h3>
+                </div>
               </div>
               
             </div>
