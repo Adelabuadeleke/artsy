@@ -3,21 +3,9 @@ display: flex;
 flex: 1;
 }
 
-.marketplace_one{
- flex: 0.25;
- /* background: red; */
- /* height: 100vh; */
- display: flex;
- justify-content: center;
- /* padding: .5rem; */
-}
 
-.marketplace_one_body{
- padding-top: 1.5rem;
-}
 
 .marketplace_two{
- flex: 0.75;
  /* background: black; */
  /* height: 100vh; */
 
@@ -177,15 +165,7 @@ flex: 1;
  padding: 16px 28px;
 }
 
-.result_sort{
- display: flex;
- align-items: center;
- justify-content: space-between;
- padding: 25px;
- background: #FFFFFF;
- box-shadow: 4px 4px 64px rgba(0, 0, 0, 0.1);
- border-radius: 15px;
-}
+
 
 .result_sort>select{
  font-family: 'Satoshi';
@@ -210,18 +190,6 @@ flex: 1;
  display: flex;
  flex-wrap: wrap;
  justify-content: space-between;
-}
-
-.art_item{
- display: flex;
- justify-content: center;
- align-items: center;
- padding: 10px;
- background: #FFFFFF;
- box-shadow: 0px 34px 68px rgba(217, 225, 244, 0.36);
- border-radius: 15px;
- width: 250px;
- margin-bottom: 40px;
 }
 
 .art_item>p{
@@ -259,4 +227,137 @@ flex: 1;
  color: #333333;
  padding: 16px 60px;
  background-color: transparent;
+}
+
+@media screen and (min-width: 320px){
+  .marketplace_one {
+    display: none;
+  }
+
+  .marketplace_two {
+    flex: 1;
+  }
+
+  .all_arts{
+    justify-content: center;
+  }
+
+  .result_sort{
+    display: none;
+  }
+
+  .filter_mobile{
+    /* width: 95%; */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 25px;
+    background: #FFFFFF;
+    box-shadow: 4px 4px 64px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+  }
+
+  .art_item_text{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .art_item{
+    width: 90%;
+  }
+
+  .art_item img{
+    width: 100%;
+  }
+
+  .marketplace_heading_title>h2{
+    color: #BCB7B7;
+    font-family: Satoshi;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 51.5px;
+  }
+
+  .marketplace_heading_title>h2>span{
+    color: #292929;
+  }
+
+  .marketplace_heading_title>p {
+    color: #BCB7B7;
+    font-family: Poppins;
+    font-size: 16px;
+    font-style: italic;
+    font-weight: 400;
+    line-height: normal;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .marketplace_heading_title{
+    display: none;
+  }
+
+  .all_arts {
+    justify-content: space-between;
+  }
+
+  .art_item_text {
+    flex-direction: column;
+    align-items: unset;
+  }
+
+  .art_item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    background: #FFFFFF;
+    box-shadow: 0px 34px 68px rgba(217, 225, 244, 0.36);
+    border-radius: 15px;
+    width: 250px;
+    margin-bottom: 40px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+
+}
+
+@media screen and (min-width: 1200px) {
+  .marketplace_one {
+    flex: 0.25;
+    /* background: red; */
+    /* height: 100vh; */
+    display: flex;
+    justify-content: center;
+    /* padding: .5rem; */
+  }
+
+  .marketplace_one_body {
+    padding-top: 1.5rem;
+  }
+
+  .marketplace_two{
+    flex: 0.75;
+  }
+
+  .result_sort {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 25px;
+    background: #FFFFFF;
+    box-shadow: 4px 4px 64px rgba(0, 0, 0, 0.1);
+    border-radius: 15px;
+  }
+
+  .filter_mobile{
+    display: none;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+
 }
