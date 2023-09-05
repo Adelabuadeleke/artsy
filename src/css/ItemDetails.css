@@ -1,7 +1,3 @@
-.itemdetails_body{
- padding: 1em 7rem;
-}
-
 .itemdetails_body>h1{
  font-family: 'Satoshi';
  font-style: normal;
@@ -14,24 +10,6 @@
  color: #333333;
 }
 
-.item_details{
- display: flex;
- flex: 1;
- border: 1px solid #333333;
-}
-.details_one{
- flex: 0.45;
- /* background: black; */
- padding: 20px;
- /* height: 50vh; */
- border-right: 1px solid #333333;
-}
-
-.details_two{
- flex:0.55;
- /* background:red; */
- /* height: 50vh; */
-}
 
 .details_title{
  display: flex;
@@ -39,22 +17,6 @@
  align-items: center;
  padding: 10px;
  border-bottom: 1px solid #333333;
-}
-
-.details_title>h2{
- font-family: 'Satoshi';
- font-style: normal;
- font-weight: 700;
- font-size: 46px;
-}
-
-.details_title>p{
- display: flex;
- align-items: center;
- font-family: 'STIX Two Text';
- font-style: normal;
- font-weight: 500;
- font-size: 40px;
 }
 
 .details_title>p>img{
@@ -128,7 +90,6 @@
 
 .cart_cta>button{
  display: inline-flex;
- padding: 24.004px 87.765px;
  justify-content: center;
  align-items: center;
  gap: 7.501px;
@@ -155,14 +116,12 @@
 
 .drop_item>p{
  color: #333;
- font-size: 32px;
  font-family: Satoshi;
  font-style: normal;
  font-weight: 500;
 }
 
 .item_detail_explore{
- padding: 40px 20px;
  display: flex;
  justify-content: space-between;
  align-items:center;
@@ -174,7 +133,6 @@
 
 .item_detail_explore>h2{
  color: #333;
- font-size: 32px;
  font-family: Satoshi;
  font-style: normal;
  font-weight: 500;
@@ -191,8 +149,6 @@
 }
 
 .explore_btn_div{
- height: 59px;
- width: 59px;
  display: flex;
  align-items: center;
  justify-content: center;
@@ -264,7 +220,6 @@ min-width: 500px;
  display: flex;
  justify-content: space-between;
  overflow-x: scroll;
- padding-left: 7rem;
  padding-bottom: 4rem;
 }
 
@@ -279,15 +234,209 @@ min-width: 500px;
  margin: 4rem 0;
 }
 
-.explore_all_cta{
- width: 313px;
- height: 91px;
- border-radius: 16px;
- border: 2px solid #272727;
- color: #272727;
- font-family: Satoshi;
- font-size: 36px;
- font-style: normal;
- font-weight: 500;
- background-color: transparent;
+
+
+@media screen and (min-width: 320px) {
+  .item_details {
+    display: flex;
+    /* flex: 1; */
+    flex-direction: column;
+    /* border: 1px solid #333333; */
+  }
+
+  .item_detail_explore>h2{
+    font-size: 25px;
+  }
+
+  .details_one {
+    flex: 1;
+    /* background: black; */
+    /* padding: 20px; */
+    /* height: 50vh; */
+    /* border-right: 1px solid #333333; */
+  }
+
+  .details_two {
+    flex: 1;
+    /* background:red; */
+    /* height: 50vh; */
+  }
+
+  .itemdetails_body {
+    padding: 1em;
+  }
+
+  .details_one>img{
+    width: 100%;
+    height: 380px;
+    object-fit: cover;
+    background-size: cover;
+  }
+
+  .cart_cta>button {
+    padding: 24.004px 10.765px;
+  }
+
+  .details_title>h2 {
+    font-family: 'Satoshi';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 26px;
+  }
+
+  .details_title>p {
+    display: flex;
+    align-items: center;
+    font-family: 'STIX Two Text';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 20px;
+  }
+
+  .details_title>p>img {
+    height: 20px;
+  }
+
+  .cart_cta>button {
+    padding: 5.004px 5.765px;
+  }
+
+  .explore_btn_div{
+    height: 40px;
+    width: 40px;
+  }
+
+  .item_detail_explore{
+    padding: 25px 18px;
+  }
+
+  .drop_item>p{
+    font-size: 20px;
+  }
+
+  .item_detail_slider{
+    padding-left: 2rem;
+  }
+
+  .explore_all_cta {
+    width: 200px;
+    height: 71px;
+    border-radius: 16px;
+    border: 2px solid #272727;
+    color: #272727;
+    font-family: Satoshi;
+    font-size: 25px;
+    font-style: normal;
+    font-weight: 500;
+    background-color: transparent;
+  }
+}
+
+@media screen and (min-width: 350px){
+  .cart_cta>button {
+    padding: 24.004px 10.765px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .cart_cta>button{
+    padding: 24.004px 87.765px;
+  }
+
+  .details_title>h2 {
+    font-family: 'Satoshi';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 46px;
+  }
+
+  .details_title>p {
+    display: flex;
+    align-items: center;
+    font-family: 'STIX Two Text';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 40px;
+  }
+
+  .details_title>p>img {
+    height: 40px;
+  }
+
+  .item_detail_explore>h2 {
+    font-size: 32px;
+  }
+
+  .explore_btn_div {
+    height: 59px;
+    width: 59px;
+  }
+
+  .item_detail_explore {
+    padding: 40px 20px;
+  }
+
+  .drop_item>p {
+    font-size: 32px;
+  }
+
+  .item_detail_slider {
+    padding-left: 7rem;
+  }
+
+  .explore_all_cta {
+    width: 313px;
+    height: 91px;
+    border-radius: 16px;
+    border: 2px solid #272727;
+    color: #272727;
+    font-family: Satoshi;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 500;
+    background-color: transparent;
+  }
+
+  .details_one>img{
+    height: 500px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+
+}
+
+@media screen and (min-width: 1300px) {
+  .item_details {
+    display: flex;
+    flex-direction: initial;
+    flex: 1;
+    border: 1px solid #333333;
+  }
+
+  .details_one {
+    flex: 0.45;
+    /* background: black; */
+    padding: 20px;
+    /* height: 50vh; */
+    border-right: 1px solid #333333;
+  }
+
+  .details_two {
+    flex: 0.55;
+    /* background:red; */
+    /* height: 50vh; */
+  }
+
+  .itemdetails_body {
+    padding: 1em 7rem;
+  }
+
+  .details_one>img {
+    height: initial;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+
 }
