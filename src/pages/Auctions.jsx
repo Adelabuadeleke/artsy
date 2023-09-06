@@ -23,7 +23,7 @@ function Auctions() {
 
     <div className="swiper_div">
       <Swiper
-        slidesPerView={2}
+        // slidesPerView={2}
         spaceBetween={30}
         pagination={{
           clickable: true,
@@ -54,7 +54,7 @@ function Auctions() {
           </div>     
         </SwiperSlide>
         <SwiperSlide className='slide' >
-          <div className="outer" style={{backgroundImage:`url("../assets/Auctions/Rectangle 245.png") center no-repeat`}}>
+          <div className="outer" style={{backgroundImage:`url("../assets/Auctions/Rectangle 245.png")`}}>
             <div className="timer">
               <span className="hr">6</span>hr : <span className="min">40</span>mins : <span className="sec">15</span>s
             </div>
