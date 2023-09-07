@@ -1,16 +1,3 @@
-.liveauctions{
- padding: 100px;
-}
-
-.liveauctions>h2{
- color: #BCB7B7;
- font-family: Satoshi;
- font-size: 24px;
- font-style: normal;
- font-weight: 500;
- line-height: 51.5px;
-}
-
 .liveauctions>h2>span{
  color: #333;
  font-family: Satoshi;
@@ -18,46 +5,6 @@
  font-style: normal;
  font-weight: 500;
  line-height: 51.5px;
-}
-
-.liveauctions_contents{
- display: flex;
- width: 100%;
- height: 90vh;
- flex: 1;
- border: 1px solid #000;
-}
-
-.liveauction_display{
- display: flex;
- flex-direction: column;
- justify-content: space-between;
- flex: 0.5;
- /* width: 100%; */
- height: 100%;
- /* background: blue; */
- background-repeat: no-repeat;
- background-size: cover;
- object-fit: cover;
- background-position: center;
-}
-
-.liveauction_comments{
- flex: 0.5;
- height: 100%;
- /* background: red; */
- display: flex;
- justify-content: space-between;
- flex-direction: column;
- /* padding: 20px 0 20px 20px; */
- padding: 0 20px;
-}
-
-.display_live{
- display: flex;
- align-items: center;
- justify-content: space-between;
- padding: 20px 30px;
 }
 
 .cancel{
@@ -89,15 +36,16 @@
  align-items: center;
 }
 
-.display_bid{
- color: #FFF;
- font-family: Inter;
- font-size: 48px;
- font-style: normal;
- font-weight: 600;
- line-height: 75px;
- /* 75.648px */
+.display_second{
+  display: flex;
+  align-items: center;
 }
+
+.viewers_count>img{
+  width: 15px;
+  height: 11px;
+}
+
 
 .display_tag>span{
  color: #FFF;
@@ -107,16 +55,6 @@
  font-weight: 400;
  line-height: 37px;
   /* 37.824px */
-}
-
-.display_tag{
- color: #FFF;
- font-family: Inter;
- font-size: 24px;
- font-style: normal;
- font-weight: 500;
- line-height: 37px;
- padding: 50px;
 }
 
 .display_bid{
@@ -149,19 +87,6 @@
  width: 100%;
 }
 
-.bid_all>img{
- border: 1px solid #000;
- border-radius: 50%;
-}
-.place_bid>small{
- color: #BAB9B9;
- font-family: Inter;
- font-size: 20px;
- font-style: italic;
- font-weight: 500;
- line-height: 31px;
-  /* 31.52px */
-}
 
 .place_bid_input{
  display: flex;
@@ -170,7 +95,6 @@
  justify-content: space-between;
  flex: 1;
  padding: 5px;
- border: 1px solid black;
  border-radius: 25px;
 }
 
@@ -209,31 +133,6 @@
  margin-right: 25px;
 }
 
-.commenter_name{
- color: #333;
- font-family: Satoshi;
- font-size: 22px;
- font-style: normal;
- font-weight: 400;
- line-height: 34px;
-  /* 34.672px */
-}
-
-.comment_text{
- color: #333;
- font-family: Satoshi;
- font-size: 22px;
- font-style: normal;
- font-weight: 500;
- line-height: 34px;
-}
-
-.auctions_upcoming{
- display: flex;
- align-items: center;
- cursor: pointer;
-}
-
 .auctions_upcoming>p{
  color: #000;
  font-family: Satoshi;
@@ -253,4 +152,443 @@
 
 a{
  text-decoration: none;
+}
+
+/* resposiveness */
+@media screen and (min-width: 320px){
+  .liveauctions>h2 {
+   display: none;
+  }
+
+  .liveauctions_contents{
+    height: 100vh;
+  }
+
+  .liveauction_comments {
+    display: none;
+  }
+
+  .auctions_upcoming {
+    display: none;
+  }
+
+  .liveauction_display {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    /* flex: 0.5; */
+    /* width: 100%; */
+    /* background: blue; */
+    background-repeat: no-repeat;
+    background-size: cover;
+    object-fit: cover;
+    background-position: center;
+  }
+
+  .display_bid{
+    color: #FFF;
+    font-family: Satoshi;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 47px;
+  }
+  
+  .display_tag {
+   display: none;
+  }
+
+  .comments_outer{
+    height: 40vh;
+    padding: 15px;
+  }
+
+  .comments_display_mobile{
+    height: 75%;
+    overflow-y: scroll;
+    margin-bottom: 20px;
+  }
+
+
+  .comment_text {
+    color: #fff;
+    font-family: Satoshi;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+  }
+
+  .commenter_name {
+    color: #fff;
+    font-family: Satoshi;
+    font-size: 13px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px;
+    /* 34.672px */
+  }
+
+  .commenter_img>img{
+    height: 32px;
+    width: 32px;
+  }
+
+  .place_bid>small {
+   display: none;
+  }
+
+  .place_bid_input {
+    border: 1px solid #fff;
+  }
+
+  .place_bid_input>input {
+    /* border: 1px solid #fff; */
+    background: transparent;
+  }
+
+  .place_bid_input>input::placeholder{
+    color: #fff;
+    font-size: 11px;
+    font-weight: 400px;
+    line-height: 17px;
+  }
+
+  .display_tag_mobile{
+    color: #FFF;
+    font-family: Satoshi;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 25px;
+  }
+
+  .display_live {
+    display: none;
+  }
+
+  .display_live_mobile {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 15px;
+  }
+
+  .bid_all>img {
+    border: 1px solid #fff;
+    border-radius: 50%;
+  }
+
+  .live_mobile {
+    width: 64px;
+    height: 29px;
+    flex-shrink: 0;
+    border-radius: 5px;
+    background: #006CA2;
+    color: #FFF;
+    font-family: Inter;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin-right: 5px;
+  }
+
+  .viewers_count {
+    color: #FFF;
+    font-family: Satoshi;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px;
+    width: 40px;
+    height: 18px;
+    flex-shrink: 0;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.40);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 3px;
+  }
+
+  .cancel_mobile {
+    margin-left: 5px;
+  }
+
+  .cancel_mobile>svg{
+    width: 20px;
+    height: 20px;
+  }
+}
+
+@media screen and (min-width: 360px){
+
+  .live_mobile{
+    margin-left: 7px;
+  }
+  .cancel_mobile {
+    margin-left: 7px;
+  }
+
+  .display_tag_mobile {
+    color: #FFF;
+    font-family: Satoshi;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 25px;
+  }
+}
+
+@media screen and (min-width: 425px){
+.live_mobile {
+    width: 84px;
+    height: 29px;
+    flex-shrink: 0;
+    border-radius: 5px;
+    background: #006CA2;
+    color: #FFF;
+    font-family: Inter;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin-right: 15px;
+  }
+
+  .viewers_count {
+    color: #FFF;
+    font-family: Satoshi;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px;
+    width: 50px;
+    height: 25px;
+    flex-shrink: 0;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.40);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 3px;
+  }
+
+  .cancel_mobile {
+    margin-left: 15px;
+  }
+
+  .display_live_mobile {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 30px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .live_mobile {
+    width: 104px;
+    height: 39px;
+    flex-shrink: 0;
+    border-radius: 5px;
+    background: #006CA2;
+    color: #FFF;
+    font-family: Inter;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    margin-right: 25px;
+  }
+
+  .viewers_count {
+    color: #FFF;
+    font-family: Satoshi;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px;
+    width: 60px;
+    height: 27px;
+    flex-shrink: 0;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.40);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 7px;
+  }
+
+  .cancel_mobile {
+    margin-left: 25px;
+  }
+
+  .cancel_mobile>svg {
+    width: 28px;
+    height: 28px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+
+}
+
+@media screen and (min-width: 1300px) {
+  .liveauctions {
+    padding: 100px;
+    max-height: 100vh;
+  }
+
+  .liveauctions_contents {
+    display: flex;
+    width: 100%;
+    height: 80%;
+    flex: 1;
+    border: 1px solid #000;
+  }
+
+  .liveauctions>h2 {
+    color: #BCB7B7;
+    font-family: Satoshi;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 51.5px;
+    display: initial;
+  }
+
+  .liveauction_comments {
+    flex: 0.5;
+    height: 100%;
+    /* background: red; */
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    /* padding: 20px 0 20px 20px; */
+    padding: 0 20px;
+  }
+
+  .auctions_upcoming {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+  }
+
+  .liveauction_display {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex: 0.5;
+    /* width: 100%; */
+    height: initial;
+    /* background: blue; */
+    background-repeat: no-repeat;
+    background-size: cover;
+    object-fit: cover;
+    background-position: center;
+  }
+
+  .display_bid {
+    color: #FFF;
+    font-family: Inter;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 75px;
+    /* 75.648px */
+  }
+
+  .display_tag {
+    color: #FFF;
+    font-family: Inter;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 37px;
+    padding: 50px;
+    display: initial;
+  }
+
+  .comment_text {
+    color: #333;
+    font-family: Satoshi;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 34px;
+  }
+
+  .commenter_name {
+    color: #333;
+    font-family: Satoshi;
+    font-size: 22px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 34px;
+    /* 34.672px */
+  }
+
+  .commenter_img>img {
+    height: 70px;
+    width: 70px;
+  }
+
+  .place_bid>small {
+    display: initial;
+    color: #BAB9B9;
+    font-family: Inter;
+    font-size: 20px;
+    font-style: italic;
+    font-weight: 500;
+    line-height: 31px;
+    /* 31.52px */
+  }
+
+  .place_bid_input{
+    border: 1px solid black;
+  }
+
+  .comments_outer{
+    display: none;
+  }
+
+  .display_live {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 30px;
+  }
+
+  .display_live_mobile {
+    display: none;
+  }
+
+  .bid_all>img {
+    border: 1px solid #000;
+    border-radius: 50%;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .liveauctions {
+    padding: 100px;
+  }
 }
