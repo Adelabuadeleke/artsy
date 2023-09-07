@@ -28,7 +28,6 @@ function App() {
           <Route path='/drops' element={<Drop/>}/>
           <Route path='/checkout' element={<ShoppingTab/>}/>
           <Route path='/checkout/thankyou' element={<Thank_you/>}/>
-
         </Routes>
       </Router>
     </div>
