@@ -15,23 +15,8 @@
 }
 
 button.notify{
- width: 420px;
- height: 84px;
  border-radius: 10px;
  border: 1px solid #000;
- color: #000;
- font-family: Satoshi;
- font-size: 36px;
- font-style: normal;
- font-weight: 500;
- line-height: 64px;
-
- color: #000;
- font-family: Satoshi;
- font-size: 36px;
- font-style: normal;
- font-weight: 500;
- line-height: 64px;
  background: transparent;
 }
 
@@ -258,6 +243,17 @@ button.notify{
     line-height: 28px;
     text-align: center;
   }
+
+  button.notify {
+    width: 200px;
+    height: 52.4px;
+    color: #000;
+    font-family: Satoshi;
+    font-size: 22.457px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 39.924px
+  }
 }
 
 @media screen and (min-width: 768px) {
@@ -273,6 +269,17 @@ button.notify{
     font-weight: 400;
     line-height: 64px;
   }
+
+  button.notify {
+    width: 320px;
+    height: 74px;
+    color: #000;
+    font-family: Satoshi;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 64px;
+  }
 }
 
 @media screen and (min-width: 1024px){
@@ -284,6 +291,11 @@ button.notify{
     font-weight: 500;
     line-height: 84.24px;
     /* 84.24px */
+  }
+
+  button.notify{
+    width: 420px;
+    height: 84px;
   }
 }
 
