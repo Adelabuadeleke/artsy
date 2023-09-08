@@ -1,16 +1,3 @@
-.drop_body{
- padding: 1rem 7rem;
-}
-
-.drop_body>h2{
- color: #BCB7B7;
- font-family: Satoshi;
- font-size: 24px;
- font-style: normal;
- font-weight: 500;
- line-height: 51.5px;
-}
-
 .drop_body>h2>span{
  color: #333;
  font-family: Satoshi;
@@ -27,15 +14,6 @@
  justify-content: center;
 }
 
-.drop_body>.drop_intro>h1{
- color: #000;
- font-family: Satoshi;
- font-size: 48px;
- font-style: normal;
- font-weight: 500;
- line-height: 84.24px
- /* 84.24px */
-}
 
 .drop_body>.drop_intro>p{
  color: #616161;
@@ -75,16 +53,10 @@ button.notify{
  display: flex;
  justify-content: space-between;
  margin-bottom: 5rem;
+ flex-wrap: wrap;
 }
 
-.item_first{
- height: 400px;
- width: 550px;
- border-radius: 10px;
- display: flex;
- align-items: flex-end;
- justify-content: center;
-}
+
 
 .drop_timer{
  padding: 10px;
@@ -257,4 +229,84 @@ button.notify{
  display: flex;
  align-items: center;
  justify-content: center;
+}
+
+@media screen and (min-width: 320px){
+  .item_first {
+    height: 400px;
+    width: 90%;
+    border-radius: 10px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    margin-bottom: 20px;
+  }
+
+  .drop_body>.drop_intro>h1 {
+    color: #000;
+    font-family: Satoshi;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 51.5px;
+  }
+
+  .drop_body {
+    padding: 1rem 1.5rem;
+  }
+
+  .drop_body>h2 {
+   display: none;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .drop_body {
+    padding: 1rem 7rem;
+  }
+}
+
+@media screen and (min-width: 1024px){
+  .drop_body>.drop_intro>h1 {
+    color: #000;
+    font-family: Satoshi;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 84.24px;
+    /* 84.24px */
+  }
+}
+
+@media screen and (min-width: 1300px) {
+  .item_first {
+    height: 400px;
+    width: 400px;
+    border-radius: 10px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    margin-bottom: unset;
+  }
+
+  .drop_body>h2 {
+    display: block;
+    color: #BCB7B7;
+    font-family: Satoshi;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 51.5px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .item_first {
+    height: 400px;
+    width: 550px;
+    border-radius: 10px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+  }
 }
