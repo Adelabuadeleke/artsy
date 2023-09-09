@@ -189,16 +189,22 @@ function Shopping_tab() {
           <div className="shipping_input">
            <label htmlFor="">Choose a wallet</label>
            <select name="" id="">
-            <option value="">one</option>
-            <option value="">two</option>
+            <optgroup label='select wallet'>
+              <option value="">one</option>
+              <option value="">two</option>
+            </optgroup>
+            
            </select>
           </div>
 
           <div className="shipping_input">
            <label htmlFor="">City</label>
            <select name="" id="">
-            <option value="">one</option>
-            <option value="">two</option>
+            <optgroup label='select city'>
+              <option value="">Lagos</option>
+              <option value="">Abuja</option>
+            </optgroup>
+            
            </select>
           </div>
 
@@ -206,8 +212,11 @@ function Shopping_tab() {
            <div className="country">
             <label htmlFor="">Country</label>
             <select name="" id="">
-             <option value="">Nigeria</option>
-             <option value="">Other</option>
+              <optgroup label='select country'>
+                <option value="">Nigeria</option>
+                <option value="">Other</option>
+              </optgroup>
+             
             </select>
            </div>
            <div className="postal">
