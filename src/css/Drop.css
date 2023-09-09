@@ -98,15 +98,6 @@ button.notify{
  width: 550px;
 }
 
-.item_second>p{
- color: #000;
- font-family: Satoshi;
- font-size: 20px;
- font-style: normal;
- font-weight: 400;
- line-height: normal;
-}
-
 .item_second>h2{
  color: #000;
  font-family: Satoshi;
@@ -265,6 +256,15 @@ button.notify{
     display: none;
   }
 
+  .item_second>p {
+    color: #000;
+    font-family: Satoshi;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+
 }
 
 @media screen and (min-width: 768px) {
@@ -317,6 +317,14 @@ button.notify{
     flex-direction: column;
   }
 
+  .item_second>p {
+    color: #000;
+    font-family: Satoshi;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
  
 }
 
