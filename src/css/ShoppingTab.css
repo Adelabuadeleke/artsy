@@ -146,12 +146,6 @@
  justify-content: space-between;
 }
 
-.shipping_details_first,
-.shipping_details_second{
- flex: 0.48;
- 
-}
-
 .shipping_input{
  margin-bottom: 60px;
 }
@@ -199,6 +193,7 @@
  border: 0.5px solid #747474;
  background: #F2F2F2;
  height: 76px;
+ width: 100%;
 }
 
 .wallet_key_input{
@@ -261,7 +256,6 @@ button.payment{
  font-style: normal;
  font-weight: 500;
  display: flex;
- width: 610px;
  padding: 32.729px 119.664px;
  justify-content: center;
  align-items: center;
@@ -547,6 +541,18 @@ a.confirm{
   .btn-container-outer {
     display: none;
   }
+
+  .shipping_details_first {
+    flex: 1;
+  }
+
+  .shipping_details_second {
+    display: none;
+  }
+
+  button.payment {
+    width: 100%;
+  }
 }
 
 @media screen and (min-width: 360px){
@@ -671,6 +677,11 @@ a.confirm{
     align-items: center;
     justify-content: center;
   }
+
+  button.payment{
+    width: 610px;
+  }
+ 
 }
 
 @media screen and (min-width: 1024px) {
@@ -723,6 +734,16 @@ a.confirm{
     font-style: normal;
     font-weight: 500;
     margin-bottom: 40px;
+  }
+
+  .shipping_details_first,
+  .shipping_details_second {
+    flex: 0.48;
+
+  }
+
+  .shipping_details_second {
+    display: flex;
   }
 }
 
