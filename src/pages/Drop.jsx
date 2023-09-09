@@ -48,7 +48,7 @@ function Drop() {
         Sed nunc tempus aliquet lectus ut vulputate.
        </small>
 
-       <h2>Creator : <span>Aliya Minat</span></h2>
+       <h2 className='creator'>Creator : <span>Aliya Minat</span></h2>
 
        <a href="">Get Notified</a>
       </div>
@@ -87,7 +87,7 @@ function Drop() {
         Sed nunc tempus aliquet lectus ut vulputate.
        </small>
 
-       <h2>Creator : <span>Aliya Minat</span></h2>
+       <h2 className='creator'>Creator : <span>Aliya Minat</span></h2>
 
        <a href="">Join Now</a>
       </div>
@@ -126,7 +126,7 @@ function Drop() {
         Sed nunc tempus aliquet lectus ut vulputate.
        </small>
 
-       <h2>Creator : <span>Aliya Minat</span></h2>
+       <h2 className='creator'>Creator : <span>Aliya Minat</span></h2>
 
        <a href="">View</a>
       </div>
@@ -165,7 +165,7 @@ function Drop() {
         Sed nunc tempus aliquet lectus ut vulputate.
        </small>
 
-       <h2>Creator : <span>Aliya Minat</span></h2>
+       <h2 className='creator'>Creator : <span>Aliya Minat</span></h2>
 
        <a href="">View</a>
       </div>
