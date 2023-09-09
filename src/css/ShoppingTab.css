@@ -157,18 +157,7 @@
  flex-direction: column;
 }
 
-.postal>label,
-.country>label,
-.shipping_input>label,
-.shipping_input>.email_checkbox{
- color: #888;
- font-family: Satoshi;
- font-size: 26px;
- font-style: normal;
- font-weight: 400;
- line-height: normal;
- margin-bottom: 17px;
-}
+
 
 .email_checkbox{
  margin-top: 17px;
@@ -183,19 +172,6 @@
  width: 26px;
 }
 
-.shipping_input>input,
-.shipping_input>select,
-.country>select,
-.country>input,
-.postal>input,
-.wallet_key_input{
- border-radius: 10px;
- border: 0.5px solid #747474;
- background: #F2F2F2;
- height: 76px;
- width: 100%;
-}
-
 .wallet_key_input{
  display: flex;
 }
@@ -206,18 +182,6 @@
  /* border: none; */
  background: #F2F2F2;
 
-}
-
-.shipping_input>input::placeholder,
-.postal>input::placeholder,
-.shipping_input>select>option{
- color: #888;
- /* text-align: right; */
- font-family: Satoshi;
- font-size: 26px;
- font-style: normal;
- font-weight: 400;
- line-height: normal;
 }
 
 .shipping_input>select{
@@ -252,11 +216,9 @@ button.payment{
  background: #272727;
  color: #FFF;
  font-family: Satoshi;
- font-size: 32.729px;
  font-style: normal;
  font-weight: 500;
  display: flex;
- padding: 32.729px 119.664px;
  justify-content: center;
  align-items: center;
  gap: 10.228px;
@@ -452,7 +414,7 @@ a.confirm{
     border: 1px solid #272727;
     color: #FFF;
     font-family: Satoshi;
-    font-size: 20px;
+    font-size: 17px;
     font-style: normal;
     font-weight: 500;
     margin-bottom: 40px;
@@ -552,6 +514,49 @@ a.confirm{
 
   button.payment {
     width: 100%;
+    padding: 22px 60px;
+    font-size: 18px;
+  }
+
+  .shipping_input>input,
+  .shipping_input>select,
+  .country>select,
+  .country>input,
+  .postal>input,
+  .wallet_key_input {
+    border-radius: 10px;
+    border: 0.5px solid #747474;
+    background: #F2F2F2;
+    height: 46px;
+    width: 100%;
+  }
+
+  .shipping_input>input::placeholder,
+  .postal>input::placeholder,
+  .shipping_input>select>optgroup {
+    color: #888;
+    /* text-align: right; */
+    font-family: Satoshi;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+
+  .postal>label,
+  .country>label,
+  .shipping_input>label,
+  .shipping_input>.email_checkbox,
+  .shipping_input>select,
+  .country> select
+   {
+    color: #888;
+    font-family: Satoshi;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-bottom: 17px;
   }
 }
 
@@ -560,7 +565,7 @@ a.confirm{
     width: 125px;
     height: 126px;
   }
-
+  button.payment,
   button.checkout-btn{
     padding: 22px 80px;
   }
@@ -680,11 +685,51 @@ a.confirm{
 
   button.payment{
     width: 610px;
+    font-size: 20px;
+  }
+
+  .shipping_input>input,
+  .shipping_input>select,
+  .country>select,
+  .country>input,
+  .postal>input,
+  .wallet_key_input {
+    border-radius: 10px;
+    border: 0.5px solid #747474;
+    background: #F2F2F2;
+    height: 76px;
+    width: 100%;
+  }
+
+  .shipping_input>input::placeholder,
+  .postal>input::placeholder,
+  .shipping_input>select>option {
+    color: #888;
+    /* text-align: right; */
+    font-family: Satoshi;
+    font-size: 26px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+
+  .postal>label,
+  .country>label,
+  .shipping_input>label,
+  .shipping_input>.email_checkbox {
+    color: #888;
+    font-family: Satoshi;
+    font-size: 26px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    margin-bottom: 17px;
   }
  
 }
 
 @media screen and (min-width: 1024px) {
+  button.payment,
   button.checkout-btn {
     display: inline-flex;
     padding: 28px 80px;
@@ -716,6 +761,11 @@ a.confirm{
     /* border-bottom-left-radius: var(--radius); */
     /* border-bottom-right-radius: var(--radius); */
     padding: 3rem 7rem;
+  }
+
+  button.payment{
+    padding: 32.729px 119.664px;
+    font-size: 32.729px;
   }
 }
 
