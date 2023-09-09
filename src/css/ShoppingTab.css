@@ -146,10 +146,6 @@
  justify-content: space-between;
 }
 
-.shipping_input{
- margin-bottom: 60px;
-}
-
 .postal,
 .country,
 .shipping_input{
@@ -188,13 +184,6 @@
 
 }
 
-.shipping_input_split{
- display: flex;
- flex: 1;
- justify-content: space-between;
- margin-bottom: 60px;
-}
-
 /* .country{
  margin-right: 2px;
 } */
@@ -230,16 +219,6 @@ button.payment{
  align-items: center;
 }
 
-.payment_method>h2{
- color: #292929;
- font-family: Satoshi;
- font-size: 28px;
- font-style: normal;
- font-weight: 500;
- line-height: 44.128px;
- /* 44.128px */
-}
-
 .secure{
  display: flex;
  /* justify-content: center; */
@@ -250,52 +229,10 @@ button.payment{
  margin-right: 10px;
 }
 
-.secure>small{
- color: #747474;
- font-family: Satoshi;
- font-size: 24px;
- font-style: normal;
- font-weight: 400;
- line-height: 37.824px;
- /* 37.824px */
-}
-
 .payment_method_body{
  display: flex;
  flex: 1;
  justify-content: space-between;
-}
-
-.select_payment_method,
-.payment_summary{
- flex: 0.48;
-}
-
-.select_wallet{
- display: flex;
- justify-content: space-between;
- align-items: center;
-}
-
-.save{
- display: flex;
- /* justify-content: center; */
- align-items: center;
- color: #747474;
- font-family: Satoshi;
- font-size: 20px;
- font-style: normal;
- font-weight: 400;
- line-height: normal;
-}
-
-.select_text{
- color: #292929;
- font-family: Satoshi;
- font-size: 28px;
- font-style: normal;
- font-weight: 500;
- line-height: normal;
 }
 
 .save>input{
@@ -311,28 +248,10 @@ button.payment{
  align-items: center;
 }
 
-.brief_text_content>p{
- color: #616161;
- font-family: Satoshi;
- font-size: 24px;
- font-style: normal;
- font-weight: 400;
- line-height: 37.824px;
- /* text-align: center; */
-  /* 37.824px */
-}
-
-.select_payment_body{
- padding: 30px;
- border-radius: 8px;
- background: #FFF;
- box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.25);
-}
-
 a.confirm{
  display: flex;
  width: 668px;
- padding: 32px 0;
+ padding: 22px 0;
  justify-content: center;
  align-items: center;
  gap: 10px;
@@ -404,6 +323,7 @@ a.confirm{
 }
 
 @media screen and (min-width: 320px) {
+  /* a.confirm, */
   button.checkout-btn {
     display: inline-flex;
     padding: 22px 60px;
@@ -512,9 +432,10 @@ a.confirm{
     display: none;
   }
 
+  a.confirm,
   button.payment {
     width: 100%;
-    padding: 22px 60px;
+    /* padding: 22px 60px; */
     font-size: 18px;
   }
 
@@ -548,7 +469,8 @@ a.confirm{
   .shipping_input>label,
   .shipping_input>.email_checkbox,
   .shipping_input>select,
-  .country> select
+  .country> select,
+  .country>input::placeholder
    {
     color: #888;
     font-family: Satoshi;
@@ -557,6 +479,103 @@ a.confirm{
     font-weight: 400;
     line-height: normal;
     margin-bottom: 17px;
+  }
+
+  .payment_summary {
+    display: none;
+  }
+
+  .shipping_input {
+    margin-bottom: 20px;
+  }
+
+  .payment_method>h2 {
+   display: none;
+  }
+
+  .select_wallet {
+    display: flex;
+    justify-content: space-between;
+    /* align-items: center; */
+    flex-direction: column;
+  }
+
+  .select_payment_body {
+    /* padding: 30px; */
+    /* border-radius: 8px; */
+    background: #FFF;
+    /* box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.25); */
+  }
+
+  .secure>small {
+    color: #747474;
+    font-family: Satoshi;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 37.824px;
+    /* 37.824px */
+  }
+
+  .secure>img{
+    width: 14px;
+    height: 19px;
+  }
+
+  .select_text {
+    color: #292929;
+    font-family: Satoshi;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+  }
+
+  .brief_text_content>p {
+    color: #616161;
+    font-family: Satoshi;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 37.824px;
+    /* text-align: center; */
+    /* 37.824px */
+  }
+
+  .save {
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    color: #747474;
+    font-family: Satoshi;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+
+  .wallet_key_input{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .wallet_key_input>img{
+    width: 29px;
+    height: 29px;
+  }
+
+  .wallet_div>img{
+    height: 42px;
+    width: 42px;
+  }
+
+  .shipping_input_split {
+    display: flex;
+    flex-direction: column;
+    /* flex: 1;
+    justify-content: space-between;
+    margin-bottom: 60px; */
   }
 }
 
@@ -725,7 +744,91 @@ a.confirm{
     line-height: normal;
     margin-bottom: 17px;
   }
- 
+
+  .payment_method>h2 {
+    color: #292929;
+    font-family: Satoshi;
+    font-size: 28px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 44.128px;
+    display: initial;
+    /* 44.128px */
+  }
+
+  .select_wallet {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+  }
+
+  .select_payment_body {
+    padding: 30px;
+    border-radius: 8px;
+    background: #FFF;
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.25);
+  }
+
+  .secure>small {
+    color: #747474;
+    font-family: Satoshi;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 37.824px;
+    /* 37.824px */
+  }
+
+  .secure>img {
+    width: 20px;
+    height: 27px;
+  }
+
+  .select_text{
+    font-size: 28px;
+  }
+
+  .brief_text_content>p {
+    color: #616161;
+    font-family: Satoshi;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 37.824px;
+    /* text-align: center; */
+    /* 37.824px */
+  }
+
+  .save {
+    display: flex;
+    /* justify-content: center; */
+    align-items: center;
+    color: #747474;
+    font-family: Satoshi;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+  }
+
+  .wallet_key_input>img {
+    width: 40px;
+    height: 40px;
+  }
+
+  .wallet_div>img {
+    height: initial;
+    width: initial;
+  }
+
+  .shipping_input_split {
+    display: flex;
+    flex: 1;
+    justify-content: space-between;
+    margin-bottom: 60px;
+    flex-direction: row;
+  }
 }
 
 @media screen and (min-width: 1024px) {
@@ -767,6 +870,10 @@ a.confirm{
     padding: 32.729px 119.664px;
     font-size: 32.729px;
   }
+
+  .shipping_input {
+    margin-bottom: 60px;
+  }
 }
 
 @media screen and (min-width: 1300px){
@@ -795,8 +902,23 @@ a.confirm{
   .shipping_details_second {
     display: flex;
   }
+
+  .about-content {
+    padding: 3rem 2rem;
+  }
+
+  .select_payment_method,
+  .payment_summary {
+    flex: 0.48;
+  }
+
+  .payment_summary{
+    display: initial;
+  }
 }
 
 @media screen and (min-width: 1440px) {
-
+  .about-content {
+    padding: 3rem 7rem;
+  }
 }
