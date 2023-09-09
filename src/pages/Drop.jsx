@@ -20,6 +20,11 @@ function Drop() {
      {/* drop item start */}
      <div className="drops_item">
       <div className="item_first" style={{backgroundImage:`url("../assets/Drops/Rectangle 82.png")`}}>
+      <div className="drop_item_tag_div">
+         <div className="second_tag upcoming">
+            upcoming
+          </div>
+      </div>
        <div className="drop_timer">
         <small>Time remaining</small>
         <div className="time_details">
@@ -54,6 +59,11 @@ function Drop() {
       {/* drop item start */}
      <div className="drops_item">
       <div className="item_first" style={{backgroundImage:`url("../assets/Drops/Rectangle 84.png")`}}>
+        <div className="drop_item_tag_div">
+          <div className="second_tag live_drop">
+            live now
+          </div>
+        </div>
        <div className="drop_timer">
         <small>Time remaining</small>
         <div className="time_details">
@@ -88,6 +98,11 @@ function Drop() {
       {/* drop item start */}
      <div className="drops_item">
       <div className="item_first" style={{backgroundImage:`url("../assets/Drops/Rectangle 87.png")`}}>
+        <div className="drop_item_tag_div">
+          <div className="second_tag ended">
+            ended
+          </div>
+        </div>
        <div className="drop_timer">
         <small>Time remaining</small>
         <div className="time_details">
@@ -122,6 +137,11 @@ function Drop() {
       {/* drop item start */}
      <div className="drops_item">
       <div className="item_first" style={{backgroundImage:`url("../assets/Drops/Rectangle 232.png")`}}>
+        <div className="drop_item_tag_div">
+          <div className="second_tag ended">
+            ended
+          </div>
+        </div>
        <div className="drop_timer">
         <small>Time remaining</small>
         <div className="time_details">
