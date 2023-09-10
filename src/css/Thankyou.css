@@ -12,15 +12,6 @@
  flex: 1;
 }
 
-.thank_you_body>h2{
- color: #000;
- font-family: Satoshi;
- font-size: 40.552px;
- font-style: normal;
- font-weight: 500;
- line-height: 63.545px;
- /* 63.545px */
-}
 
 .thank_you_body>small{
  color: #000;
@@ -54,6 +45,17 @@
   width: 275px;
   height: 246px;
  }
+
+ .thank_you_body>h2 {
+  color: #000;
+  font-family: Satoshi;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 28px;
+  /* 63.545px */
+  text-align: center;
+ }
 }
 
 @media screen and (min-width: 768px) {
@@ -66,10 +68,16 @@
   width: 455px;
   height: 406px;
  }
+
+ .thank_you_body>h2 {
+  font-size: 24px;
+ }
 }
 
 @media screen and (min-width: 1024px) {
-
+ .thank_you_body>h2 {
+  font-size: 40.552px;
+ }
 }
 
 @media screen and (min-width: 1330px) {
