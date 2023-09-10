@@ -1,5 +1,6 @@
 import React, { useRef, useState } from 'react';
 import Nav from '../components/Nav';
+import SideBar from '../components/SideBar';
 import '../css/Auctions.css'
 
 // Import Swiper React components
@@ -16,6 +17,7 @@ import { Pagination } from 'swiper/modules';
 function Auctions() {
  return (
   <div className='auctions'>
+   <SideBar />
    <Nav />
    <div className="auctions_body">
     <h1>Home/<span>Auctions</span>  </h1>
