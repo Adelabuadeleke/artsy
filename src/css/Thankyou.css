@@ -50,13 +50,21 @@
 }
 
 @media screen and (min-width: 320px){
-
+ .thank_you_body>img{
+  width: 275px;
+  height: 246px;
+ }
 }
 
 @media screen and (min-width: 768px) {
  .thank_you{
   background: url('../../public/assets/Thankyou/Ellipse\ 7.png') no-repeat,
   url('../../public/assets/Thankyou/Ellipse\ 8.png') no-repeat;
+ }
+
+ .thank_you_body>img {
+  width: 455px;
+  height: 406px;
  }
 }
 
