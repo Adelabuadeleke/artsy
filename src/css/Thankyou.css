@@ -20,6 +20,11 @@
 }
 
 @media screen and (min-width: 320px){
+ .thank_you {
+  background: url('../../public/assets/Thankyou/blue.png') top left no-repeat,
+  url('../../public/assets/Thankyou/purple.png') top center no-repeat, url('../../public/assets/Thankyou/red.png') center right no-repeat;
+ }
+
  .thank_you_body>img{
   width: 275px;
   height: 246px;
@@ -73,6 +78,7 @@
  .thank_you_body>img {
   width: 455px;
   height: 406px;
+  
  }
 
  .thank_you_body>h2 {
@@ -87,6 +93,7 @@
  .thank_you_body>small>img {
   width: 101.463px;
   height: 101.463px;
+  display: initial;
  }
 
  .thank_you_body>small>span {
