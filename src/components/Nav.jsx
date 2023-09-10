@@ -1,10 +1,17 @@
 import React from 'react'
 import '../css/Nav.css'
 import { NavLink } from 'react-router-dom'
+import MenuIcon from '@mui/icons-material/Menu';
+import SearchIcon from '@mui/icons-material/Search';
+import NotificationsNoneIcon from '@mui/icons-material/NotificationsNone';
+import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 
 function Nav() {
   return (
     <nav>
+      <div className="mobile_icon">
+        <MenuIcon  className='menu'/>
+      </div>
       <p>artsy.</p>
 
       <ul>
@@ -16,9 +23,9 @@ function Nav() {
       </ul>
 
       <div className="nav__icons">
-        <img src="../../assets/Vector (3).png" alt="" />
-        <img src="../../assets/Vector (1).png" alt="" />
-        <img src="../../assets/Vector (2).png" alt="" />
+        <SearchIcon className='search'/>
+        <ShoppingCartOutlinedIcon className='cart'/>
+        <NotificationsNoneIcon className='bell' />
       </div>
     </nav>
   )
