@@ -1,10 +1,12 @@
 import React from 'react'
 import Nav from '../components/Nav'
+import SideBar from '../components/SideBar'
 import '../css/Thankyou.css'
 
 function Thank_you() {
   return (
     <div className='thank_you'>
+      <SideBar />
       <Nav />
       <div className="thank_you_body">
         <img src="../../assets/Thankyou/Woman get online delivery.png" alt="" />
