@@ -11,7 +11,7 @@ function SideBar() {
     </div>
 
     <div className="sidebar_list">
-      <a href="/home">
+      <a href="/">
         <p>Home</p>
       </a>
 
