@@ -1,6 +1,5 @@
 import React, {useEffect, useState} from 'react'
 import Nav from '../components/Nav'
-import SideBar from '../components/SideBar'
 import '../css/Home.css'
 function Home() {
   // const [scrollImages, setScrollImages] = useState([
@@ -112,7 +111,6 @@ infiniteScrollLeft()
 
   return (
    <div className='home'>
-    <SideBar />
     <Nav />
     <div className="photography">
       <h1>Photography is poetry &</h1>

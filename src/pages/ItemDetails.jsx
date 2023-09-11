@@ -1,12 +1,10 @@
 import React from 'react';
 import Nav from '../components/Nav';
-import SideBar from '../components/SideBar';
 import'../css/ItemDetails.css';
 
 function ItemDetails() {
   return (
     <div className='itemdetails'>
-     <SideBar />
      <Nav />
      <div className="itemdetails_body">
       <h1>Home/ Marketplace/ Editorials/<span>Philomena ‘22</span> </h1>

@@ -1,12 +1,10 @@
 import React from 'react';
 import Nav from '../components/Nav';
-import SideBar from '../components/SideBar';
 import'../css/Drop.css'
 
 function Drop() {
  return (
   <div className='drop'>
-    <SideBar />
    <Nav />
    <div className="drop_body">
     <h2>Home/ Auctions/ Live bid/ <span>Drop</span></h2>

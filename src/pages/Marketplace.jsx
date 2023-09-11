@@ -1,12 +1,10 @@
 import React from 'react';
 import Nav from '../components/Nav';
-import SideBar from '../components/SideBar';
 import'../css/Marketplace.css';
 
 function Marketplace() {
   return (
     <div className='marketplace'>
-     <SideBar />
      <Nav />
      <div className="marketplace_body">
       <div className="marketplace_one">

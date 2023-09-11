@@ -1,6 +1,5 @@
 import React from 'react';
 import Nav from '../components/Nav';
-import SideBar from '../components/SideBar';
 import '../css/ShoppingTab.css'
 // import Shopping_cart from '../components/Shopping_cart'
 // import { checkout } from '../ProceedToCheckout'
@@ -60,7 +59,6 @@ function Shopping_tab() {
 
   return (
     <div className='shopping_tab'>
-    <SideBar />
      <Nav />
       <article className="about">
           {/* <!-- btn container --> */}
