@@ -6,6 +6,13 @@
  background: #fff;
  padding: 1rem;
  transform: translateX(-100%);
+ top: 0;
+ transition: ease-in-out 1s;
+}
+
+.show_toggle{
+ transform: translateX(0);
+ transition: ease-in-out 1s;
 }
 
 .sidebar_top{
@@ -45,4 +52,10 @@
  position: absolute;
  bottom: 60px;
  right: 30px;
+}
+
+@media screen and (min-width: 768px){
+ .sidebar{
+  display: none;
+ }
 }
