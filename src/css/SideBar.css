@@ -28,3 +28,12 @@
  width: 26px;
  height: 26px;
 }
+
+.sidebar_list>a>p{
+ color: #333;
+ font-family: Satoshi;
+ font-size: 24px;
+ font-style: normal;
+ font-weight: 500;
+ line-height: 51.5px;
+}
