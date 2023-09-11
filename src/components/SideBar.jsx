@@ -28,6 +28,10 @@ function SideBar() {
       </a>
 
     </div>
+
+    <div className="sidebar_chat">
+      <img src="../../assets/chat.svg" alt="" />
+    </div>
    </aside>
   )
 }
