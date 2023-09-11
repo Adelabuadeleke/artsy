@@ -318,7 +318,7 @@
 
 
 /* animation */
-@keyframes scroll__right {
+/* @keyframes scroll__right {
  0% {
   transform: translate3d(5px, 0, 0);
  }
@@ -363,7 +363,7 @@
  100% {
   transform: translateX(5px);
  }
-}
+} */
 
 
 @media screen and (min-width: 320px){
