@@ -9,6 +9,25 @@ function SideBar() {
       <h2>artsy.</h2>
       <ClearOutlinedIcon className='sidebar_cancel'/>
     </div>
+
+    <div className="sidebar_list">
+      <a href="/home">
+        <p>Home</p>
+      </a>
+
+      <a href="/auctions">
+        <p>Auctions</p>
+      </a>
+
+      <a href="/marketplace">
+        <p>Marketplace</p>
+      </a>
+
+      <a href="/drops">
+        <p>Drops</p>
+      </a>
+
+    </div>
    </aside>
   )
 }
