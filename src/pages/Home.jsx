@@ -9,6 +9,43 @@ function Home() {
   //   // '../../assets/Rectangle 234.png'])
 
 useEffect(()=>{
+  const infiniteScrollSmall = () => {
+  const imgContainer = document.querySelector('.slides_small')
+  let imgs =  document.querySelectorAll('.slide-small')
+  const interval = 3000;
+  let index = 1;
+
+  const firstClone = imgs[0].cloneNode(true);
+  const lastClone = imgs[imgs.length - 1].cloneNode(true);
+
+  firstClone.id = 'first-clone-small'
+  lastClone.id = 'last-clone-small'
+  
+  // imgContainer.append(firstClone)
+  // imgContainer.prepend(lastClone)
+
+  imgContainer.style.transform = `translate(${-300 * index}px)`;
+    const startSlide = () => {
+      setInterval(() => {
+        index = index + 1
+        imgContainer.style.transform = `translate(${-300 * index}px)`;
+        imgContainer.style.transition ='.7s'
+      }, interval);
+    }
+    imgContainer.addEventListener('transitionend', ()=>{
+      imgs = document.querySelectorAll('.slide-small')
+      if(imgs[index].id === firstClone.id){
+        imgContainer.style.transition = 'none';
+        index = 1
+        imgContainer.style.transform = `translate(${-300 * index}px)`;
+        // imgContainer.style.transition ='.7s'
+      }
+    })
+
+    startSlide() 
+  }
+
+
   const infiniteScroll = () => {
   const imgContainer = document.querySelector('.slides')
   let imgs =  document.querySelectorAll('.slide')
@@ -45,7 +82,51 @@ useEffect(()=>{
     startSlide() 
   }
 
-  const infiniteScrollLeft = () => {
+  const infiniteScrollLeftSmall = () => {
+    const imgContainerLeft = document.querySelector('.slides_left_small')
+    let imgsLeft =  document.querySelectorAll('.slide_left_small')
+
+    const interval = 3000
+    let indexLeft = 1
+
+    const firstCloneLeftSmall = imgsLeft[0].cloneNode(true);
+    const lastCloneLeftSmall = imgsLeft[imgsLeft.length - 1].cloneNode(true);
+
+    firstCloneLeftSmall.id = 'first-clone-left-small'
+    lastCloneLeftSmall.id = 'last-clone-left-small'
+
+    // imgContainerLeft.append(firstCloneLeft)
+    // imgContainerLeft.prepend(lastCloneLeft)
+
+    imgContainerLeft.style.transform = `translateX(${-300 * indexLeft}px)`;
+
+    const startSlide = () => {
+      setInterval(() => {
+      // console.log(imgs)
+
+        indexLeft = indexLeft - 1
+        imgContainerLeft.style.transform = `translateX(${-300 * indexLeft}px)`;
+        imgContainerLeft.style.transition ='.7s'
+
+      }, interval);
+      
+    } 
+    imgContainerLeft.addEventListener('transitionend', ()=>{
+      imgsLeft = document.querySelectorAll('.slide_left_small')
+      console.log(imgsLeft[indexLeft].id)
+      console.log(lastCloneLeftSmall.id)
+      if(imgsLeft[indexLeft].id === lastCloneLeftSmall.id){
+        imgContainerLeft.style.transition = 'none';
+        indexLeft = imgsLeft.length - 2
+        imgContainerLeft.style.transform = `translateX(${-300 * indexLeft}px)`;
+        // imgContainer.style.transition ='.7s'
+      }
+    })
+
+    startSlide()
+  }
+
+   const infiniteScrollLeft = () => {
     const imgContainerLeft = document.querySelector('.slides_left')
     let imgsLeft =  document.querySelectorAll('.slide_left')
 
@@ -86,8 +167,10 @@ useEffect(()=>{
 
     startSlide()
   }
+infiniteScrollSmall()
 infiniteScroll()
 infiniteScrollLeft()
+infiniteScrollLeftSmall()
 }, [])
  
   
@@ -116,7 +199,36 @@ infiniteScrollLeft()
     </div>
 
     <div className="photography__scroll">
-      <div className="scroll__infinite first">
+      <div className="scroll__right first">
+        <div className="slides_small">
+
+            <div className="slide-small" id='last-clone-small'>
+              <img src='../../assets/Rectangle 231.png' alt="" className="scroll_img" />
+            </div>
+
+           <div className="slide-small">
+              <img src='../../assets/Rectangle 231.png' alt="" className="scroll_img" />
+            </div>
+           <div className="slide-small">
+            <img src='../../assets/Rectangle 232.png' alt="" className="scroll_img" />
+           </div>
+           
+           <div className="slide-small">
+             <img src='../../assets/Rectangle 233.png' alt="" className="scroll_img" />
+           </div>
+          
+          <div className="slide-small">
+            <img src='../../assets/Rectangle 234.png' alt="" className="scroll_img" />
+          </div>
+
+          <div className="slide-small" id='first-clone-small'>
+            <img src='../../assets/Rectangle 231.png' alt="" className="scroll_img" />
+          </div>
+        </div>
+           
+      </div>
+
+      <div className="scroll__infinite first margtop">
         <div className="slides">
 
             <div className="slide" id='last-clone'>
@@ -124,22 +236,22 @@ infiniteScrollLeft()
             </div>
 
            <div className="slide">
-              <img src='../../assets/Rectangle 231.png' alt="" className="scroll_img" />
+              <img src='../../assets/Rectangle 232.png' alt="" className="scroll_img" />
             </div>
            <div className="slide">
-            <img src='../../assets/Rectangle 232.png' alt="" className="scroll_img" />
+            <img src='../../assets/Rectangle 233.png' alt="" className="scroll_img" />
            </div>
            
            <div className="slide">
-             <img src='../../assets/Rectangle 233.png' alt="" className="scroll_img" />
+             <img src='../../assets/Rectangle 234.png' alt="" className="scroll_img" />
            </div>
           
           <div className="slide">
-            <img src='../../assets/Rectangle 234.png' alt="" className="scroll_img" />
+            <img src='../../assets/Rectangle 231.png' alt="" className="scroll_img" />
           </div>
 
           <div className="slide" id='first-clone'>
-            <img src='../../assets/Rectangle 231.png' alt="" className="scroll_img" />
+            <img src='../../assets/Rectangle 232.png' alt="" className="scroll_img" />
           </div>
         </div>
            
@@ -152,14 +264,14 @@ infiniteScrollLeft()
           </div>
 
           <div className="slide_left">
-            <img src='../../assets/Rectangle 231.png' alt="" className="scroll_img" />
+            <img src='../../assets/Rectangle 233.png' alt="" className="scroll_img" />
           </div>
           <div className="slide_left">
           <img src='../../assets/Rectangle 232.png' alt="" className="scroll_img" />
           </div>
           
           <div className="slide_left">
-            <img src='../../assets/Rectangle 233.png' alt="" className="scroll_img" />
+            <img src='../../assets/Rectangle 231.png' alt="" className="scroll_img" />
           </div>
         
         <div className="slide_left">
@@ -167,38 +279,41 @@ infiniteScrollLeft()
         </div>
 
         <div className="slide_left" id='first-clone-left'>
-          <img src='../../assets/Rectangle 231.png' alt="" className="scroll_img" />
+          <img src='../../assets/Rectangle 233.png' alt="" className="scroll_img" />
         </div>
       </div>
           
     </div>
-      
+    
 
+    <div className="scroll__mid first">
+      <div className="slides_left_small">
+          <div className="slide_left_small" id='last-clone-left-small'>
+            <img src='../../assets/Rectangle 233.png' alt="last-clone-left-small" className="scroll_img" />
+          </div>
 
-       {/* <div className="scroll__right "> 
-        <img src="../../assets/Rectangle 233.png" alt="" />
-        <img src="../../assets/Rectangle 234.png" alt="" />
-         <img src="../../assets/Rectangle 231.png" alt="" />
-        <img src="../../assets/Rectangle 232.png" alt="" />
-       
-      </div> */}
+          <div className="slide_left_small">
+            <img src='../../assets/Rectangle 234.png' alt="" className="scroll_img" />
+          </div>
+          <div className="slide_left_small">
+          <img src='../../assets/Rectangle 231.png' alt="" className="scroll_img" />
+          </div>
+          
+          <div className="slide_left_small">
+            <img src='../../assets/Rectangle 232.png' alt="" className="scroll_img" />
+          </div>
+        
+        <div className="slide_left_small">
+          <img src='../../assets/Rectangle 233.png' alt="" className="scroll_img" />
+        </div>
 
-        {/* <div className="scroll__right second">
-        <img src="../../assets/Rectangle 231.png" alt="" />
-        <img src="../../assets/Rectangle 232.png" alt="" />
-        <img src="../../assets/Rectangle 233.png" alt="" />
-        <img src="../../assets/Rectangle 234.png" alt="" />
-      </div> */}
-      
-
-
-     {/* <div className="scroll__right second"> 
-        <img src="../../assets/Rectangle 233.png" alt="" />
-        <img src="../../assets/Rectangle 234.png" alt="" />
-         <img src="../../assets/Rectangle 231.png" alt="" />
-        <img src="../../assets/Rectangle 232.png" alt="" />
-       
-      </div> */}
+        <div className="slide_left_small" id='first-clone-left-small'>
+          <img src='../../assets/Rectangle 234.png' alt="" className="scroll_img" />
+        </div>
+      </div>
+          
+    </div>
+    
     </div>
 
     <section className="featured">
