@@ -289,14 +289,14 @@ infiniteScrollLeftSmall()
     <div className="scroll__mid first">
       <div className="slides_left_small">
           <div className="slide_left_small" id='last-clone-left-small'>
-            <img src='../../assets/Rectangle 233.png' alt="last-clone-left-small" className="scroll_img" />
+            <img src='../../assets/Rectangle 231.png' alt="last-clone-left-small" className="scroll_img" />
           </div>
 
           <div className="slide_left_small">
             <img src='../../assets/Rectangle 234.png' alt="" className="scroll_img" />
           </div>
           <div className="slide_left_small">
-          <img src='../../assets/Rectangle 231.png' alt="" className="scroll_img" />
+          <img src='../../assets/Rectangle 233.png' alt="" className="scroll_img" />
           </div>
           
           <div className="slide_left_small">
@@ -304,7 +304,7 @@ infiniteScrollLeftSmall()
           </div>
         
         <div className="slide_left_small">
-          <img src='../../assets/Rectangle 233.png' alt="" className="scroll_img" />
+          <img src='../../assets/Rectangle 231.png' alt="" className="scroll_img" />
         </div>
 
         <div className="slide_left_small" id='first-clone-left-small'>
