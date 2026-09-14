@@ -5,7 +5,7 @@
 .auctions_body>h1{
  color: #BCB7B7;
  font-family: Satoshi;
- font-size: 24px;
+ font-size: clamp(18.7px, calc(16.56px + 0.517vw), 24px);
  font-style: normal;
  font-weight: 500;
  margin: 40px 0;
@@ -14,7 +14,7 @@
 .auctions_body>h2{
  color: #000;
  font-family: Satoshi;
- font-size: 28px;
+ font-size: clamp(19.6px, calc(16.21px + 0.819vw), 28px);
  font-style: normal;
  font-weight: 500;
  line-height: normal;
@@ -24,7 +24,7 @@
 .auctions_body>h1>span{
  color: #333;
  font-family: Satoshi;
- font-size: 24px;
+ font-size: clamp(18.7px, calc(16.56px + 0.517vw), 24px);
  font-style: normal;
  font-weight: 500;
 }
@@ -32,13 +32,13 @@
 /* swiper style */
 .swiper {
  width: 100%;
- height: 100%;
+ height: auto;
 }
 
 
 .swiper-slide {
  text-align: center;
- font-size: 18px;
+ font-size: clamp(15.3px, calc(14.21px + 0.263vw), 18px);
  /* background: #333; */
  
  /* Center slide text vertically */
@@ -65,7 +65,7 @@
 .top-bids{
  color: #000;
  font-family: Satoshi;
- font-size: 36px;
+ font-size: clamp(21.6px, calc(15.79px + 1.404vw), 36px);
  font-style: normal;
  font-weight: 700;
  line-height: 64px
@@ -74,7 +74,7 @@
 .outer{
  height: 100%;
  width: 100%;
- /* background: url("../../public/assets/Auctions/Rectangle\ 247.png"); */
+ /* background: url("../../public/assets/Auctions/Rectangle\ 247.webp"); */
  object-fit: cover;
  background-size: cover;
  /* background-repeat: no-repeat; */
@@ -139,7 +139,7 @@
 .top_bid_title>h2{
  color: #000;
  font-family: Satoshi;
- font-size: 40px;
+ font-size: clamp(24px, calc(17.54px + 1.559vw), 40px);
  font-style: normal;
  font-weight: 700;
  line-height: 64px;
@@ -156,7 +156,7 @@
 .top_bid_texts>p>span{
  color: #333;
  font-family: Satoshi;
- font-size: 30px;
+ font-size: clamp(21px, calc(17.37px + 0.877vw), 30px);
  font-style: normal;
  font-weight: 700;
  line-height: 64px;
@@ -181,7 +181,7 @@
 .current_bid_eth{
  color: #000;
  font-family: Satoshi;
- font-size: 30px;
+ font-size: clamp(21px, calc(17.37px + 0.877vw), 30px);
  font-style: normal;
  font-weight: 700;
  line-height: 64px;
@@ -198,7 +198,7 @@
  justify-content: center;
  align-items: center;
  gap: 5.953px;
- border-radius: 3.682px;
+ border-radius: 10px;
  background: #272727;
  border: 1px solid #272727;
  color: #FFF;
@@ -222,34 +222,31 @@
     width: 100%;
   }
 
-  .swiper-slide.slide {
-    max-width: 485px;
-    height: 250px;
-  }
+  
 
   .current_bid_two>button {
-    padding: 15.049px 20.648px;
+    padding: 15px 21px;
     font-size: 12.775px;
   }
 
   .current_bid_text {
-    font-size: 22px;
+    font-size: clamp(17.2px, calc(15.26px + 0.468vw), 22px);
     line-height: 30px;
   }
 
   .current_bid_eth{
-    font-size: 18px;
+    font-size: clamp(15.3px, calc(14.21px + 0.263vw), 18px);
     line-height: 30px;
   }
 
   .top_bid_texts>p,
   .top_bid_texts>p>span {
-    font-size: 20px;
+    font-size: clamp(17px, calc(15.79px + 0.292vw), 20px);
     line-height: 30px;
   }
 
   .timer{
-    font-size: 20px;
+    font-size: clamp(17px, calc(15.79px + 0.292vw), 20px);
     line-height: 30px;
   }
 
@@ -259,14 +256,11 @@
 }
 
 @media screen and (min-width: 360px){
-  .swiper-slide.slide {
-    max-width: 485px;
-    height: 280px;
-  }
+  
 
   .top_bid_texts>p,
   .top_bid_texts>p>span {
-    font-size: 25px;
+    font-size: clamp(17.5px, calc(14.47px + 0.731vw), 25px);
     line-height: 30px;
   }
 }
@@ -280,29 +274,26 @@
     width: 500px;
   }
 
-  .swiper-slide.slide {
-    max-width: 485px;
-    height: 396px;
-  }
+  
 
   .current_bid_text{
-    font-size: 30px;
+    font-size: clamp(21px, calc(17.37px + 0.877vw), 30px);
     line-height: 64px;
   }
 
   .current_bid_two>button{
-    padding: 19.049px 69.648px;
-    font-size: 25.775px;
+    padding: 19px 70px;
+    font-size: clamp(18px, calc(14.86px + 0.758vw), 25.775px);
   }
 
   .top_bid_texts>p,
   .top_bid_texts>p>span {
-    font-size: 32px;
+    font-size: clamp(22.4px, calc(18.53px + 0.936vw), 32px);
     line-height: 64px;
   }
 
   .timer {
-    font-size: 40px;
+    font-size: clamp(24px, calc(17.54px + 1.559vw), 40px);
     line-height: 64px;
   }
 
@@ -320,10 +311,7 @@
     justify-content: space-between;
   }
 
-  .swiper-slide.slide {
-    max-width: 485px;
-    height: 600px;
-  }
+  
 }
 
 @media screen and (min-width: 1440px) {
@@ -331,9 +319,280 @@
     padding: 1rem 7rem;
   }
 
-  .swiper-slide.slide {
-    max-width: 485px;
-    height: 500px;
+  
+}
+/* ---------------------------------------------------------------
+   Desktop sizing pass — same rationale as Marketplace. The 1440 frame's
+   literal sizes (40px card titles, 36px heading, 30px bid values) read
+   oversized on a 1200-1400px screen.
+   --------------------------------------------------------------- */
 
+.auctions_body > h2 {
+  font-size: clamp(16px, calc(14.39px + 0.39vw), 20px);
+  line-height: 1.5;
+}
+
+.top-bids {
+  font-size: clamp(19px, calc(16.18px + 0.682vw), 26px);
+  line-height: 1.3;
+  margin-bottom: 8px;
+}
+
+.top_bid_title > h2 {
+  font-size: clamp(19px, calc(16.18px + 0.682vw), 26px);
+  line-height: 1.3;
+}
+
+.top_bid_texts > p,
+.top_bid_texts > p > span {
+  font-size: clamp(15px, calc(13.79px + 0.292vw), 18px);
+  line-height: 1.9;
+}
+
+.current_bid_text {
+  font-size: clamp(14.5px, calc(13.49px + 0.244vw), 17px);
+}
+
+.current_bid_eth {
+  font-size: clamp(17px, calc(14.98px + 0.487vw), 22px);
+}
+
+.current_bid_two > button {
+  font-size: clamp(14px, calc(13.19px + 0.195vw), 16px);
+  line-height: 1;
+  padding: 0 26px;
+  height: clamp(40px, calc(36.8px + 0.78vw), 48px);
+  min-width: clamp(120px, calc(111.6px + 2.05vw), 141px);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+/* Countdown pill: Figma uses a frosted panel over the image. */
+.timer {
+  font-size: clamp(17px, calc(14.98px + 0.487vw), 22px);
+  backdrop-filter: blur(2px);
+  background: rgba(245, 244, 244, 0.24);
+  border: 0.5px solid #ffffff;
+  border-radius: 8px;
+  font-variant-numeric: tabular-nums;
+}
+
+.timer.is_ended {
+  background: rgba(0, 0, 0, 0.45);
+}
+
+/* Favourite toggle (was a static image). */
+.top_bid_heart {
+  background: none;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  line-height: 0;
+}
+
+.top_bid_heart > img {
+  transition: transform 0.15s ease;
+}
+
+.top_bid_heart:hover > img { transform: scale(1.12); }
+.top_bid_heart.is_liked > img { transform: scale(1.06); }
+
+.see_more_auctions {
+  display: flex;
+  justify-content: center;
+  padding: 34px 0 44px;
+}
+
+.see_more_auctions > button {
+  border: 1px solid #333333;
+  border-radius: 10px;
+  background: transparent;
+  color: #333333;
+  font-family: 'Satoshi';
+  font-weight: 500;
+  font-size: clamp(14.5px, calc(13.49px + 0.244vw), 17px);
+  line-height: 1;
+  padding: 0 30px;
+  height: clamp(40px, calc(36.8px + 0.78vw), 48px);
+  min-width: clamp(140px, calc(128.8px + 2.73vw), 168px);
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.see_more_auctions > button:hover {
+  background: #333333;
+  color: #ffffff;
+}
+
+/* ---------------------------------------------------------------
+   Carousel geometry. Figma lot card is 485x396; let Swiper own the width
+   (it sets an inline width from slidesPerView) and derive height from the
+   design's aspect ratio instead of hard-coded per-breakpoint heights.
+   --------------------------------------------------------------- */
+.swiper-slide.slide {
+  /* min-width:auto (the flex default) resolves to height x ratio once an
+     aspect-ratio is set, and min-width beats max-width — which let the slide
+     grow to 1140px. Pin it to 0 and stop the slide stretching to wrapper
+     height so the ratio derives height FROM Swiper's computed width. */
+  min-width: 0;
+  align-self: flex-start;
+  height: auto;
+  aspect-ratio: 485 / 396;
+  max-width: 485px;
+}
+
+.swiper-slide.slide .outer {
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  background-position: center;
+  border-radius: 15px;
+  box-shadow: 0 0 9px -1px rgba(0, 0, 0, 0.25);
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+}
+
+/* Figma insets the pill ~9% each side and ~8% off the bottom. */
+.swiper-slide.slide .timer {
+  width: 82%;
+  margin-bottom: 8%;
+  padding: 6px 12px;
+  text-align: center;
+}
+
+/* Figma: 68px circle holding the heart, top-right of the lot card. */
+.top_bid_heart {
+  width: clamp(38px, calc(33.2px + 1.17vw), 50px);
+  height: clamp(38px, calc(33.2px + 1.17vw), 50px);
+  border-radius: 50%;
+  border: 1px solid #e6e6e6;
+  background: #ffffff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.06);
+}
+
+.top_bid_heart .heart_glyph {
+  width: 58%;
+  height: 58%;
+}
+
+.top_bid_heart.is_liked {
+  border-color: #f3c9c8;
+  background: #fff5f5;
+}
+
+/* ---------------------------------------------------------------
+   Vertical rhythm. Intro and "Top bids" both carried margin-bottom:100px,
+   and the bid rows ran at line-height 1.9, which left the page very airy.
+   --------------------------------------------------------------- */
+
+.auctions_body > h1 {
+  margin-top: 24px;
+  margin-bottom: 12px;
+}
+
+.auctions_body > h2 {
+  margin-top: 0;
+  margin-bottom: 34px;
+}
+
+/* .top-bids is an h2 inside .auctions_body, so the element+class selector
+   above (0,1,1) outranked a bare .top-bids rule — match it here. */
+.auctions_body > h2.top-bids {
+  margin-top: 8px;
+  margin-bottom: 26px;
+}
+
+.swiper-custom-pagination {
+  margin: 20px 0 0;
+}
+
+.top_bid_texts > p {
+  line-height: 1.5;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.auction_top_bids {
+  gap: 40px;
+}
+
+.current_bid {
+  margin-top: 16px;
+}
+
+.see_more_auctions {
+  padding: 26px 0 40px;
+}
+
+/* Row gap was doubling up: 40px flex gap + 50px item margin = 90px.
+   Let the container's gap own the spacing. */
+.top_bid_item {
+  margin-bottom: 0;
+}
+
+.auction_top_bids {
+  gap: 44px;
+}
+
+/* ---------------------------------------------------------------
+   Column layout. Was flex + `justify-content: space-between` with each item
+   capped at width:500px — so the leftover container width was distributed
+   BETWEEN the columns and `gap` (only ever a minimum) had no effect.
+   Grid with 1fr columns makes the cards share the width, so the gap is
+   exactly what's declared.
+   Note: the Figma frame actually specifies a 110px gutter (545px cards at
+   x=120 and x=775); this is deliberately tighter per request.
+   --------------------------------------------------------------- */
+.auction_top_bids {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 32px;
+  justify-content: initial;
+}
+
+.top_bid_item {
+  width: auto;
+  max-width: none;
+  min-width: 0;
+}
+
+@media screen and (min-width: 1024px) {
+  .auction_top_bids {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    column-gap: 44px;
+    row-gap: 44px;
   }
 }
+
+/* Figma uses a fixed 545x280 image box with object-cover, so rows stay even
+   regardless of each photo's native orientation (the feed mixes landscape
+   and portrait sources). */
+.top_bid_img > img {
+  width: 100%;
+  aspect-ratio: 545 / 280;
+  object-fit: cover;
+  display: block;
+  border-radius: 8px;
+}
+
+.top_bid_img {
+  width: 100%;
+}
+
+/* Lot cards are links into their live room. */
+.swiper-slide.slide .lot_link {
+  display: block;
+  height: 100%;
+  width: 100%;
+  text-decoration: none;
+}
+
+.current_bid_two > button { cursor: pointer; }
