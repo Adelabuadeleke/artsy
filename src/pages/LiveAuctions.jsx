@@ -8,6 +8,7 @@ import {
   parseBid,
 } from '../data/liveAuction';
 import { getLot, formatClock } from '../data/auctions';
+import { useBump } from '../hooks/useMotion';
 import '../css/LiveAuctions.css';
 
 const HEART_COLOURS = ['#4693ed', '#e8505b', '#37c978', '#8b5cf6', '#f59e0b', '#ec4899'];
@@ -70,6 +71,8 @@ function LiveAuctions() {
   }, [lot]);
 
   const ended = left <= 0;
+  // The one figure in the room that matters gets a beat when someone raises.
+  const bidBumping = useBump(bid);
 
   // Rival bids + drifting viewer count, so the room reads as live. Both stop
   // once the clock runs out. The standing bid is mirrored in a ref because the
@@ -177,7 +180,11 @@ function LiveAuctions() {
 
           <div className="display_bid">
             <span className="display_bid_label">Current bid</span>
-            <strong className="display_bid_value">${bid.toLocaleString()}</strong>
+            <strong
+              className={'display_bid_value' + (bidBumping ? ' is_bumping' : '')}
+            >
+              ${bid.toLocaleString()}
+            </strong>
             <span className="display_bid_leader">
               {ended ? 'Won by' : 'Leading'} : {leader}
             </span>

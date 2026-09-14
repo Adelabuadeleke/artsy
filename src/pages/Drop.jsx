@@ -11,6 +11,7 @@ import {
   PILL_LABEL,
 } from '../data/drops';
 import { useNotifications } from '../context/NotificationsContext';
+import { useReveal } from '../hooks/useMotion';
 import '../css/Drop.css';
 
 const PAGE_SIZE = 4;
@@ -43,6 +44,7 @@ function Drop() {
   const [subscribed, setSubscribed] = useState(false);
   // One clock for every countdown rather than a timer per row.
   const [elapsed, setElapsed] = useState(0);
+  const [listRef, listRevealed] = useReveal();
 
   useEffect(() => {
     const t = setInterval(() => setElapsed((e) => e + 1), 1000);
@@ -166,15 +168,18 @@ function Drop() {
           ))}
         </div>
 
-        <div className="drop_items">
-          {shown.map((d) => {
+        <div
+          className={'drop_items reveal' + (listRevealed ? ' is_revealed' : '')}
+          ref={listRef}
+        >
+          {shown.map((d, i) => {
             const isEnded = d.status === 'ended';
             const left = isEnded ? 0 : d.endsIn - elapsed;
             const cls = STATUS_CLASS[d.status];
             const isNotified = notified.includes(d.id);
 
             return (
-              <div className="drops_item" key={d.id}>
+              <div className="drops_item" key={d.id} style={{ '--i': i }}>
                 <div className="item_first" style={{ backgroundImage: `url("${d.img}")` }}>
                   <div className="drop_item_tag_div">
                     <div className={'second_tag ' + cls}>{STATUS_LABEL[d.status]}</div>

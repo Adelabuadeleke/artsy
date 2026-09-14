@@ -9,6 +9,7 @@ import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import ClearOutlinedIcon from '@mui/icons-material/ClearOutlined';
 import { useCart } from '../context/CartContext';
 import { useNotifications } from '../context/NotificationsContext';
+import { useBump } from '../hooks/useMotion';
 import NotificationsPanel from './NotificationsPanel';
 
 const LINKS = [
@@ -24,6 +25,11 @@ function Nav() {
   const { count } = useCart();
   const { unread } = useNotifications();
   const { pathname } = useLocation();
+
+  // Both badges pop when their number grows, so an add or an arrival registers
+  // without interrupting whatever you were doing.
+  const cartBumping = useBump(count);
+  const bellBumping = useBump(unread);
 
   // Navigating away should leave the drawer behind.
   useEffect(() => {
@@ -84,8 +90,14 @@ function Nav() {
             <ShoppingCartOutlinedIcon className="cart" />
             {count > 0 && (
               <>
-                <span className="cart_dot" aria-hidden="true" />
-                <span className="cart_count" aria-hidden="true">
+                <span
+                  className={'cart_dot' + (cartBumping ? ' is_bumping' : '')}
+                  aria-hidden="true"
+                />
+                <span
+                  className={'cart_count' + (cartBumping ? ' is_bumping' : '')}
+                  aria-hidden="true"
+                >
                   {count > 9 ? '9+' : count}
                 </span>
               </>
@@ -97,7 +109,7 @@ function Nav() {
           <div className="notif_anchor">
             <button
               type="button"
-              className="bell_btn"
+              className={'bell_btn' + (bellBumping ? ' is_ringing' : '')}
               onClick={() => setNotifOpen((o) => !o)}
               aria-label={
                 unread ? `Notifications, ${unread} unread` : 'Notifications'
@@ -108,8 +120,14 @@ function Nav() {
               <NotificationsNoneIcon className="bell" />
               {unread > 0 && (
                 <>
-                  <span className="bell_dot" aria-hidden="true" />
-                  <span className="bell_count" aria-hidden="true">
+                  <span
+                    className={'bell_dot' + (bellBumping ? ' is_bumping' : '')}
+                    aria-hidden="true"
+                  />
+                  <span
+                    className={'bell_count' + (bellBumping ? ' is_bumping' : '')}
+                    aria-hidden="true"
+                  >
                     {unread > 9 ? '9+' : unread}
                   </span>
                 </>

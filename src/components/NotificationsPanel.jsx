@@ -123,8 +123,12 @@ function NotificationsPanel({ onClose }) {
         </div>
 
         <ul className="notif_list">
-          {shown.map((n) => (
-            <li key={n.id} className={'notif_item' + (n.read ? '' : ' is_unread')}>
+          {shown.map((n, i) => (
+            <li
+              key={n.id}
+              className={'notif_item' + (n.read ? '' : ' is_unread')}
+              style={{ '--i': i }}
+            >
               <Link
                 to={n.to}
                 className="notif_link"

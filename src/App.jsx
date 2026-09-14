@@ -20,6 +20,18 @@ import { NotificationsProvider } from './context/NotificationsContext';
 import './App.css';
 // Last, so its hover/focus states land after every page sheet in the cascade.
 import './css/Interactive.css';
+import './css/Motion.css';
+
+/* Keyed on the path so each navigation mounts a fresh node and replays the
+   entry animation; without the key React reuses the wrapper and nothing runs. */
+function PageTransition({ children }) {
+  const { pathname } = useLocation();
+  return (
+    <div className="page_transition" key={pathname}>
+      {children}
+    </div>
+  );
+}
 
 /* A client-side navigation keeps the old scroll offset, which lands you
    half-way down the next page. */
@@ -40,20 +52,22 @@ function App() {
         <NotificationsProvider>
           <Router>
             <ScrollToTop />
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/marketplace" element={<Marketplace />} />
-              <Route path="/marketplace/item" element={<ItemDetails />} />
-              <Route path="/marketplace/item/:id" element={<ItemDetails />} />
-              <Route path="/auctions" element={<Auctions />} />
-              <Route path="/auctions/live" element={<LiveAuctions />} />
-              <Route path="/auctions/live/:id" element={<LiveAuctions />} />
-              <Route path="/drops" element={<Drop />} />
-              <Route path="/checkout" element={<ShoppingTab />} />
-              <Route path="/checkout/thankyou" element={<Thank_you />} />
-              {/* Anything else lands on the home page rather than a blank screen. */}
-              <Route path="*" element={<Navigate to="/" replace />} />
-            </Routes>
+            <PageTransition>
+              <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/marketplace" element={<Marketplace />} />
+                <Route path="/marketplace/item" element={<ItemDetails />} />
+                <Route path="/marketplace/item/:id" element={<ItemDetails />} />
+                <Route path="/auctions" element={<Auctions />} />
+                <Route path="/auctions/live" element={<LiveAuctions />} />
+                <Route path="/auctions/live/:id" element={<LiveAuctions />} />
+                <Route path="/drops" element={<Drop />} />
+                <Route path="/checkout" element={<ShoppingTab />} />
+                <Route path="/checkout/thankyou" element={<Thank_you />} />
+                {/* Anything else lands on the home page rather than a blank screen. */}
+                <Route path="*" element={<Navigate to="/" replace />} />
+              </Routes>
+            </PageTransition>
           </Router>
         </NotificationsProvider>
       </CartProvider>

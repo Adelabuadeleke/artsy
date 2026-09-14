@@ -1,6 +1,7 @@
 import React, { useMemo, useState } from 'react';
 import { Link } from 'react-router-dom';
 import Nav from '../components/Nav';
+import { useReveal } from '../hooks/useMotion';
 import { PRODUCTS, CATEGORIES, PRICE_BANDS, SORTS } from '../data/products';
 import '../css/Marketplace.css';
 
@@ -16,6 +17,7 @@ function Marketplace() {
   const [sort, setSort] = useState('featured');
   const [visible, setVisible] = useState(PAGE_SIZE);
   const [open, setOpen] = useState({ category: true, price: true, artist: true, year: false });
+  const [gridRef, gridRevealed] = useReveal();
 
   const toggleSection = (key) => setOpen((o) => ({ ...o, [key]: !o[key] }));
 
@@ -221,9 +223,12 @@ function Marketplace() {
               </select>
             </div>
 
-            <div className="all_arts">
-              {shown.map((p) => (
-                <div className="art_item" key={p.id}>
+            <div
+              className={'all_arts reveal' + (gridRevealed ? ' is_revealed' : '')}
+              ref={gridRef}
+            >
+              {shown.map((p, i) => (
+                <div className="art_item" key={p.id} style={{ '--i': i }}>
                   <Link className="art_item_body" to={'/marketplace/item/' + p.id}>
                     <img src={p.img} alt={p.title} loading="lazy" />
                     <div className="art_item_text">

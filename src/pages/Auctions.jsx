@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import Nav from '../components/Nav';
+import { useReveal } from '../hooks/useMotion';
 import { LIVE_LOTS, TOP_BIDS, formatCountdown } from '../data/auctions';
 import '../css/Auctions.css';
 
@@ -16,6 +17,7 @@ function Auctions() {
   const navigate = useNavigate();
   const [visible, setVisible] = useState(PAGE_SIZE);
   const [liked, setLiked] = useState([]);
+  const [bidsRef, bidsRevealed] = useReveal();
   // One ticking clock drives every countdown rather than a timer per card.
   const [elapsed, setElapsed] = useState(0);
 
@@ -80,9 +82,12 @@ function Auctions() {
 
         <h2 className="top-bids">Top bids from popular creators</h2>
 
-        <div className="auction_top_bids">
-          {shown.map((bid) => (
-            <div className="top_bid_item" key={bid.id}>
+        <div
+          className={'auction_top_bids reveal' + (bidsRevealed ? ' is_revealed' : '')}
+          ref={bidsRef}
+        >
+          {shown.map((bid, i) => (
+            <div className="top_bid_item" key={bid.id} style={{ '--i': i }}>
               <div className="top_bid_display">
                 <button
                   type="button"

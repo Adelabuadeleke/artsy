@@ -96,7 +96,11 @@ function ItemDetails() {
               </div>
 
               <div className="cart_cta">
-                <button type="button" onClick={addToCart}>
+                <button
+                  type="button"
+                  className={added ? 'is_added' : undefined}
+                  onClick={addToCart}
+                >
                   {added ? 'Added to cart ✓' : 'Add to cart — ' + money(product.price * qty)}
                 </button>
                 <button
