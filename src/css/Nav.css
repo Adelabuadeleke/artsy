@@ -1,7 +1,3 @@
-@import url('https://fonts.googleapis.com/css2?family=STIX+Two+Text:wght@500&display=swap');
-@import url('https://fonts.cdnfonts.com/css/clash-display');
-@import url('https://fonts.cdnfonts.com/css/satoshi');
-
 nav{
  display: flex;
  align-items: center;
@@ -9,18 +5,21 @@ nav{
  
 }
 
-ul {
+/* Scoped to the nav: as a bare element selector this laid out every <ul> in
+   the app in a row, which is what made the notifications list scroll
+   sideways. */
+nav ul {
  display:  flex;
  margin: 0;
 }
 
-ul>a {
+nav ul>a {
  margin-left: 20px;
  list-style-type: none;
  text-transform: capitalize;
  font-family: 'satoshi', Arial, Helvetica, sans-serif;
  font-weight: 400;
- font-size: 24px;
+ font-size: clamp(18.7px, calc(16.56px + 0.517vw), 24px);
  color: #292929;
 }
 
@@ -62,7 +61,7 @@ a.active {
   text-transform: uppercase;
   font-family: 'STIX Two Text', Arial, Helvetica, sans-serif;
   font-weight: 700;
-  font-size: 24px;
+  font-size: clamp(18.7px, calc(16.56px + 0.517vw), 24px);
   margin: 0;
   /* line-height: 90px; */
   color: #292929;
@@ -77,7 +76,7 @@ a.active {
 
 @media screen and (min-width: 768px){
  nav>p {
-  font-size: 32px;
+  font-size: clamp(22.4px, calc(18.53px + 0.936vw), 32px);
  }
 
  .bell.MuiSvgIcon-root,
@@ -105,4 +104,168 @@ a.active {
  }
 
  
+}
+/* ---------------------------------------------------------------
+   Cart icon is a link to the checkout, with the design's red dot when the
+   cart has something in it.
+   --------------------------------------------------------------- */
+.nav__icons > .cart_link {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: #292929;
+  text-decoration: none;
+  margin: 0 20px;
+}
+
+.nav__icons > .cart_link:hover { opacity: 0.7; }
+
+/* The dot alone at small sizes; the count rides on top of it once there is
+   room for a legible number. */
+.cart_dot {
+  position: absolute;
+  top: -2px;
+  right: -3px;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #e4514f;
+  box-shadow: 0 0 0 2px #fff;
+}
+
+.cart_count { display: none; }
+
+@media screen and (min-width: 768px) {
+  .cart_dot {
+    width: 18px;
+    height: 18px;
+    top: -6px;
+    right: -8px;
+  }
+
+  .cart_count {
+    display: grid;
+    place-items: center;
+    position: absolute;
+    top: -6px;
+    right: -8px;
+    width: 18px;
+    height: 18px;
+    color: #fff;
+    font-family: 'Satoshi', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    line-height: 1;
+    pointer-events: none;
+  }
+}
+
+/* nav had no max width, so on a wide screen the brand and the links drifted to
+   opposite edges of a 2560px window. */
+nav {
+  max-width: 1600px;
+  margin: 0 auto;
+  gap: 16px;
+}
+
+@media screen and (min-width: 1200px) {
+  nav { padding: 2rem clamp(24px, 5vw, 72px); }
+}
+
+/* ---------------------------------------------------------------
+   Bell opens the notifications modal, with the same unread treatment as the
+   cart. It stays visible on mobile now — the drawer also carries an entry,
+   but the badge has to be reachable without opening the menu.
+   --------------------------------------------------------------- */
+.nav__icons .bell_btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: #292929;
+  cursor: pointer;
+}
+
+.nav__icons .bell_btn:hover { opacity: 0.7; }
+
+.bell_dot {
+  position: absolute;
+  top: -2px;
+  right: -3px;
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background: #e4514f;
+  box-shadow: 0 0 0 2px #fff;
+}
+
+.bell_count { display: none; }
+
+@media screen and (min-width: 320px) {
+  /* The 320px block hides .bell alongside .search; the bell is a real control
+     now, so only the search icon stays hidden on a phone. */
+  .bell.MuiSvgIcon-root { display: initial; }
+  .nav__icons .bell_btn { margin-left: 18px; }
+}
+
+@media screen and (min-width: 768px) {
+  .nav__icons .bell_btn { margin: 0 20px 0 0; }
+
+  .bell_dot {
+    width: 18px;
+    height: 18px;
+    top: -6px;
+    right: -8px;
+  }
+
+  .bell_count {
+    display: grid;
+    place-items: center;
+    position: absolute;
+    top: -6px;
+    right: -8px;
+    width: 18px;
+    height: 18px;
+    color: #fff;
+    font-family: 'Satoshi', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    line-height: 1;
+    pointer-events: none;
+  }
+}
+
+/* The 768px block gives .bell a 20px side margin from when it was a bare icon;
+   the spacing belongs on the button now. */
+.bell_btn > .bell.MuiSvgIcon-root { margin: 0; }
+
+/* Kill every scrap of the UA button chrome on the icon controls — a border,
+   a grey face and the default focus ring all show up otherwise. */
+.nav__icons .bell_btn,
+.mobile_icon .menu_btn,
+.sidebar_cancel_btn,
+.sidebar_notif {
+  appearance: none;
+  -webkit-appearance: none;
+  border: 0;
+  outline: none;
+  background: none;
+  background-color: transparent;
+  box-shadow: none;
+  border-radius: 0;
+  font: inherit;
+  color: inherit;
+}
+
+/* Keyboard users still need to see focus. */
+.nav__icons .bell_btn:focus-visible,
+.nav__icons .cart_link:focus-visible,
+.mobile_icon .menu_btn:focus-visible {
+  outline: 2px solid #292929;
+  outline-offset: 3px;
+  border-radius: 4px;
 }
