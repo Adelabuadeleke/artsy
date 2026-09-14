@@ -1,3 +1,18 @@
+/* Fluid base for footer text. These previously had no rule below 1200px, so they
+   inherited 16px and then snapped to 26px/24px at the breakpoint. */
+.footer_inner_four>p,
+.footer_inner_two>p,
+.footer_inner_three>p {
+  font-family: 'Satoshi', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-weight: 400;
+  font-size: clamp(18.2px, calc(15.05px + 0.76vw), 26px);
+  line-height: 1.4;
+}
+
+.footer_end>p {
+  font-size: clamp(16.8px, calc(13.9px + 0.702vw), 24px);
+}
+
 .photography {
  display:  flex;
  justify-content: center;
@@ -87,10 +102,10 @@
 }
 
 .featured> h2 {
- font-family: 'Satoshi';
+ font-family: 'Satoshi', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
  font-style: normal;
  font-weight: 500;
- font-size: 48px;
+ font-size: clamp(28.8px, calc(21.05px + 1.871vw), 48px);
  line-height: 65px;
  color: #333333;
 }
@@ -105,19 +120,19 @@
 }
 
 .featured__contents>h2{
- font-family: 'STIX Two Text';
+ font-family: 'STIX Two Text', Georgia, 'Times New Roman', serif;
  font-weight: 700;
- font-size: 40px;
+ font-size: clamp(24px, calc(17.54px + 1.559vw), 40px);
  line-height: 50px;
  color: #333333;
  margin-top: 0;
 }
 
 .featured__contents> p{
- font-family: 'Satoshi';
+ font-family: 'Satoshi', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
  font-style: normal;
  font-weight: 400;
- font-size: 24px;
+ font-size: clamp(18.7px, calc(16.56px + 0.517vw), 24px);
  line-height: 32px;
  color: #333333;
 }
@@ -140,10 +155,10 @@
 }
 
 .featured__creators > p {
- font-family: 'Satoshi';
+ font-family: 'Satoshi', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
  font-style: normal;
  font-weight: 500;
- font-size: 24px;
+ font-size: clamp(18.7px, calc(16.56px + 0.517vw), 24px);
  line-height: 32px;
  color: #333333;
 }
@@ -171,7 +186,7 @@
 
 
 .auction__slider {
- background: url('../../public/assets/Rectangle\ 91.png');
+ background: url('../../public/assets/Rectangle\ 91.webp');
  height: 546px;
  margin: 20px 0;
  display: flex;
@@ -195,7 +210,7 @@
 }
 
 .first_contents>small {
- font-family: 'Poppins';
+ font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
  font-style: normal;
  font-weight: 400;
  font-size: 13.46px;
@@ -205,7 +220,7 @@
 }
 
 .slider_first>p{
- font-family: 'Satoshi';
+ font-family: 'Satoshi', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
  font-style: normal;
  font-weight: 500;
  font-size: 15.8576px;
@@ -222,10 +237,10 @@
 }
 
 .see_more>a>p {
- font-family: 'Satoshi';
+ font-family: 'Satoshi', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
  font-style: normal;
  font-weight: 400;
- font-size: 24px;
+ font-size: clamp(18.7px, calc(16.56px + 0.517vw), 24px);
  line-height: 32px;
  text-decoration-line: underline;
  color: #FFFFFF;
@@ -268,7 +283,7 @@
 }
 
 .explore_item>h2 {
- font-family: 'Satoshi';
+ font-family: 'Satoshi', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
  font-style: normal;
  font-weight: 500;
  line-height: 65px;
@@ -302,7 +317,7 @@
 
 .top_creator_second>p{
  max-width: 1000px;
- font-family: 'Clash Display';
+ font-family: 'Clash Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
  font-style: normal;
  font-weight: 200;
  color: rgba(0, 0, 0, 0.57);
@@ -318,7 +333,7 @@
 }
 
 .over_conts>h2 {
- font-family: 'Clash Display';
+ font-family: 'Clash Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
  font-style: normal;
  font-weight: 700;
  /* line-height: 155.5%; */
@@ -328,7 +343,7 @@
 }
 
 .over_conts>h1{
- font-family: 'Clash Display';
+ font-family: 'Clash Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
  font-style: normal;
  font-weight: 700;
  text-decoration-line: line-through;
@@ -407,8 +422,8 @@
   }
 
   .featured__item_display{
-    /* background: linear-gradient(0deg, rgba(0, 0, 0, 0.60) 0%, rgba(0, 0, 0, 0.60) 100%), url('../../public/assets/Rectangle\ 299.png'), lightgray 50% / cover no-repeat, #D9D9D9; */
-    /* background: linear-gradient(0deg, rgba(0, 0, 0, 0.60) 0%, rgba(0, 0, 0, 0.60) 100%), url('../../public/assets/Rectangle\ 299\ (2).png'); */
+    /* background: linear-gradient(0deg, rgba(0, 0, 0, 0.60) 0%, rgba(0, 0, 0, 0.60) 100%), url('../../public/assets/Rectangle\ 299.webp'), lightgray 50% / cover no-repeat, #D9D9D9; */
+    /* background: linear-gradient(0deg, rgba(0, 0, 0, 0.60) 0%, rgba(0, 0, 0, 0.60) 100%), url('../../public/assets/Rectangle\ 299\ (2).webp'); */
     background-size: cover;
     background-repeat: no-repeat;
     width: 100%;
@@ -421,8 +436,8 @@
 
   .featured__item_display>h2{
     color: #FFF;
-    font-family: Clash Display;
-    font-size: 30px;
+    font-family: 'Clash Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    font-size: clamp(21px, calc(17.37px + 0.877vw), 30px);
     font-style: normal;
     font-weight: 600;
     text-align: center;
@@ -438,9 +453,9 @@
 
 
   .photography>h1 {
-    font-family: 'Clash Display';
+    font-family: 'Clash Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
     font-weight: 500;
-    font-size: 30px;
+    font-size: clamp(21px, calc(17.37px + 0.877vw), 30px);
     line-height: 45px;
     margin: 2px;
     padding: 0;
@@ -448,7 +463,7 @@
   }
 
   .photography>p {
-    font-family: 'Satoshi';
+    font-family: 'Satoshi', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
     font-style: normal;
     font-weight: 500;
     font-size: 16px;
@@ -467,34 +482,39 @@
   }
 
   .first_contents>h2 {
-    font-family: 'Bellefair';
+    font-family: 'Bellefair', Georgia, 'Times New Roman', serif;
     font-style: normal;
     font-weight: 400;
-    font-size: 20px;
+    font-size: clamp(17px, calc(15.79px + 0.292vw), 20px);
     line-height: 33px;
     color: #FFFFFF;
     margin-left: -22px;
   }
 
   .slider__second>button {
-    width: 102px;
+    min-width: 102px;
     height: 36px;
+    padding: 0 14px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
     border: 1px solid #FFFFFF;
     border-radius: 10px;
     background: transparent;
-    font-family: 'Satoshi';
+    font-family: 'Satoshi', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
     font-style: normal;
     font-weight: 400;
     font-size: 14px;
-    line-height: 32px;
+    line-height: 1;
     color: #FFFFFF;
   }
 
   .slider_first>span {
-    font-family: 'Bellefair';
+    font-family: 'Bellefair', Georgia, 'Times New Roman', serif;
     font-style: normal;
     font-weight: 400;
-    font-size: 40px;
+    font-size: clamp(24px, calc(17.54px + 1.559vw), 40px);
     /* line-height: 77px; */
     text-transform: uppercase;
     color: #E1E1E1;
@@ -513,10 +533,10 @@
   }
 
   .creator_title>p {
-    font-family: 'Clash Display';
+    font-family: 'Clash Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
     font-style: normal;
     font-weight: 600;
-    font-size: 24px;
+    font-size: clamp(18.7px, calc(16.56px + 0.517vw), 24px);
     line-height: 37px;
     margin: 3px;
     color: #161616;
@@ -531,15 +551,15 @@
     margin-right: 20px;
     width: 40%;
     display: flex;
-    overflow-x: scroll;
+    overflow-x: auto;
 
   }
 
   .creator_segments>p {
-    font-family: 'Clash Display';
+    font-family: 'Clash Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
     font-style: normal;
     font-weight: 400;
-    font-size: 40px;
+    font-size: clamp(24px, calc(17.54px + 1.559vw), 40px);
     line-height: 62px;
     color: #333333;
     margin-right: 10px;
@@ -551,11 +571,11 @@
   }
 
   .over_conts>h1 {
-    font-size: 64px;
+    font-size: clamp(32px, calc(19.09px + 3.119vw), 64px);
   }
 
   .over_conts>h2 {
-    font-size: 24px;
+    font-size: clamp(18.7px, calc(16.56px + 0.517vw), 24px);
   }
 
   .slider__div {
@@ -582,8 +602,8 @@
   }
 
   .newsletter_inner>h2 {
-    font-family: 'Baskervville';
-    font-size: 30px;
+    font-family: 'Baskervville', Georgia, 'Times New Roman', serif;
+    font-size: clamp(21px, calc(17.37px + 0.877vw), 30px);
     font-weight: 400;
     line-height: 39px;
     letter-spacing: 0em;
@@ -594,7 +614,7 @@
 
 
   .newsletter_inner>p {
-    font-family: 'Satoshi';
+    font-family: 'Satoshi', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
     font-style: normal;
     font-weight: 400;
     font-size:11px;
@@ -610,16 +630,39 @@
 
   .newsletter_input>input{
     height: 46px;
+    width: 100%;
+    padding: 0 18px;
+    border: 1px solid #333333;
+    border-radius: 0;
+    background: transparent;
+    outline: none;
+    font-family: 'Baskervville', Georgia, serif;
+    font-size: 14px;
+    color: #333333;
+    text-transform: uppercase;
+  }
+
+  .newsletter_input>input::placeholder{
+    font-family: 'Baskervville', Georgia, serif;
+    font-size: 14px;
+    color: #333333;
+    text-transform: uppercase;
+    opacity: 1;
+  }
+
+  .newsletter_input>input:focus{
+    border-color: #272727;
+    box-shadow: 0 0 0 2px rgba(39,39,39,0.12);
   }
   /* .newsletter_inner>input::placeholder{
     text-transform: uppercase;
   } */
 
   .newsletter_input>button {
-    width: 181.635px;
+    width: clamp(112.6px, calc(84.74px + 6.729vw), 181.635px);
     height: 53.636px;
     margin-top: 1rem;
-    font-family: 'Baskervville';
+    font-family: 'Baskervville', Georgia, 'Times New Roman', serif;
     font-style: normal;
     font-weight: 400;
     font-size: 11px;
@@ -631,7 +674,7 @@
   }
 
   .explore_item>h2 {
-    font-size: 24px;
+    font-size: clamp(18.7px, calc(16.56px + 0.517vw), 24px);
   }
 
   .explore_item>img{
@@ -661,7 +704,11 @@
   }
 
   .footer_inner_four>p>img{
-    margin-right: 20px;
+    width: 1.35em;
+    height: auto;
+    flex-shrink: 0;
+    object-fit: contain;
+    margin-right: 12px;
   }
 
   .featured__contents>h2 {
@@ -716,10 +763,10 @@
   }
 
   .slider_first>span {
-    font-family: 'Bellefair';
+    font-family: 'Bellefair', Georgia, 'Times New Roman', serif;
     font-style: normal;
     font-weight: 400;
-    font-size: 67.6122px;
+    font-size: clamp(33.8px, calc(20.16px + 3.296vw), 67.6122px);
     line-height: 77px;
     text-transform: uppercase;
     color: #E1E1E1;
@@ -734,10 +781,10 @@
   }
 
   .creator_title>p {
-    font-family: 'Clash Display';
+    font-family: 'Clash Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
     font-style: normal;
     font-weight: 600;
-    font-size: 55px;
+    font-size: clamp(27.5px, calc(16.4px + 2.68vw), 55px);
     line-height: 86px;
     margin: 3px;
     color: #161616;
@@ -746,29 +793,30 @@
   .creator_segments {
     margin-right: 20px;
     display: initial;
+    overflow-x: visible;
   }
 
   .creator_segments>p {
-    font-family: 'Clash Display';
+    font-family: 'Clash Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
     font-style: normal;
     font-weight: 400;
-    font-size: 40px;
+    font-size: clamp(24px, calc(17.54px + 1.559vw), 40px);
     line-height: 62px;
     color: #333333;
 
   }
 
   .top_creator_second>p{
-    font-size: 32px;
+    font-size: clamp(22.4px, calc(18.53px + 0.936vw), 32px);
     line-height: 42px;
   }
 
   .over_conts>h2{
-   font-size: 48px;
+   font-size: clamp(28.8px, calc(21.05px + 1.871vw), 48px);
   }
 
   .over_conts>h1{
-    font-size: 170px;
+    font-size: clamp(68px, calc(26.84px + 9.942vw), 170px);
   }
 
   .slider_first{
@@ -796,8 +844,8 @@
   }
   
   .newsletter_inner>h2 {
-    font-family: 'Baskervville';
-    font-size: 30px;
+    font-family: 'Baskervville', Georgia, 'Times New Roman', serif;
+    font-size: clamp(21px, calc(17.37px + 0.877vw), 30px);
     font-weight: 400;
     line-height: 39px;
     letter-spacing: 0em;
@@ -808,10 +856,10 @@
   
   
   .newsletter_inner>p {
-    font-family: 'Satoshi';
+    font-family: 'Satoshi', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
     font-style: normal;
     font-weight: 400;
-    font-size: 32px;
+    font-size: clamp(22.4px, calc(18.53px + 0.936vw), 32px);
     line-height: 43px;
     text-transform: lowercase;
   }
@@ -826,10 +874,10 @@
 
   
   .newsletter_input>button {
-    width: 181.63px;
-    height: 60px;
+    width: clamp(112.6px, calc(84.75px + 6.728vw), 181.63px);
+    height: clamp(43.2px, calc(36.42px + 1.637vw), 60px);
     margin-left: 1rem;
-    font-family: 'Baskervville';
+    font-family: 'Baskervville', Georgia, 'Times New Roman', serif;
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
@@ -843,7 +891,7 @@
   }
 
   .explore_item>h2{
-    font-size: 48px;
+    font-size: clamp(28.8px, calc(21.05px + 1.871vw), 48px);
   }
 
   .explore_item>img {
@@ -875,9 +923,9 @@
 
 @media screen and (min-width: 1024px) {
   .photography>h1 {
-    font-family: 'Clash Display';
+    font-family: 'Clash Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
     font-weight: 600;
-    font-size: 80px;
+    font-size: clamp(40px, calc(23.86px + 3.899vw), 80px);
     line-height: 100px;
     margin: 2px;
     padding: 0;
@@ -885,10 +933,10 @@
   }
 
   .photography>p {
-    font-family: 'Satoshi';
+    font-family: 'Satoshi', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
     font-style: normal;
     font-weight: 500;
-    font-size: 28px;
+    font-size: clamp(19.6px, calc(16.21px + 0.819vw), 28px);
     line-height: 156.7%;
     margin: 2px;
     padding: 0;
@@ -906,20 +954,20 @@
   }
 
   .auction__title>h2 {
-    font-family: 'Satoshi';
+    font-family: 'Satoshi', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
     font-style: normal;
     font-weight: 500;
-    font-size: 40px;
+    font-size: clamp(24px, calc(17.54px + 1.559vw), 40px);
     line-height: 54px;
     color: #FFFFFF;
     margin-bottom: 2px;
   }
 
   .first_contents>h2 {
-    font-family: 'Bellefair';
+    font-family: 'Bellefair', Georgia, 'Times New Roman', serif;
     font-style: normal;
     font-weight: 400;
-    font-size: 29.2313px;
+    font-size: clamp(20.5px, calc(16.98px + 0.851vw), 29.2313px);
     line-height: 33px;
     text-transform: uppercase;
     color: #FFFFFF;
@@ -927,16 +975,21 @@
   }
 
   .slider__second>button {
-    width: 181px;
-    height: 62px;
+    min-width: clamp(150px, calc(137.5px + 3.02vw), 181px);
+    height: clamp(48px, calc(42.4px + 1.36vw), 62px);
+    padding: 0 13px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    white-space: nowrap;
     border: 1px solid #FFFFFF;
     border-radius: 10px;
     background: transparent;
-    font-family: 'Satoshi';
+    font-family: 'Satoshi', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
     font-style: normal;
     font-weight: 400;
-    font-size: 24px;
-    line-height: 32px;
+    font-size: clamp(18.7px, calc(16.56px + 0.517vw), 24px);
+    line-height: 1;
     color: #FFFFFF;
   }
 
@@ -961,8 +1014,14 @@
   }
 
   .newsletter_input>input {
-    width: 446px;
-    height: 60px;
+    width: clamp(280px, calc(180px + 18.5vw), 446px);
+    height: clamp(48px, calc(43.2px + 1.17vw), 60px);
+    padding: 0 24px;
+    font-size: 16px;
+  }
+
+  .newsletter_input>input::placeholder{
+    font-size: 16px;
   }
 
 }
@@ -993,10 +1052,10 @@
   }
 
   .footer_inner_one>h1 {
-    font-family: 'Clash Display';
+    font-family: 'Clash Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
     font-style: normal;
     font-weight: 600;
-    font-size: 48px;
+    font-size: clamp(28.8px, calc(21.05px + 1.871vw), 48px);
     line-height: 59px;
     /* identical to box height */
     color: #292929;
@@ -1005,10 +1064,10 @@
   .footer_inner_four>p,
   .footer_inner_two>p,
   .footer_inner_three>p {
-    font-family: 'Satoshi';
+    font-family: 'Satoshi', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
     font-style: normal;
     font-weight: 400;
-    font-size: 26px;
+    font-size: clamp(18.2px, calc(15.05px + 0.76vw), 26px);
     line-height: 35px;
     color: #333333;
   }
@@ -1020,7 +1079,11 @@
   }
   
   .footer_inner_four>p>img {
-    margin-right: 20px;
+    width: 1.35em;
+    height: auto;
+    flex-shrink: 0;
+    object-fit: contain;
+    margin-right: 12px;
   }
 
   .footer_inner_one,
@@ -1036,10 +1099,10 @@
 
   .footer_end>p {
     text-align: center;
-    font-family: 'Rubik';
+    font-family: 'Rubik', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
     font-style: normal;
     font-weight: 500;
-    font-size: 24px;
+    font-size: clamp(18.7px, calc(16.56px + 0.517vw), 24px);
     line-height: 21px;
     /* identical to box height, or 88% */
 
@@ -1058,7 +1121,11 @@
   }
 
   .footer_inner_four>p>img {
-    margin-right: 0;
+    width: 1.35em;
+    height: auto;
+    flex-shrink: 0;
+    object-fit: contain;
+    margin-right: 16px;
   }
 }
 
@@ -1070,4 +1137,200 @@
 
 @media screen and (min-width: 1440px) {
 
+}
+/* ---------------------------------------------------------------
+   Home polish pass.
+   --------------------------------------------------------------- */
+
+/* The avatar stack was a set of natural-size inline <img>s inside a plain
+   block, so they sat on a text line and the fifth one wrapped onto its own
+   row at 320px. Make it a non-shrinking flex row and size the avatars off the
+   viewport so the whole stack always fits. */
+.creators__imgs {
+  display: inline-flex;
+  align-items: center;
+  flex-shrink: 0;
+  margin-left: 0;
+}
+
+.creators__imgs > img {
+  width: clamp(26px, calc(21.2px + 1.5vw), 42px);
+  height: clamp(26px, calc(21.2px + 1.5vw), 42px);
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+  position: relative;
+  /* Overlap tracks the avatar size instead of a flat -20px. */
+  margin-left: clamp(-14px, -0.9vw - 8px, -8px);
+  /* A ring separates the discs where they overlap. */
+  box-shadow: 0 0 0 2px #fff;
+}
+
+.creators__imgs > img:first-child { margin-left: 0; }
+
+/* Stacking order so each disc sits under the one before it, as drawn. */
+.creators__imgs > img:nth-child(1) { z-index: 5; }
+.creators__imgs > img:nth-child(2) { z-index: 4; }
+.creators__imgs > img:nth-child(3) { z-index: 3; }
+.creators__imgs > img:nth-child(4) { z-index: 2; }
+.creators__imgs > img:nth-child(5) { z-index: 1; }
+
+.featured__creators {
+  flex-wrap: wrap;
+  gap: clamp(8px, 2vw, 18px);
+  margin-top: clamp(14px, 2vw, 22px);
+}
+
+.featured__creators > p {
+  margin: 0;
+  font-size: clamp(12px, calc(10.4px + 0.49vw), 18px);
+  line-height: 1.4;
+  white-space: nowrap;
+}
+
+.arrow {
+  width: clamp(30px, calc(25.2px + 1.5vw), 44px);
+  height: clamp(30px, calc(25.2px + 1.5vw), 44px);
+  padding: clamp(7px, 0.8vw, 11px);
+  flex-shrink: 0;
+  box-sizing: border-box;
+  transition: background-color 0.15s ease;
+}
+
+.arrow:hover { background: rgba(0, 0, 0, 0.06); }
+.arrow > img { width: 100%; height: auto; }
+
+/* 200px of padding top and bottom is most of a phone screen. */
+.explore { padding: clamp(56px, 12vw, 160px) 0; }
+
+.explore_item {
+  gap: clamp(10px, 2vw, 20px);
+  padding: clamp(14px, 2.5vw, 28px) clamp(16px, 3vw, 32px);
+  transition: background-color 0.15s ease;
+}
+
+.explore_item:hover { background: rgba(0, 0, 0, 0.04); }
+
+/* The quote block had no side gutter, so it ran to the screen edges. */
+.top_creator_second > p {
+  padding: 0 clamp(16px, 5vw, 48px);
+  line-height: 1.6;
+}
+
+.creator_title,
+.creator_segments {
+  margin-left: 0;
+  padding: 0 clamp(16px, 4vw, 40px);
+}
+
+.top_creator_first {
+  flex-wrap: wrap;
+  gap: clamp(12px, 2vw, 24px);
+  padding-top: clamp(28px, 4vw, 56px);
+}
+
+.creator_segments {
+  display: flex;
+  flex-wrap: wrap;
+  gap: clamp(10px, 2vw, 26px);
+}
+
+.creator_segments > p { margin: 0; }
+
+/* ---------------------------------------------------------------
+   Footer pass (shared by Home and Drops).
+
+   It carried `padding: 7rem` at 1200+, four columns pinned at a fixed 350px
+   each (1400px of track before gaps), 26px body text and a 48px wordmark —
+   all drawn against a 1920px frame. Below 1200px `.footer__inner` was
+   `display: none`, so the whole footer was an empty box on a phone.
+   --------------------------------------------------------------- */
+
+footer {
+  padding: clamp(32px, 5vw, 64px) clamp(16px, 5vw, 56px) clamp(24px, 3vw, 40px);
+}
+
+.footer__inner {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: clamp(24px, 4vw, 48px);
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* The fixed 350px columns forced the row far wider than the content. */
+.footer_inner_one,
+.footer_inner_two,
+.footer_inner_three,
+.footer_inner_four {
+  display: block;
+  width: auto;
+  min-width: 0;
+  flex: 1 1 150px;
+}
+
+.footer_inner_one { flex: 1 1 100%; }
+
+.footer_inner_one > h1 {
+  margin: 0;
+  font-size: clamp(22px, calc(17.2px + 1.5vw), 38px);
+  line-height: 1.1;
+  margin-right: 0;
+}
+
+.footer_inner_two > p,
+.footer_inner_two > a,
+.footer_inner_three > p,
+.footer_inner_four > p {
+  margin: 0 0 8px;
+  font-family: 'Satoshi', sans-serif;
+  font-weight: 400;
+  font-size: clamp(13px, calc(12.2px + 0.29vw), 16px);
+  line-height: 1.6;
+  color: #333;
+}
+
+.footer_inner_four > p {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  justify-content: flex-start;
+  margin-right: 0;
+  overflow-wrap: anywhere;
+}
+
+.footer_inner_four > p > img {
+  width: 1.15em;
+  height: auto;
+  flex-shrink: 0;
+}
+
+.footer_end {
+  display: block;
+  max-width: 1200px;
+  margin: clamp(24px, 3vw, 40px) auto 0;
+  padding-top: clamp(14px, 2vw, 22px);
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+.footer_end > p {
+  margin: 0;
+  text-align: center;
+  font-size: clamp(11.5px, calc(10.7px + 0.29vw), 14px);
+  line-height: 1.5;
+}
+
+/* Two columns on a phone rather than nothing at all. */
+@media screen and (max-width: 599px) {
+  .footer_inner_two,
+  .footer_inner_three { flex: 1 1 40%; }
+
+  .footer_inner_four { flex: 1 1 100%; }
+}
+
+@media screen and (min-width: 900px) {
+  .footer_inner_one { flex: 1 1 200px; }
 }

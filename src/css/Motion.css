@@ -1,0 +1,268 @@
+/* ---------------------------------------------------------------
+   Motion layer.
+
+   One place for the app's animation, so durations and easings stay consistent
+   and there is a single reduced-motion guard rather than one per stylesheet.
+
+   The rule of thumb here: motion either explains a change (something arrived,
+   a figure moved, a panel opened) or confirms a press. Nothing animates purely
+   for decoration, and nothing blocks you from acting while it plays.
+
+   Imported last from App.jsx, after every page sheet.
+   --------------------------------------------------------------- */
+
+:root {
+  --ease-out: cubic-bezier(0.22, 0.61, 0.36, 1);
+  --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --dur-fast: 0.16s;
+  --dur: 0.28s;
+  --dur-slow: 0.42s;
+}
+
+/* ---------------- page transition ---------------- */
+
+/* Note: while this animation runs, the wrapper has a live transform, which
+   makes it the containing block for any `position: fixed` descendant — the
+   drawer and the notification sheet. It settles on `transform: none`, which
+   establishes no containing block, and the window is under 300ms, so nothing
+   reachable in that time is affected. Worth remembering before lengthening it. */
+.page_transition {
+  animation: page_in var(--dur) var(--ease-out) both;
+}
+
+@keyframes page_in {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: none; }
+}
+
+/* ---------------- scroll reveal + stagger ----------------
+
+   A container gets .reveal; each child carries `--i` for its position. The
+   delay is capped at the 9th child so a long grid's tail is not left waiting.
+
+   Children start invisible, so useReveal carries a timeout that reveals the
+   container regardless of whether the observer ever fires — the failure mode
+   has to be a missing animation, never missing content. */
+
+.reveal > * {
+  opacity: 0;
+}
+
+.reveal.is_revealed > * {
+  animation: reveal_in var(--dur-slow) var(--ease-out) both;
+  animation-delay: calc(min(var(--i, 0), 8) * 45ms);
+}
+
+@keyframes reveal_in {
+  from { opacity: 0; transform: translateY(14px); }
+  to { opacity: 1; transform: none; }
+}
+
+/* ---------------- press feedback ---------------- */
+
+.checkout-btn:active:not(:disabled),
+button.payment:active:not(:disabled),
+.confirm:active:not(:disabled),
+.cart_cta > button:active,
+.current_bid_two > button:active,
+.raise_btn:active:not(:disabled),
+.drop_cta:active,
+.drop_pill:active,
+button.notify:active,
+.see_more > button:active,
+.see_more_auctions > button:active,
+.see_more_drops > button:active,
+.explore_all_cta:active,
+.thank_you_actions > a:active,
+.drop_filter:active,
+.tab-btn:active,
+.wallet_div > .wallet_option:active,
+.counter_div > button:active,
+.notif_filter:active {
+  transform: scale(0.97);
+}
+
+.checkout-btn,
+button.payment,
+.confirm,
+.cart_cta > button,
+.current_bid_two > button,
+.raise_btn,
+.drop_cta,
+.drop_pill,
+button.notify,
+.see_more > button,
+.see_more_auctions > button,
+.see_more_drops > button,
+.explore_all_cta,
+.thank_you_actions > a,
+.drop_filter,
+.tab-btn,
+.wallet_div > .wallet_option,
+.counter_div > button,
+.notif_filter {
+  transition: transform var(--dur-fast) var(--ease-out),
+    background-color var(--dur-fast) ease, color var(--dur-fast) ease,
+    border-color var(--dur-fast) ease, opacity var(--dur-fast) ease;
+}
+
+/* ---------------- nav badges ---------------- */
+
+/* The dot pops when the number behind it grows, so a cart add or a new
+   notification is noticed without stealing focus from what you were doing. */
+.cart_dot.is_bumping,
+.cart_count.is_bumping,
+.bell_dot.is_bumping,
+.bell_count.is_bumping {
+  animation: badge_pop var(--dur-slow) var(--ease-spring);
+}
+
+@keyframes badge_pop {
+  0% { transform: scale(1); }
+  35% { transform: scale(1.45); }
+  100% { transform: scale(1); }
+}
+
+.bell_btn.is_ringing .bell {
+  animation: bell_ring 0.6s var(--ease-out);
+  transform-origin: 50% 12%;
+}
+
+@keyframes bell_ring {
+  0%, 100% { transform: rotate(0); }
+  15% { transform: rotate(13deg); }
+  30% { transform: rotate(-11deg); }
+  45% { transform: rotate(7deg); }
+  60% { transform: rotate(-4deg); }
+  75% { transform: rotate(2deg); }
+}
+
+/* ---------------- live room ---------------- */
+
+/* The standing bid is the one number in the room that matters, so it gets a
+   beat of its own when someone raises. */
+.display_bid_value.is_bumping {
+  animation: bid_flash var(--dur-slow) var(--ease-spring);
+}
+
+@keyframes bid_flash {
+  0% { transform: scale(1); }
+  30% { transform: scale(1.09); text-shadow: 0 0 22px rgba(255, 255, 255, 0.55); }
+  100% { transform: scale(1); }
+}
+
+/* Keys keep existing rows' DOM nodes, so only genuinely new comments animate. */
+.comment_display_item {
+  animation: comment_in var(--dur) var(--ease-out) both;
+}
+
+@keyframes comment_in {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: none; }
+}
+
+/* A live room should look alive even when the feed is quiet. */
+.live:not(.is_ended)::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  margin-right: 7px;
+  border-radius: 50%;
+  background: #fff;
+  animation: live_pulse 1.8s ease-in-out infinite;
+}
+
+@keyframes live_pulse {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.35; transform: scale(0.82); }
+}
+
+.lot_clock { transition: color var(--dur) ease; }
+
+/* ---------------- checkout ---------------- */
+
+/* Switching step swaps the panel, so the new node animates and the old one
+   simply goes — no cross-fade, which would push the page height around. */
+.content.active {
+  animation: panel_in var(--dur) var(--ease-out) both;
+}
+
+@keyframes panel_in {
+  from { opacity: 0; transform: translateX(8px); }
+  to { opacity: 1; transform: none; }
+}
+
+.cart_item {
+  animation: comment_in var(--dur) var(--ease-out) both;
+}
+
+/* ---------------- confirmations ---------------- */
+
+/* Add to cart, reminder set, subscribed: a one-shot confirmation on the
+   control you just pressed, rather than a toast somewhere else. */
+.cart_cta > button.is_added,
+.drop_cta.is_on,
+button.notify.is_on {
+  animation: confirm_pop var(--dur-slow) var(--ease-spring);
+}
+
+@keyframes confirm_pop {
+  0% { transform: scale(1); }
+  40% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+.added_note,
+.newsletter_done {
+  animation: reveal_in var(--dur) var(--ease-out) both;
+}
+
+/* ---------------- notifications ---------------- */
+
+.notif_item {
+  animation: reveal_in var(--dur) var(--ease-out) both;
+  animation-delay: calc(min(var(--i, 0), 6) * 35ms);
+}
+
+.notif_pill { animation: badge_pop var(--dur-slow) var(--ease-spring); }
+
+/* ---------------- media ---------------- */
+
+/* A slow ease on transform so the hover zoom below reads as a glide rather
+   than a snap. */
+.art_item img,
+.top_bid_img > img,
+.notif_thumb > img {
+  transition: transform var(--dur-slow) var(--ease-out), opacity var(--dur) ease;
+}
+
+.art_item .art_item_body:hover img,
+.explore_page_item:hover .explore_img > img {
+  transform: scale(1.03);
+}
+
+/* The card clips the zoom rather than letting it spill. */
+.art_item,
+.explore_img,
+.top_bid_img {
+  overflow: hidden;
+}
+
+/* ---------------- reduced motion ----------------
+
+   One blanket guard for the whole app. Anyone who has asked their OS for less
+   motion gets none of the above, including the infinite live pulse. */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    animation-delay: 0ms !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .reveal > * { opacity: 1; }
+}

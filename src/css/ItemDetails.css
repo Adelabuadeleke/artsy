@@ -1,8 +1,8 @@
 .itemdetails_body>h1{
- font-family: 'Satoshi';
+ font-family: 'Satoshi', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
  font-style: normal;
  font-weight: 500;
- font-size: 24px;
+ font-size: clamp(18.7px, calc(16.56px + 0.517vw), 24px);
  line-height: 52px;
  color: #BCB7B7;
 }
@@ -29,32 +29,32 @@
 
 .details_cart>small{
  color: #000;
- font-size: 24px;
- font-family: Satoshi;
+ font-size: clamp(18.7px, calc(16.56px + 0.517vw), 24px);
+ font-family: 'Satoshi', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
  font-style: normal;
  font-weight: 400;
 }
 
 .details_cart>p{
  color: #616161;
- font-size: 30px;
- font-family: Satoshi;
+ font-size: clamp(21px, calc(17.37px + 0.877vw), 30px);
+ font-family: 'Satoshi', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
  font-style: normal;
  font-weight: 400;
 }
 
 .details_cart>p>span{
  color: #4693ED;
- font-size: 30px;
- font-family: Satoshi;
+ font-size: clamp(21px, calc(17.37px + 0.877vw), 30px);
+ font-family: 'Satoshi', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
  font-style: normal;
  font-weight: 500;
 }
 
 .details_cart>h4{
  color: #000;
- font-size: 28px;
- font-family: Satoshi;
+ font-size: clamp(19.6px, calc(16.21px + 0.819vw), 28px);
+ font-family: 'Satoshi', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
  font-style: normal;
  font-weight: 500;
 }
@@ -68,8 +68,8 @@
 .counter_div>button,
 .count{
  color: #333;
- font-size: 36px;
- font-family: Satoshi;
+ font-size: clamp(21.6px, calc(15.79px + 1.404vw), 36px);
+ font-family: 'Satoshi', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
  font-style: normal;
  font-weight: 500;
 }
@@ -93,12 +93,12 @@
  justify-content: center;
  align-items: center;
  gap: 7.501px;
- border-radius: 3.001px;
+ border-radius: 10px;
  background: #272727;
  border: 1px solid #272727;
  color: #FFF;
- font-size: 26px;
- font-family: Inter;
+ font-size: clamp(18.2px, calc(15.05px + 0.76vw), 26px);
+ font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
  font-style: normal;
  font-weight: 500;
  line-height: normal;
@@ -116,7 +116,7 @@
 
 .drop_item>p{
  color: #333;
- font-family: Satoshi;
+ font-family: 'Satoshi', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
  font-style: normal;
  font-weight: 500;
 }
@@ -133,7 +133,7 @@
 
 .item_detail_explore>h2{
  color: #333;
- font-family: Satoshi;
+ font-family: 'Satoshi', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
  font-style: normal;
  font-weight: 500;
 }
@@ -186,8 +186,8 @@ min-width: 500px;
  justify-content: space-between;
  width: 80%;
  margin-top: 10px;
- font-family: Satoshi;
- font-size: 32px;
+ font-family: 'Satoshi', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+ font-size: clamp(22.4px, calc(18.53px + 0.936vw), 32px);
  font-style: normal;
  font-weight: 500;
 }
@@ -245,7 +245,7 @@ min-width: 500px;
   }
 
   .item_detail_explore>h2{
-    font-size: 25px;
+    font-size: clamp(17.5px, calc(14.47px + 0.731vw), 25px);
   }
 
   .details_one {
@@ -274,23 +274,23 @@ min-width: 500px;
   }
 
   .cart_cta>button {
-    padding: 24.004px 10.765px;
+    padding: 24px 11px;
   }
 
   .details_title>h2 {
-    font-family: 'Satoshi';
+    font-family: 'Satoshi', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
     font-style: normal;
     font-weight: 700;
-    font-size: 26px;
+    font-size: clamp(18.2px, calc(15.05px + 0.76vw), 26px);
   }
 
   .details_title>p {
     display: flex;
     align-items: center;
-    font-family: 'STIX Two Text';
+    font-family: 'STIX Two Text', Georgia, 'Times New Roman', serif;
     font-style: normal;
     font-weight: 500;
-    font-size: 20px;
+    font-size: clamp(17px, calc(15.79px + 0.292vw), 20px);
   }
 
   .details_title>p>img {
@@ -298,7 +298,7 @@ min-width: 500px;
   }
 
   .cart_cta>button {
-    padding: 5.004px 5.765px;
+    padding: 5px 6px;
   }
 
   .explore_btn_div{
@@ -311,7 +311,7 @@ min-width: 500px;
   }
 
   .drop_item>p{
-    font-size: 20px;
+    font-size: clamp(17px, calc(15.79px + 0.292vw), 20px);
   }
 
   .item_detail_slider{
@@ -324,8 +324,8 @@ min-width: 500px;
     border-radius: 16px;
     border: 2px solid #272727;
     color: #272727;
-    font-family: Satoshi;
-    font-size: 25px;
+    font-family: 'Satoshi', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    font-size: clamp(17.5px, calc(14.47px + 0.731vw), 25px);
     font-style: normal;
     font-weight: 500;
     background-color: transparent;
@@ -334,29 +334,29 @@ min-width: 500px;
 
 @media screen and (min-width: 350px){
   .cart_cta>button {
-    padding: 24.004px 10.765px;
+    padding: 24px 11px;
   }
 }
 
 @media screen and (min-width: 768px) {
   .cart_cta>button{
-    padding: 24.004px 87.765px;
+    padding: 24px 88px;
   }
 
   .details_title>h2 {
-    font-family: 'Satoshi';
+    font-family: 'Satoshi', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
     font-style: normal;
     font-weight: 700;
-    font-size: 46px;
+    font-size: clamp(27.6px, calc(20.18px + 1.793vw), 46px);
   }
 
   .details_title>p {
     display: flex;
     align-items: center;
-    font-family: 'STIX Two Text';
+    font-family: 'STIX Two Text', Georgia, 'Times New Roman', serif;
     font-style: normal;
     font-weight: 500;
-    font-size: 40px;
+    font-size: clamp(24px, calc(17.54px + 1.559vw), 40px);
   }
 
   .details_title>p>img {
@@ -364,7 +364,7 @@ min-width: 500px;
   }
 
   .item_detail_explore>h2 {
-    font-size: 32px;
+    font-size: clamp(22.4px, calc(18.53px + 0.936vw), 32px);
   }
 
   .explore_btn_div {
@@ -377,7 +377,7 @@ min-width: 500px;
   }
 
   .drop_item>p {
-    font-size: 32px;
+    font-size: clamp(22.4px, calc(18.53px + 0.936vw), 32px);
   }
 
   .item_detail_slider {
@@ -390,8 +390,8 @@ min-width: 500px;
     border-radius: 16px;
     border: 2px solid #272727;
     color: #272727;
-    font-family: Satoshi;
-    font-size: 36px;
+    font-family: 'Satoshi', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    font-size: clamp(21.6px, calc(15.79px + 1.404vw), 36px);
     font-style: normal;
     font-weight: 500;
     background-color: transparent;
@@ -439,4 +439,316 @@ min-width: 500px;
 
 @media screen and (min-width: 1440px) {
 
+}
+/* ---------------------------------------------------------------
+   Item detail is driven by the catalogue now (/marketplace/item/:id), with a
+   working quantity control, add-to-cart and accordion.
+   --------------------------------------------------------------- */
+
+.itemdetails_body > h1 a { color: inherit; text-decoration: none; }
+.itemdetails_body > h1 a:hover { text-decoration: underline; }
+
+.cart_cta > button { cursor: pointer; }
+
+/* The favourite control was a bare <img>, so there was no liked state. */
+.cart_cta > .like_btn {
+  display: grid;
+  place-items: center;
+  width: clamp(40px, calc(36px + 1.25vw), 52px);
+  height: clamp(40px, calc(36px + 1.25vw), 52px);
+  padding: 0;
+  margin: 0;
+  border: 1px solid #e6e6e6;
+  border-radius: 50%;
+  background: #fff;
+}
+
+.cart_cta > .like_btn > svg { width: 56%; height: 56%; }
+.cart_cta > .like_btn.is_liked { border-color: #e4514f; }
+
+.details_cart > .added_note {
+  margin: -30px 0 0;
+  color: #616161;
+  font-family: 'Satoshi', sans-serif;
+  font-size: clamp(13px, calc(12.2px + 0.29vw), 16px);
+  font-weight: 400;
+}
+
+.added_note a { color: #272727; text-decoration: underline; }
+
+/* ---------------- accordion ---------------- */
+
+.drop_item {
+  display: block;
+  padding: 0;
+}
+
+.drop_item_head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  width: 100%;
+  padding: 14px clamp(8px, 2vw, 24px);
+  border: 0;
+  background: none;
+  cursor: pointer;
+  text-align: left;
+}
+
+.drop_item_head > img {
+  width: 16px;
+  height: auto;
+  flex-shrink: 0;
+}
+
+.drop_item > .drop_item_body {
+  margin: 0;
+  padding: 0 clamp(8px, 2vw, 24px) 16px;
+  color: #616161;
+  font-family: 'Satoshi', sans-serif;
+  font-size: clamp(13px, calc(12.2px + 0.29vw), 16px);
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+/* ---------------- related strip ---------------- */
+
+/* Cards were pinned at min-width 500px around a 400x400 image, which forced a
+   horizontal scroll on anything narrower than a desktop. */
+.item_detail_slider {
+  gap: clamp(16px, 2.5vw, 32px);
+  justify-content: flex-start;
+  padding: 0 clamp(16px, 4vw, 56px) 3rem;
+  scroll-snap-type: x mandatory;
+}
+
+.explore_page_item {
+  min-width: 0;
+  width: clamp(200px, 40vw, 300px);
+  flex: 0 0 auto;
+  margin-right: 0;
+  padding-bottom: 14px;
+  border: 1px solid #e2e2e2;
+  border-radius: 10px;
+  scroll-snap-align: start;
+  text-decoration: none;
+  transition: box-shadow 0.15s ease;
+}
+
+.explore_page_item:hover { box-shadow: 0 4px 22px rgba(0, 0, 0, 0.1); }
+
+.explore_img { width: 88%; margin-top: 14px; }
+
+.explore_img > img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1;
+  object-fit: cover;
+  border-radius: 6px;
+  display: block;
+}
+
+.explore_text {
+  width: 88%;
+  gap: 10px;
+  font-size: clamp(13px, calc(12.2px + 0.29vw), 17px);
+  color: #292929;
+}
+
+.explore_text > p { margin: 0; overflow-wrap: anywhere; }
+.text_eth > p { margin: 0; }
+
+.text_eth > img {
+  width: clamp(14px, calc(13.2px + 0.29vw), 18px);
+  height: auto;
+  margin-right: 6px;
+}
+
+/* ---------------- explore all ---------------- */
+
+.explore_all_cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: auto;
+  height: clamp(48px, calc(43.2px + 1.5vw), 64px);
+  padding: 0 clamp(28px, 3vw, 52px);
+  border: 2px solid #272727;
+  border-radius: 16px;
+  background: transparent;
+  color: #272727;
+  font-family: 'Satoshi', sans-serif;
+  font-size: clamp(15px, calc(13.4px + 0.49vw), 21px);
+  font-weight: 500;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.explore_all_cta:hover { background: #f2f2f2; }
+
+/* ---------------------------------------------------------------
+   Item detail sizing pass.
+
+   The page overflowed its column because `.cart_cta > button` carried
+   `padding: 24px 88px` from 768px up — 176px of padding around a label that
+   now also shows a price — inside a flex row that would not let it shrink.
+   The rest is the same story as the other pages: type and spacing drawn
+   against a 1920px frame (46px title, 500px image, 7rem gutters) and a
+   two-column split that did not start until 1300px.
+   --------------------------------------------------------------- */
+
+.itemdetails_body {
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: clamp(12px, 2vw, 20px) clamp(16px, 4vw, 56px);
+}
+
+.itemdetails_body > h1 {
+  font-size: clamp(13px, calc(11.8px + 0.39vw), 17px);
+  line-height: 1.6;
+  margin: 0 0 clamp(12px, 2vw, 20px);
+}
+
+/* ---------------- product ---------------- */
+
+.item_details { gap: clamp(20px, 3vw, 44px); }
+
+/* min-width:auto on a flex child lets an over-wide control push the row out. */
+.details_one,
+.details_two { min-width: 0; }
+
+.details_one > img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 5;
+  max-height: min(62vh, 560px);
+  object-fit: cover;
+  border-radius: 8px;
+  display: block;
+}
+
+.details_title {
+  gap: 12px;
+  padding: 10px 0;
+}
+
+.details_title > h2 {
+  margin: 0;
+  font-size: clamp(18px, calc(14px + 1.25vw), 32px);
+  line-height: 1.25;
+  overflow-wrap: anywhere;
+}
+
+.details_title > p {
+  margin: 0;
+  flex-shrink: 0;
+  font-size: clamp(16px, calc(13.6px + 0.78vw), 26px);
+}
+
+.details_title > p > img {
+  height: clamp(16px, calc(13.6px + 0.78vw), 26px);
+  width: auto;
+  margin-right: 8px;
+}
+
+.details_cart { padding: 10px 0; }
+
+.details_cart > p,
+.details_cart > p > span {
+  font-size: clamp(14px, calc(12.4px + 0.49vw), 19px);
+  margin: 6px 0;
+}
+
+.details_cart > small { font-size: clamp(13px, calc(12.2px + 0.29vw), 16px); }
+
+.details_cart > h4 {
+  font-size: clamp(14px, calc(12.4px + 0.49vw), 19px);
+  margin: 10px 0;
+}
+
+.details_cart .counter_div > button,
+.details_cart .count {
+  font-size: clamp(16px, calc(13.6px + 0.78vw), 24px);
+}
+
+/* ---------------- add to cart ---------------- */
+
+.cart_cta {
+  flex-wrap: wrap;
+  gap: 12px;
+  margin: clamp(20px, 3vw, 34px) 0;
+}
+
+.cart_cta > button:first-child {
+  flex: 1 1 auto;
+  /* Was 176px of horizontal padding; the label now carries a price too. */
+  min-width: 0;
+  max-width: 340px;
+  height: clamp(46px, calc(41.2px + 1.5vw), 58px);
+  padding: 0 clamp(18px, 2vw, 30px);
+  margin-right: 0;
+  font-size: clamp(14px, calc(12.8px + 0.39vw), 18px);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.details_cart > .added_note { margin: -8px 0 0; }
+
+/* ---------------- accordion ---------------- */
+
+.drop_item_head > p {
+  margin: 0;
+  font-size: clamp(14px, calc(12.8px + 0.39vw), 18px);
+}
+
+.cart_drop_down { margin-top: clamp(16px, 2vw, 24px); }
+
+/* ---------------- explore ---------------- */
+
+.item_detail_explore {
+  margin: clamp(28px, 4vw, 48px) 0 clamp(18px, 2.5vw, 28px);
+  padding: clamp(16px, 2.2vw, 26px) clamp(16px, 2vw, 24px);
+  border-radius: 12px;
+  box-shadow: 4px 4px 34px rgba(0, 0, 0, 0.06);
+}
+
+.item_detail_explore > h2 {
+  margin: 0;
+  font-size: clamp(15px, calc(13.4px + 0.49vw), 21px);
+}
+
+.explore_all { margin: clamp(24px, 3vw, 44px) 0; }
+
+/* ---------------------------------------------------------------
+   Two columns from 1024 rather than 1300, so laptops stop getting the phone
+   stack with desktop-sized type.
+   --------------------------------------------------------------- */
+
+@media screen and (min-width: 1024px) {
+  .item_details {
+    flex-direction: row;
+    align-items: flex-start;
+    border: 1px solid #e2e2e2;
+    border-radius: 12px;
+    padding: clamp(14px, 1.6vw, 22px);
+  }
+
+  .details_one {
+    flex: 0 0 42%;
+    padding: 0;
+    border-right: 0;
+  }
+
+  .details_two { flex: 1 1 auto; }
+
+  .details_one > img { aspect-ratio: 3 / 4; }
+}
+
+@media screen and (min-width: 1300px) {
+  /* Undo the old block's flat 7rem gutters and hairline border. */
+  .itemdetails_body { padding: clamp(12px, 2vw, 20px) clamp(16px, 4vw, 56px); }
+  .item_details { border-color: #e2e2e2; }
+  .details_one { padding: 0; border-right: 0; }
 }

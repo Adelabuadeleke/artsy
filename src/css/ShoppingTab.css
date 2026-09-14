@@ -1,924 +1,685 @@
+/* ---------------------------------------------------------------
+   Checkout. Figma CHECKOUT (347:116) / payment panel (409:213).
+
+   Rewritten from ~1150 lines of stacked media queries that re-declared the
+   same rules at each breakpoint with only the font size changed. The old
+   sheet was calibrated against a 1920px design — 76px tall inputs, 26px
+   labels, 60px gaps, 33px x 120px buttons, a fixed 668px Confirm and
+   `width: initial` on cart thumbnails — which is what made the page read as
+   oversized on a laptop. Sizes now scale with the viewport off a single set
+   of rules, and the layout splits into two columns at 1024px rather than
+   1300px.
+   --------------------------------------------------------------- */
+
+.shopping_tab {
+  --gutter: clamp(16px, 4vw, 56px);
+  --rule: #e2e2e2;
+  --muted: #888;
+  --ink: #292929;
+
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.shopping_tab .about {
+  width: 100%;
+  max-width: 1320px;
+  margin: 0 auto;
+  padding: clamp(8px, 2vw, 20px) var(--gutter) clamp(40px, 6vw, 80px);
+}
+
+.about-content { padding: 0; }
+
+.content { display: none; }
+.content.active { display: block; }
+
+/* ---------------- step bar ---------------- */
+
+.btn-container-outer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 4px;
+}
+
 .btn-container {
- /* border-top-left-radius: var(--radius); */
- /* border-top-right-radius: var(--radius); */
- width: 60%;
- display: grid;
- grid-template-columns: 1fr 1fr 1fr;
- margin-bottom: 40px;
-}
-
-/* .tab-btn:nth-child(1) {
- border-top-left-radius: var(--radius);
-}
-
-.tab-btn:nth-child(3) {
- border-top-right-radius: var(--radius);
-} */
-
-.tab-btn {
- padding: 1rem 0;
- border: none;
- text-transform: capitalize;
- font-size: 1rem;
- display: block;
- /* background: var(--clr-grey-9); */
- cursor: pointer;
- /* transition: var(--transition); */
- /* letter-spacing: var(--spacing); */
-}
-
-/* .tab-btn:hover:not(.active) {
- background: var(--clr-primary-10); 
- color: var(--clr-primary-5);
-} */
-
-
-/* hide content */
-.content {
- display: none;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 4px;
+  width: 100%;
+  max-width: 680px;
+  margin-bottom: clamp(24px, 3vw, 40px);
 }
 
 .tab-btn {
- background: transparent;
- color: #747474;;
- font-family: Satoshi;
- font-size: 24px;
- font-style: normal;
- font-weight: 500;
- border-bottom: 2px solid #747474;;
+  padding: 10px 4px;
+  border: 0;
+  border-bottom: 2px solid var(--rule);
+  background: none;
+  color: var(--muted);
+  font-family: 'Satoshi', sans-serif;
+  font-size: clamp(12px, calc(10.4px + 0.49vw), 18px);
+  font-weight: 500;
+  text-transform: capitalize;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  cursor: pointer;
+  transition: color 0.15s ease, border-color 0.15s ease;
 }
+
+.tab-btn:hover { color: #555; }
 
 .tab-btn.active {
- color: #292929;
- font-family: Satoshi;
- font-size: 24px;
- font-style: normal;
- font-weight: 500;
- border-bottom: 2px solid #292929;
- /* background: var(--clr-white); */
+  color: var(--ink);
+  border-bottom-color: var(--ink);
 }
 
-.content.active {
- display: block;
+/* ---------------- cart lines ---------------- */
+
+.cart_item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: clamp(12px, 2vw, 28px);
+  padding: clamp(16px, 2.2vw, 28px) 0;
+  border-top: 1px solid var(--rule);
 }
 
-/* cart item style */
-.cart_first{
- display: flex;
- align-items: center;
+.cart_first {
+  display: flex;
+  align-items: center;
+  gap: clamp(12px, 2.4vw, 32px);
+  min-width: 0;
 }
 
-.cart_first_one{
- margin-right: 40px;
+/* `width: initial` let these render at their natural size on anything over
+   768px, which on a laptop was the single biggest source of the oversizing. */
+.cart_first_one > img {
+  width: clamp(72px, calc(56px + 5vw), 132px);
+  height: clamp(72px, calc(56px + 5vw), 132px);
+  object-fit: cover;
+  border-radius: 6px;
+  display: block;
 }
 
-.cart_first_two{
- display: flex;
- flex-direction: column;
- justify-content: space-between;
+.cart_first_two {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
 }
 
-/* .shopping_cart_items{
- border-bottom: 1px solid #747474;
-} */
-
-
-.cart_second{
- display: flex;
- flex-direction: column;
- justify-content: space-between;
- align-items: center;
+.cart_first_two > h2 {
+  margin: 0;
+  color: var(--ink);
+  font-family: 'Satoshi', sans-serif;
+  font-size: clamp(15px, calc(13.4px + 0.49vw), 21px);
+  font-weight: 500;
+  line-height: 1.3;
 }
 
-.cart_first_two>p.size{
- color: #888;
- font-family: Satoshi;
- font-size: 20px;
- font-style: normal;
- font-weight: 400;
- line-height: normal;
+.cart_first_two > p {
+  margin: 0;
+  color: var(--muted);
+  font-family: 'Satoshi', sans-serif;
+  font-size: clamp(12px, calc(11.2px + 0.29vw), 16px);
+  font-weight: 400;
+  line-height: 1.4;
 }
 
-.cart_first_two>p.size>span{
- color: #292929;
- font-family: Satoshi;
- font-size: 20px;
- font-style: normal;
- font-weight: 400;
- line-height: normal;
+.cart_first_two > p.size > span { color: var(--ink); }
+
+.shopping_tab .counter_div {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin-top: 6px;
 }
 
-.cart_first_two>.counter_div{
- color: #292929;
- font-family: Satoshi;
- font-size: 32px;
- font-style: normal;
- font-weight: 500;
- line-height: normal;
+.shopping_tab .counter_div > button {
+  display: grid;
+  place-items: center;
+  width: clamp(26px, calc(23.6px + 0.78vw), 34px);
+  height: clamp(26px, calc(23.6px + 0.78vw), 34px);
+  padding: 0;
+  border: 1px solid var(--rule);
+  border-radius: 6px;
+  background: #fff;
+  color: #333;
+  font-family: 'Satoshi', sans-serif;
+  font-size: clamp(15px, calc(13.4px + 0.49vw), 21px);
+  font-weight: 500;
+  line-height: 1;
+  cursor: pointer;
 }
 
-.cart_proceed{
- display: flex;
- flex-direction: column;
- align-items: center;
- justify-content: center;
+.shopping_tab .counter_div > button:hover { background: #f4f4f4; }
+
+.shopping_tab .counter_div > .count {
+  min-width: 34px;
+  text-align: center;
+  color: var(--ink);
+  font-family: 'Satoshi', sans-serif;
+  font-size: clamp(15px, calc(13.4px + 0.49vw), 21px);
+  font-weight: 500;
 }
 
-.cart_proceed>a {
- color: #272727;
- font-family: Satoshi;
- font-size: 28px;
- font-style: normal;
- font-weight: 500;
- line-height: 44.212px;
- /* 44.212px */
- text-decoration-line: underline;
+.cart_second {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: clamp(8px, 1.4vw, 18px);
+  flex-shrink: 0;
 }
 
-.cart_items_total>p>span.name_content{
- color: #292929;
+.cart_second > h1 {
+  margin: 0;
+  color: var(--ink);
+  font-family: 'Sora', 'Satoshi', sans-serif;
+  font-size: clamp(16px, calc(13.6px + 0.78vw), 26px);
+  font-weight: 400;
+  line-height: 1.2;
+  white-space: nowrap;
 }
 
-/* shipping details style */
-.shipping_details{
- display: flex;
- flex: 1;
- justify-content: space-between;
+.cart_second > .remove_item {
+  padding: 6px;
+  border: 0;
+  border-radius: 6px;
+  background: none;
+  line-height: 0;
+  cursor: pointer;
 }
 
-.postal,
+.cart_second > .remove_item:hover { background: rgba(0, 0, 0, 0.05); }
+
+.cart_second > .remove_item img {
+  width: clamp(14px, calc(12.4px + 0.49vw), 20px);
+  height: auto;
+}
+
+.cart_empty {
+  padding: 48px 0;
+  color: var(--muted);
+  font-family: 'Satoshi', sans-serif;
+  font-size: clamp(14px, calc(12.8px + 0.39vw), 18px);
+}
+
+/* ---------------- totals ---------------- */
+
+.cart_items_total {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding-top: clamp(18px, 2.4vw, 30px);
+  border-top: 1px solid var(--rule);
+}
+
+.cart_items_total > p {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  margin: 0;
+  color: var(--muted);
+  font-family: 'Satoshi', sans-serif;
+  font-size: clamp(13px, calc(11.8px + 0.39vw), 18px);
+  font-weight: 400;
+}
+
+.cart_items_total > p > .name_content { color: var(--ink); }
+.cart_items_total > p:last-child { font-weight: 500; }
+
+/* ---------------- buttons ---------------- */
+
+.cart_actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: clamp(14px, 2vw, 26px);
+  padding: clamp(20px, 3vw, 34px) 0 0;
+}
+
+.checkout-btn,
+button.payment,
+.confirm {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  height: clamp(46px, calc(41.2px + 1.5vw), 62px);
+  padding: 0 clamp(26px, calc(16.4px + 3vw), 56px);
+  border: 1px solid #272727;
+  border-radius: 4px;
+  background: #272727;
+  color: #fff;
+  font-family: 'Satoshi', sans-serif;
+  font-size: clamp(14px, calc(12.4px + 0.49vw), 20px);
+  font-weight: 500;
+  line-height: 1;
+  white-space: nowrap;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.checkout-btn:hover:not(:disabled),
+button.payment:hover:not(:disabled),
+.confirm:hover:not(:disabled) { background: #000; }
+
+.checkout-btn:disabled,
+button.payment:disabled,
+.confirm:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.continue_shopping {
+  color: #272727;
+  font-family: 'Satoshi', sans-serif;
+  font-size: clamp(13px, calc(12.2px + 0.29vw), 16px);
+  font-weight: 500;
+  text-decoration: underline;
+}
+
+.payment-btn {
+  display: flex;
+  margin-top: clamp(10px, 1.6vw, 18px);
+}
+
+/* The CTA was a fixed clamp up to 610px wide; let it fill its column instead. */
+.payment-btn > button.payment { width: 100%; }
+
+/* ---------------- form controls ---------------- */
+
+.shipping_input,
 .country,
-.shipping_input{
- display: flex;
- flex-direction: column;
+.postal {
+  display: flex;
+  flex-direction: column;
 }
 
+.shipping_input { margin-bottom: 16px; }
 
-
-.email_checkbox{
- margin-top: 17px;
- display: flex;
- /* justify-content: center; */
- align-items: center;
+.shipping_input > label,
+.country > label,
+.postal > label {
+  margin-bottom: 6px;
+  color: #5c5c5c;
+  font-family: 'Satoshi', sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1.3;
 }
 
-.email_checkbox>input{
- margin-right: 13px;
- height: 26px;
- width: 26px;
+/* One control style for every field. These were 76px tall with a 0.5px #747474
+   hairline on #f2f2f2 — tall, and the near-black hairline made a wall of heavy
+   boxes. A 46px control on a light fill with a soft border reads much cleaner,
+   and the size no longer tracks the viewport: form controls should not grow
+   just because the window did. */
+.shipping_input > input,
+.shipping_input > select,
+.country > select,
+.country > input,
+.postal > input,
+.postal > select,
+.wallet_key_input {
+  width: 100%;
+  height: 46px;
+  padding: 0 14px;
+  border: 1px solid #e4e4e4;
+  border-radius: 8px;
+  background: #fafafa;
+  color: var(--ink);
+  font-family: 'Satoshi', sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 1.2;
+  transition: border-color 0.15s ease, background 0.15s ease;
 }
 
-.wallet_key_input{
- display: flex;
+.shipping_input > input:hover,
+.shipping_input > select:hover,
+.country > select:hover,
+.country > input:hover,
+.postal > input:hover,
+.postal > select:hover { border-color: #cfcfcf; }
+
+.shipping_input > input:focus,
+.shipping_input > select:focus,
+.country > select:focus,
+.country > input:focus,
+.postal > input:focus,
+.postal > select:focus,
+.wallet_key_input:focus-within {
+  outline: none;
+  border-color: #272727;
+  background: #fff;
+  box-shadow: 0 0 0 3px rgba(39, 39, 39, 0.08);
 }
 
-.wallet_key_input>input{
- flex-grow: 1;
- border: 0.5px solid transparent;
- /* border: none; */
- background: #F2F2F2;
-
+.shipping_input > input::placeholder,
+.postal > input::placeholder,
+.country > input::placeholder {
+  color: #a5a5a5;
 }
 
-/* .shipping_input>select{
-
-} */
-
-/* .country{
- margin-right: 2px;
-} */
-
-.country,
-.postal{
- flex: 0.48;
+.shipping_input > input:read-only {
+  color: #6b6b6b;
+  cursor: default;
 }
 
-.payment_btn{
- display: flex;
- align-items: center;
- align-items: center;
+/* Native select chrome varies wildly between platforms; draw our own caret. */
+.shipping_input > select,
+.country > select,
+.postal > select {
+  appearance: none;
+  -webkit-appearance: none;
+  padding-right: 38px;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 8'%3E%3Cpath d='M1 1.5L6 6.5L11 1.5' stroke='%23747474' stroke-width='1.6' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  background-size: 11px 8px;
+  cursor: pointer;
 }
 
-button.payment{
- border-radius: 8px;
- border: 1px solid #272727;
- background: #272727;
- color: #FFF;
- font-family: Satoshi;
- font-style: normal;
- font-weight: 500;
- display: flex;
- justify-content: center;
- align-items: center;
- gap: 10.228px;
+.shipping_input_split {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-bottom: 16px;
 }
 
-.payment_method{
- display: flex;
- justify-content: space-between;
- align-items: center;
+.email_checkbox,
+.save {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin-top: 10px;
+  color: #5c5c5c;
+  font-family: 'Satoshi', sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1.4;
+  cursor: pointer;
 }
 
-.secure{
- display: flex;
- /* justify-content: center; */
- align-items: center;
+.email_checkbox > input,
+.save > input {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  margin: 0;
+  accent-color: #272727;
 }
 
-.secure>img{
- margin-right: 10px;
+/* ---------------- shipping layout ---------------- */
+
+.shipping_details {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(28px, 4vw, 56px);
 }
 
-.payment_method_body{
- display: flex;
- flex: 1;
- justify-content: space-between;
+.shipping_details_first,
+.shipping_details_second { min-width: 0; }
+
+/* ---------------- payment layout ---------------- */
+
+.payment_method {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: clamp(16px, 2vw, 24px);
 }
 
-.save>input{
- width: 26px;
- height: 26px;
- border-radius: 5px;
- background: #D9D9D9;
+.payment_method > h2 {
+  margin: 0;
+  color: var(--ink);
+  font-family: 'Satoshi', sans-serif;
+  font-size: clamp(16px, calc(13.6px + 0.78vw), 26px);
+  font-weight: 500;
+  line-height: 1.3;
 }
 
-.brief_text{
- display: flex;
- justify-content: center;
- align-items: center;
+.secure {
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
-a.confirm{
- display: flex;
- width: 668px;
- padding: 22px 0;
- justify-content: center;
- align-items: center;
- gap: 10px;
- border-radius: 4px;
- background: #272727;
- color: #FFF;
- font-family: Satoshi;
- font-size: 32px;
- font-style: normal;
- font-weight: 500;
- margin-top: 70px;
+.secure > img {
+  width: clamp(13px, calc(12.2px + 0.29vw), 16px);
+  height: auto;
 }
 
-.summary_heading{
- border-bottom: 0.3px solid #747474;
- padding-bottom: 41px;
+.secure > small {
+  color: #747474;
+  font-family: 'Satoshi', sans-serif;
+  font-size: clamp(12px, calc(11.2px + 0.29vw), 16px);
+  font-weight: 400;
 }
 
-.summary_heading>h2{
- color: #292929;
- font-family: Satoshi;
- font-size: 28px;
- font-style: normal;
- font-weight: 500;
- line-height: normal;
+.payment_method_body {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(24px, 3.5vw, 48px);
 }
 
-.summary_wallet{
- border-bottom: 0.3px solid #747474;
- padding-top: 39px;
- padding-bottom: 30px;
+.select_payment_method,
+.payment_summary { min-width: 0; }
+
+.select_payment_body {
+  padding: clamp(16px, 2vw, 26px);
+  border-radius: 8px;
+  background: #fff;
+  box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.18);
 }
 
-.summary_wallet>h3{
- color: #292929;
- font-family: Satoshi;
- font-size: 26px;
- font-style: normal;
- font-weight: 400;
- line-height: 40.976px;
- /* 40.976px */
+.select_wallet {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 12px;
 }
 
-.summary_wallet>p{
- color: #616161;
- font-family: Satoshi;
- font-size: 24px;
- font-style: normal;
- font-weight: 400;
- line-height: 37.824px;
- /* 37.824px */
+/* Figma pairs the label with a radio marker. */
+.select_text {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  color: var(--ink);
+  font-family: 'Satoshi', sans-serif;
+  font-size: clamp(13px, calc(12.2px + 0.29vw), 17px);
+  font-weight: 500;
 }
 
-
-.summary_arrival{
- border-bottom: 0.3px solid #747474;
- padding-top: 47px;
- padding-bottom: 56px;
+.select_text::before {
+  content: '';
+  width: 18px;
+  height: 18px;
+  flex-shrink: 0;
+  border: 2px solid #272727;
+  border-radius: 50%;
+  box-shadow: inset 0 0 0 3px #fff, inset 0 0 0 9px #272727;
 }
 
-.summary_arrival>p{
- color: #292929;
- font-family: Satoshi;
- font-size: 24px;
- font-style: normal;
- font-weight: 400;
- line-height: 37.824px;
- /* 37.824px */
+/* The wallet options are <button>s; without an explicit flex container they
+   stack instead of sitting in a row. */
+.wallet_div {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
-@media screen and (min-width: 320px) {
-  /* a.confirm, */
-  button.checkout-btn {
-    display: inline-flex;
-    padding: 22px 60px;
-    align-items: flex-start;
-    gap: 10px;
-    border-radius: 4px;
-    background: #272727;
-    border: 1px solid #272727;
-    color: #FFF;
-    font-family: Satoshi;
-    font-size: 17px;
-    font-style: normal;
-    font-weight: 500;
-    margin-bottom: 40px;
-  }
+.wallet_div > .wallet_option {
+  display: grid;
+  place-items: center;
+  padding: 6px 8px;
+  border: 1.5px solid var(--rule);
+  border-radius: 10px;
+  background: #fff;
+  cursor: pointer;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
 
-  .cart_items_total>p {
-    display: flex;
-    justify-content: space-between;
-    color: #888;
-    text-align: right;
-    font-family: Satoshi;
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 400;
-  }
+.wallet_div > .wallet_option img {
+  width: clamp(30px, calc(26px + 1vw), 40px);
+  height: auto;
+  display: block;
+}
 
-  .about-content {
-    /* border-bottom-left-radius: var(--radius); */
-    /* border-bottom-right-radius: var(--radius); */
-    padding: 3rem 1rem;
-  }
+.wallet_div > .wallet_option:hover { border-color: #bdbdbd; }
 
-  .cart_proceed,
-  .cart_items_total {
-    flex: 1;
-    /* flex-direction: row; */
-  }
+.wallet_div > .wallet_option.is_selected {
+  border-color: #272727;
+  box-shadow: 0 0 0 2px rgba(39, 39, 39, 0.12);
+}
 
-  .cart_summary {
-    display: flex;
-    flex: 1;
-    flex-direction: column-reverse;
-    margin-top: 100px;
-    margin-bottom: 100px;
-  }
+.brief_text { margin: 6px 0 16px; }
 
-  .cart_first_one>img {
-    width: 100px;
-    height: 100px;
-  }
+.brief_text_content > p {
+  margin: 2px 0;
+  color: #616161;
+  font-family: 'Satoshi', sans-serif;
+  font-size: clamp(12px, calc(11.2px + 0.29vw), 15px);
+  font-weight: 400;
+  line-height: 1.5;
+}
 
-  .cart_first_two>p {
-    display: none;
-  }
+.wallet_key_input {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 10px 0 14px;
+}
 
-  .cart_first_two>h2 {
-    color: #292929;
-    font-family: Satoshi;
-    font-size: 22px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: normal;
-  }
+.wallet_key_input > input {
+  flex: 1;
+  min-width: 0;
+  height: 100%;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  outline: none;
+  color: var(--ink);
+  font-family: 'Satoshi', sans-serif;
+  font-size: 14px;
+}
 
-  .cart_second>h1 {
-    color: #292929;
-    font-family: Sora;
-    font-size: 18px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-  }
+.wallet_key_input > input::placeholder { color: #a5a5a5; }
 
-  .cart_second>img {
-    width: 25px;
-    height: 25px;
-  }
+.wallet_key_input > img {
+  width: 26px;
+  height: auto;
+  flex-shrink: 0;
+}
 
-  .counter_div>button,
-  .count {
-    color: #333;
-    font-size: 20px;
-    font-family: Satoshi;
-    font-style: normal;
-    font-weight: 500;
-  }
+.select_payment_method > .confirm {
+  width: 100%;
+  margin-top: clamp(16px, 2vw, 24px);
+}
 
-  .cart_item {
-    display: flex;
-    justify-content: space-between;
-    border-top: 1px solid #747474;
-    padding-top: 20px;
-    padding-bottom: 40px;
-  }
+/* ---------------- payment summary ---------------- */
 
-  .btn-container-outer {
-    display: none;
-  }
+.summary_heading { padding-bottom: clamp(14px, 2vw, 22px); border-bottom: 0.5px solid var(--rule); }
 
-  .shipping_details_first {
-    flex: 1;
-  }
+.summary_heading > h2 {
+  margin: 0;
+  color: var(--ink);
+  font-family: 'Satoshi', sans-serif;
+  font-size: clamp(16px, calc(13.6px + 0.78vw), 24px);
+  font-weight: 500;
+}
 
-  .shipping_details_second {
-    display: none;
-  }
+.summary_wallet,
+.summary_arrival {
+  padding: clamp(14px, 2vw, 22px) 0;
+  border-bottom: 0.5px solid var(--rule);
+}
 
-  a.confirm,
-  button.payment {
-    width: 100%;
-    /* padding: 22px 60px; */
-    font-size: 18px;
-  }
+.summary_wallet > h3 {
+  margin: 0 0 4px;
+  color: var(--ink);
+  font-family: 'Satoshi', sans-serif;
+  font-size: clamp(14px, calc(12.8px + 0.39vw), 19px);
+  font-weight: 500;
+  line-height: 1.4;
+  overflow-wrap: anywhere;
+}
 
-  .shipping_input>input,
-  .shipping_input>select,
-  .country>select,
-  .country>input,
-  .postal>input,
-  .wallet_key_input {
-    border-radius: 10px;
-    border: 0.5px solid #747474;
-    background: #F2F2F2;
-    height: 46px;
-    width: 100%;
-  }
+.summary_wallet > p,
+.summary_arrival > p {
+  margin: 2px 0;
+  color: #616161;
+  font-family: 'Satoshi', sans-serif;
+  font-size: clamp(12px, calc(11.2px + 0.29vw), 16px);
+  font-weight: 400;
+  line-height: 1.5;
+}
 
-  .shipping_input>input::placeholder,
-  .postal>input::placeholder,
-  .shipping_input>select>optgroup {
-    color: #888;
-    /* text-align: right; */
-    font-family: Satoshi;
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-  }
+.summary_arrival > p { color: var(--ink); }
 
-  .postal>label,
-  .country>label,
-  .shipping_input>label,
-  .shipping_input>.email_checkbox,
-  .shipping_input>select,
-  .country> select,
-  .country>input::placeholder
-   {
-    color: #888;
-    font-family: Satoshi;
-    font-size: 18px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    margin-bottom: 17px;
-  }
+.payment_summary .cart_items_total {
+  padding-top: clamp(14px, 2vw, 22px);
+  border-top: 0;
+}
 
-  .payment_summary {
-    display: none;
-  }
+/* ---------------------------------------------------------------
+   Tablet: the country/postal pair fits side by side.
+   --------------------------------------------------------------- */
 
-  .shipping_input {
-    margin-bottom: 20px;
-  }
+@media screen and (min-width: 600px) {
+  .shipping_input_split { flex-direction: row; }
+  .country, .postal { flex: 1; }
 
-  .payment_method>h2 {
-   display: none;
-  }
+  /* A 700px-wide text input looks broken however tall it is. */
+  .shipping_details_first,
+  .select_payment_method { max-width: 520px; }
 
   .select_wallet {
-    display: flex;
-    justify-content: space-between;
-    /* align-items: center; */
-    flex-direction: column;
-  }
-
-  .select_payment_body {
-    /* padding: 30px; */
-    /* border-radius: 8px; */
-    background: #FFF;
-    /* box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.25); */
-  }
-
-  .secure>small {
-    color: #747474;
-    font-family: Satoshi;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 37.824px;
-    /* 37.824px */
-  }
-
-  .secure>img{
-    width: 14px;
-    height: 19px;
-  }
-
-  .select_text {
-    color: #292929;
-    font-family: Satoshi;
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: normal;
-  }
-
-  .brief_text_content>p {
-    color: #616161;
-    font-family: Satoshi;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 37.824px;
-    /* text-align: center; */
-    /* 37.824px */
-  }
-
-  .save {
-    display: flex;
-    /* justify-content: center; */
+    flex-direction: row;
     align-items: center;
-    color: #747474;
-    font-family: Satoshi;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-  }
-
-  .wallet_key_input{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .wallet_key_input>img{
-    width: 29px;
-    height: 29px;
-  }
-
-  .wallet_div>img{
-    height: 42px;
-    width: 42px;
-  }
-
-  .shipping_input_split {
-    display: flex;
-    flex-direction: column;
-    /* flex: 1;
     justify-content: space-between;
-    margin-bottom: 60px; */
+    gap: 16px;
   }
+
+  .payment-btn > button.payment { width: auto; min-width: 280px; }
+  .select_payment_method > .confirm { width: auto; min-width: 320px; }
 }
 
-@media screen and (min-width: 360px){
-  .cart_first_one>img {
-    width: 125px;
-    height: 126px;
-  }
-  button.payment,
-  button.checkout-btn{
-    padding: 22px 80px;
-  }
-}
-
-@media screen and (min-width: 768px) {
-  button.checkout-btn {
-    display: inline-flex;
-    padding: 22px 80px;
-    align-items: flex-start;
-    gap: 10px;
-    border-radius: 4px;
-    background: #272727;
-    border: 1px solid #272727;
-    color: #FFF;
-    font-family: Satoshi;
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 500;
-    margin-bottom: 40px;
-  }
-
-  .cart_items_total>p {
-    display: flex;
-    justify-content: space-between;
-    color: #888;
-    text-align: right;
-    font-family: Satoshi;
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 400;
-  }
-
-  .about-content {
-    /* border-bottom-left-radius: var(--radius); */
-    /* border-bottom-right-radius: var(--radius); */
-    padding: 3rem 3rem;
-  }
-
-  .cart_proceed,
-  .cart_items_total {
-    flex: 0.5;
-    /* flex-direction: row; */
-  }
-
-  .cart_summary {
-    display: flex;
-    flex: 1;
-    flex-direction: row;
-    margin-top: 100px;
-    margin-bottom: 100px;
-  }
-
-  .cart_first_one>img{
-    width: initial;
-    height: initial;
-  }
-
-  .cart_first_two>p {
-    color: #888;
-    font-family: Satoshi;
-    font-size: 24px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-  }
-
-  .cart_first_two>p {
-    display: block;
-  }
-
-  .cart_first_two>h2 {
-    color: #292929;
-    font-family: Satoshi;
-    font-size: 26px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: normal;
-  }
-
-  .cart_second>h1 {
-    color: #292929;
-    font-family: Sora;
-    font-size: 36px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-  }
-
-  .cart_second>img {
-    width: 40px;
-    height: 40px;
-  }
-
-  .counter_div>button,
-  .count {
-    color: #333;
-    font-size: 36px;
-    font-family: Satoshi;
-    font-style: normal;
-    font-weight: 500;
-  }
-
-  .cart_item {
-    display: flex;
-    justify-content: space-between;
-    border-top: 1px solid #747474;
-    padding-top: 40px;
-    padding-bottom: 40px;
-  }
-
-  .btn-container-outer {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-
-  button.payment{
-    width: 610px;
-    font-size: 20px;
-  }
-
-  .shipping_input>input,
-  .shipping_input>select,
-  .country>select,
-  .country>input,
-  .postal>input,
-  .wallet_key_input {
-    border-radius: 10px;
-    border: 0.5px solid #747474;
-    background: #F2F2F2;
-    height: 76px;
-    width: 100%;
-  }
-
-  .shipping_input>input::placeholder,
-  .postal>input::placeholder,
-  .shipping_input>select>option {
-    color: #888;
-    /* text-align: right; */
-    font-family: Satoshi;
-    font-size: 26px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-  }
-
-  .postal>label,
-  .country>label,
-  .shipping_input>label,
-  .shipping_input>.email_checkbox {
-    color: #888;
-    font-family: Satoshi;
-    font-size: 26px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    margin-bottom: 17px;
-  }
-
-  .payment_method>h2 {
-    color: #292929;
-    font-family: Satoshi;
-    font-size: 28px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 44.128px;
-    display: initial;
-    /* 44.128px */
-  }
-
-  .select_wallet {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-direction: row;
-  }
-
-  .select_payment_body {
-    padding: 30px;
-    border-radius: 8px;
-    background: #FFF;
-    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.25);
-  }
-
-  .secure>small {
-    color: #747474;
-    font-family: Satoshi;
-    font-size: 24px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 37.824px;
-    /* 37.824px */
-  }
-
-  .secure>img {
-    width: 20px;
-    height: 27px;
-  }
-
-  .select_text{
-    font-size: 28px;
-  }
-
-  .brief_text_content>p {
-    color: #616161;
-    font-family: Satoshi;
-    font-size: 24px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 37.824px;
-    /* text-align: center; */
-    /* 37.824px */
-  }
-
-  .save {
-    display: flex;
-    /* justify-content: center; */
-    align-items: center;
-    color: #747474;
-    font-family: Satoshi;
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-  }
-
-  .wallet_key_input>img {
-    width: 40px;
-    height: 40px;
-  }
-
-  .wallet_div>img {
-    height: initial;
-    width: initial;
-  }
-
-  .shipping_input_split {
-    display: flex;
-    flex: 1;
-    justify-content: space-between;
-    margin-bottom: 60px;
-    flex-direction: row;
-  }
-}
+/* ---------------------------------------------------------------
+   Laptop: form on the left, running summary on the right. The old sheet
+   waited until 1300px for this and hid the summary entirely below it.
+   --------------------------------------------------------------- */
 
 @media screen and (min-width: 1024px) {
-  button.payment,
-  button.checkout-btn {
-    display: inline-flex;
-    padding: 28px 80px;
+  .shipping_details,
+  .payment_method_body {
+    flex-direction: row;
     align-items: flex-start;
-    gap: 10px;
-    border-radius: 4px;
-    background: #272727;
-    border: 1px solid #272727;
-    color: #FFF;
-    font-family: Satoshi;
-    font-size: 25px;
-    font-style: normal;
-    font-weight: 500;
-    margin-bottom: 40px;
-  }
-
-  .cart_items_total>p {
-    display: flex;
-    justify-content: space-between;
-    color: #888;
-    text-align: right;
-    font-family: Satoshi;
-    font-size: 28px;
-    font-style: normal;
-    font-weight: 400;
-  }
-
-  .about-content {
-    /* border-bottom-left-radius: var(--radius); */
-    /* border-bottom-right-radius: var(--radius); */
-    padding: 3rem 7rem;
-  }
-
-  button.payment{
-    padding: 32.729px 119.664px;
-    font-size: 32.729px;
-  }
-
-  .shipping_input {
-    margin-bottom: 60px;
-  }
-}
-
-@media screen and (min-width: 1300px){
-  button.checkout-btn {
-    display: inline-flex;
-    padding: 32px 117px;
-    align-items: flex-start;
-    gap: 10px;
-    border-radius: 4px;
-    background: #272727;
-    border: 1px solid #272727;
-    color: #FFF;
-    font-family: Satoshi;
-    font-size: 32px;
-    font-style: normal;
-    font-weight: 500;
-    margin-bottom: 40px;
+    gap: clamp(32px, 4vw, 64px);
   }
 
   .shipping_details_first,
-  .shipping_details_second {
-    flex: 0.48;
+  .select_payment_method { flex: 1 1 520px; }
 
-  }
-
-  .shipping_details_second {
-    display: flex;
-  }
-
-  .about-content {
-    padding: 3rem 2rem;
-  }
-
-  .select_payment_method,
+  .shipping_details_second,
   .payment_summary {
-    flex: 0.48;
+    flex: 1 1 340px;
+    max-width: 440px;
+    position: sticky;
+    top: 24px;
   }
 
-  .payment_summary{
-    display: initial;
+  /* The summary column repeats the cart at a smaller scale. */
+  .shipping_details_second .cart_first_one > img {
+    width: 72px;
+    height: 72px;
   }
-}
 
-@media screen and (min-width: 1440px) {
-  .about-content {
-    padding: 3rem 7rem;
-  }
+  .shipping_details_second .cart_item { padding: 16px 0; }
 }

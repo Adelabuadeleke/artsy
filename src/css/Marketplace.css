@@ -31,20 +31,20 @@ flex: 1;
  height: 32px;
  background: transparent;
  outline: none;
- border: none;font-family: 'Satoshi';
+ border: none;font-family: 'Satoshi', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
  font-style: normal;
  font-weight: 500;
- font-size: 24px;
+ font-size: clamp(18.7px, calc(16.56px + 0.517vw), 24px);
  line-height: 32px;
  color: #999999;
 
 }
 
 .search_outter>input::placeholder{
- font-family: 'Satoshi';
+ font-family: 'Satoshi', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
  font-style: normal;
  font-weight: 500;
- font-size: 24px;
+ font-size: clamp(18.7px, calc(16.56px + 0.517vw), 24px);
  line-height: 32px;
  color: #999999;
 }
@@ -68,10 +68,10 @@ flex: 1;
 }
 
 .marketplace_filter_top>p{
- font-family: 'Satoshi';
+ font-family: 'Satoshi', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
  font-style: normal;
  font-weight: 500;
- font-size: 32px;
+ font-size: clamp(22.4px, calc(18.53px + 0.936vw), 32px);
  /* line-height: 157.6%; */
  color: #333333;
 }
@@ -103,20 +103,20 @@ flex: 1;
  margin-right: 10px;
 }
 
-.category_item>label{
- font-family: 'Satoshi';
+.category_item>span{
+ font-family: 'Satoshi', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
  font-style: normal;
  font-weight: 400;
- font-size: 24px;
+ font-size: clamp(18.7px, calc(16.56px + 0.517vw), 24px);
  line-height: 32px;
  color: #292929;
 }
 
 .by_category_inner>p{
- font-family: 'Satoshi';
+ font-family: 'Satoshi', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
  font-style: normal;
  font-weight: 500;
- font-size: 28px;
+ font-size: clamp(19.6px, calc(16.21px + 0.819vw), 28px);
 }
 
 .by_category{
@@ -134,29 +134,25 @@ flex: 1;
 }
 
 .by_price_body>p{
- font-family: 'Satoshi';
+ font-family: 'Satoshi', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
  font-style: normal;
  font-weight: 400;
- font-size: 24px;
+ font-size: clamp(18.7px, calc(16.56px + 0.517vw), 24px);
  line-height: 32px;
  color: #292929;
 }
 
-.by_artist_body>h2{
- font-family: 'Satoshi';
- font-style: normal;
- font-weight: 400;
- font-size: 24px;
- line-height: 32px; 
- color: #292929;
+/* Active state should only add the underline — carrying a font-size here gave it
+   (0,2,0) specificity and overrode the sizing pass below. */
+.band_option.is_active{
  text-decoration: underline;
 }
 
-.by_artist_body>p{
- font-family: 'Satoshi';
+.band_option{
+ font-family: 'Satoshi', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
  font-style: normal;
  font-weight: 400;
- font-size: 24px;
+ font-size: clamp(18.7px, calc(16.56px + 0.517vw), 24px);
  line-height: 32px;
  color: #292929;
 }
@@ -168,43 +164,60 @@ flex: 1;
 
 
 .result_sort>select{
- font-family: 'Satoshi';
+ font-family: 'Satoshi', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
  font-style: normal;
  font-weight: 500;
- font-size: 24px;
+ font-size: clamp(18.7px, calc(16.56px + 0.517vw), 24px);
  padding: 10px 20px;
  border: 0.4px solid #333333;
  border-radius: 8px;
 }
 
 .result_sort>p{
- font-family: 'Satoshi';
+ font-family: 'Satoshi', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
  font-style: normal;
  font-weight: 400;
- font-size: 24px;
+ font-size: clamp(18.7px, calc(16.56px + 0.517vw), 24px);
  color: #333333;
+}
+
+/* Card body must fill the card, otherwise the image is sized to its intrinsic
+   width and leaves dead space inside the card. */
+.art_item_body{
+ width: 100%;
+}
+
+/* Figma uses a fixed 241x280 image box with object-cover, so rows stay even
+   regardless of each photo's native aspect ratio. */
+.art_item img{
+ width: 100%;
+ aspect-ratio: 241 / 280;
+ object-fit: cover;
+ border-radius: 8px;
+ display: block;
 }
 
 .all_arts{
  margin-top: 40px;
- display: flex;
- flex-wrap: wrap;
- justify-content: space-between;
+ display: grid;
+ grid-template-columns: 1fr;
+ gap: 32px 24px;
+ justify-items: center;
 }
 
-.art_item>p{
- font-family: 'Satoshi';
+.art_item_text>p{
+ font-family: 'Satoshi', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
  font-style: normal;
  font-weight: 400;
- font-size: 22px;
+ font-size: clamp(17.2px, calc(15.26px + 0.468vw), 22px);
  color: #333333;
 }
 
-.art_item>h3{
- font-family: 'Satoshi';
+.art_item_text>h3{
+ font-family: 'Satoshi', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
  font-style: normal;
  font-weight: 700;
- font-size: 28px;
+ font-size: clamp(19.6px, calc(16.21px + 0.819vw), 28px);
  color: #333333;
  
 }
@@ -219,10 +232,10 @@ flex: 1;
 .see_more>button{
  border: 1px solid #333333;
  border-radius: 10px;
- font-family: 'Satoshi';
+ font-family: 'Satoshi', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
  font-style: normal;
  font-weight: 500;
- font-size: 30px;
+ font-size: clamp(21px, calc(17.37px + 0.877vw), 30px);
  line-height: 41px;
  color: #333333;
  padding: 16px 60px;
@@ -238,8 +251,11 @@ flex: 1;
     flex: 1;
   }
 
-  .all_arts{
-    justify-content: center;
+  .art_item_text>p,
+  .art_item_text>h3{
+    font-size: 16px;
+    font-weight: 500;
+    margin: 8px 0 0;
   }
 
   .result_sort{
@@ -264,17 +280,18 @@ flex: 1;
   }
 
   .art_item{
-    width: 90%;
+    width: 86%;
   }
 
   .art_item img{
     width: 100%;
+    aspect-ratio: 357 / 384;
   }
 
   .marketplace_heading_title>h2{
     color: #BCB7B7;
-    font-family: Satoshi;
-    font-size: 18px;
+    font-family: 'Satoshi', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    font-size: clamp(15.3px, calc(14.21px + 0.263vw), 18px);
     font-style: normal;
     font-weight: 500;
     line-height: 51.5px;
@@ -286,7 +303,7 @@ flex: 1;
 
   .marketplace_heading_title>p {
     color: #BCB7B7;
-    font-family: Poppins;
+    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
     font-size: 16px;
     font-style: italic;
     font-weight: 400;
@@ -300,12 +317,26 @@ flex: 1;
   }
 
   .all_arts {
-    justify-content: space-between;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    justify-items: stretch;
   }
 
   .art_item_text {
     flex-direction: column;
     align-items: unset;
+  }
+
+  /* restore the desktop type scale the 320px block lowered for mobile */
+  .art_item_text>p{
+    font-size: clamp(17.2px, calc(15.26px + 0.468vw), 22px);
+    font-weight: 400;
+    margin: 12px 0 0;
+  }
+
+  .art_item_text>h3{
+    font-size: clamp(19.6px, calc(16.21px + 0.819vw), 28px);
+    font-weight: 700;
+    margin: 4px 0 0;
   }
 
   .art_item {
@@ -316,8 +347,7 @@ flex: 1;
     background: #FFFFFF;
     box-shadow: 0px 34px 68px rgba(217, 225, 244, 0.36);
     border-radius: 15px;
-    width: 250px;
-    margin-bottom: 40px;
+    width: 100%;
   }
 }
 
@@ -360,4 +390,462 @@ flex: 1;
 
 @media screen and (min-width: 1440px) {
 
+}
+/* ---------------------------------------------------------------
+   Interactive sidebar (collapsible sections, filter buttons)
+   --------------------------------------------------------------- */
+
+/* .by_category_inner is a <button> now so the section can collapse —
+   strip the UA button chrome but keep the original flex layout. */
+.by_category_inner {
+  width: 100%;
+  background: none;
+  border: 0;
+  padding: 0;
+  font: inherit;
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.by_category_inner > img {
+  width: 16px;
+  height: auto;
+  flex-shrink: 0;
+  transition: opacity 0.15s ease;
+}
+
+.by_category_inner:hover > img { opacity: 0.6; }
+
+.filter_section { margin-bottom: 34px; }
+.filter_section.is_closed { margin-bottom: 22px; }
+
+/* Figma: 26x26 swatch, 5px radius */
+.category_item > input[type='checkbox'] {
+  width: 22px;
+  height: 22px;
+  border-radius: 5px;
+  accent-color: #333333;
+  flex-shrink: 0;
+  cursor: pointer;
+}
+
+.category_item { cursor: pointer; }
+
+.by_artist_body {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.band_option {
+  background: none;
+  border: 0;
+  padding: 4px 0;
+  font-family: 'Satoshi', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-weight: 400;
+  font-size: clamp(18.7px, calc(16.56px + 0.517vw), 24px);
+  line-height: 32px;
+  color: #292929;
+  cursor: pointer;
+  text-align: left;
+}
+
+.band_option:hover { color: #000; }
+.band_option.is_active { text-decoration: underline; }
+.band_option.is_static { cursor: default; }
+
+.no_results {
+  padding: 48px 0;
+  text-align: center;
+  font-family: 'Satoshi', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-size: clamp(16px, calc(14.5px + 0.36vw), 20px);
+  color: #616161;
+}
+
+/* Sidebar icons: fixed px meant they stayed desktop-sized on smaller screens. */
+.search_outter > img {
+  width: clamp(20px, calc(17.4px + 0.63vw), 28px);
+  height: auto;
+  flex-shrink: 0;
+  margin-right: 10px;
+}
+
+.marketplace_filter_top > img {
+  width: clamp(26px, calc(21.97px + 0.97vw), 36px);
+  height: auto;
+  flex-shrink: 0;
+  margin-right: 20px;
+}
+
+/* ---------------------------------------------------------------
+   Pixel details from the Figma PRODUCT PAGE frame (181:905)
+   --------------------------------------------------------------- */
+
+/* Figma: solid #d9d9d9 swatch, 26x26, 5px radius — not a UA checkbox. */
+.category_item > input[type='checkbox'] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: clamp(20px, calc(17.6px + 0.58vw), 26px);
+  height: clamp(20px, calc(17.6px + 0.58vw), 26px);
+  background: #d9d9d9;
+  border: 0;
+  border-radius: 5px;
+  display: inline-grid;
+  place-content: center;
+  transition: background 0.15s ease;
+}
+
+.category_item > input[type='checkbox']::before {
+  content: '';
+  width: 0.6em;
+  height: 0.35em;
+  border-left: 2.5px solid #fff;
+  border-bottom: 2.5px solid #fff;
+  transform: rotate(-45deg) scale(0);
+  transition: transform 0.12s ease;
+}
+
+.category_item > input[type='checkbox']:checked { background: #333333; }
+.category_item > input[type='checkbox']:checked::before { transform: rotate(-45deg) scale(1); }
+.category_item > input[type='checkbox']:focus-visible { outline: 2px solid #333; outline-offset: 2px; }
+
+/* Price slider: Figma shows a flat 6px track, not the UA blue control. */
+.by_price_body > input[type='range'] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 100%;
+  height: 6px;
+  border-radius: 10px;
+  background: #d9d9d9;
+  outline: none;
+}
+
+.by_price_body > input[type='range']::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #333333;
+  cursor: pointer;
+  border: 0;
+}
+
+.by_price_body > input[type='range']::-moz-range-thumb {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  background: #333333;
+  cursor: pointer;
+  border: 0;
+}
+
+/* Figma: 191x58 box, 0.4px #333 border, 8px radius, with its own chevron. */
+.result_sort > select {
+  min-width: clamp(150px, calc(133.4px + 4vw), 191px);
+  height: clamp(46px, calc(41.2px + 1.17vw), 58px);
+  border: 0.4px solid #333333;
+  border-radius: 8px;
+  background-color: #fff;
+  color: #333333;
+  cursor: pointer;
+  appearance: none;
+  -webkit-appearance: none;
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='36' height='29' viewBox='0 0 36 29' fill='none'%3E%3Cpath d='M4 9l14 12L32 9' stroke='%23333' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 16px center;
+  background-size: 20px 16px;
+  padding-right: 46px;
+}
+
+.filter_mobile > select {
+  appearance: none;
+  -webkit-appearance: none;
+  border: 0.4px solid #333333;
+  border-radius: 8px;
+  background-color: #fff;
+  color: #333333;
+  font-family: 'Satoshi', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  font-size: 16px;
+  padding: 10px 38px 10px 14px;
+  cursor: pointer;
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='36' height='29' viewBox='0 0 36 29' fill='none'%3E%3Cpath d='M4 9l14 12L32 9' stroke='%23333' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  background-size: 16px 13px;
+}
+
+/* The mobile filter bar is a flex row; without min-width:0 its selects refuse to
+   shrink below their intrinsic width and force the whole column wider than the
+   viewport on small screens. */
+.filter_mobile {
+  gap: 12px;
+  padding: 16px;
+  flex-wrap: wrap;
+}
+
+.filter_mobile > select {
+  min-width: 0;
+  flex: 1 1 0;
+  padding: 10px 32px 10px 12px;
+  text-overflow: ellipsis;
+}
+
+.market_two_body,
+.marketplace_two {
+  min-width: 0;
+}
+
+/* ---------------------------------------------------------------
+   Desktop sizing pass.
+   The Figma frame is drawn at 1440, but its raw type sizes (32px "Filter",
+   28px section headings, 24px labels) read oversized on a real 1200-1400px
+   screen. These ceilings step the chrome down ~25% while keeping the same
+   proportions; the product grid stays closer to the design.
+   --------------------------------------------------------------- */
+
+.marketplace_filter_top > p {
+  font-size: clamp(18px, calc(15.58px + 0.585vw), 24px);
+  line-height: 1.3;
+  margin: 0;
+}
+
+.by_category_inner > p {
+  font-size: clamp(16px, calc(14.39px + 0.39vw), 20px);
+  line-height: 1.3;
+  margin: 0;
+}
+
+.category_item > span,
+.band_option {
+  font-size: clamp(14.5px, calc(13.49px + 0.244vw), 17px);
+  line-height: 1.6;
+}
+
+.category_item { margin-bottom: 12px; }
+.band_option { padding: 2px 0; }
+.filter_section { margin-bottom: 26px; }
+
+.marketplace_filter_top > img {
+  width: clamp(20px, calc(17.6px + 0.58vw), 26px);
+  margin-right: 12px;
+}
+
+.search_outter {
+  height: clamp(44px, calc(39.2px + 1.17vw), 52px);
+  padding: 0 16px;
+  margin-bottom: 32px;
+}
+
+.search_outter > input,
+.search_outter > input::placeholder {
+  font-size: clamp(14.5px, calc(13.49px + 0.244vw), 17px);
+  line-height: 1.4;
+}
+
+/* Results bar: 124px tall with 24px text was heavy for a toolbar. */
+.result_sort {
+  padding: 14px 20px;
+}
+
+.result_sort > p {
+  font-size: clamp(15px, calc(13.79px + 0.292vw), 18px);
+  margin: 0;
+}
+
+.result_sort > select {
+  height: clamp(38px, calc(35.6px + 0.585vw), 44px);
+  min-width: clamp(132px, calc(121.2px + 2.63vw), 159px);
+  font-size: clamp(14px, calc(13.19px + 0.195vw), 16px);
+  padding: 0 40px 0 14px;
+  background-size: 16px 13px;
+  background-position: right 14px center;
+}
+
+/* Card text: keep it a touch tighter than the raw 22/28px design values. */
+.art_item_text > p {
+  font-size: clamp(15px, calc(13.79px + 0.292vw), 18px);
+}
+
+.art_item_text > h3 {
+  font-size: clamp(17px, calc(14.98px + 0.487vw), 22px);
+}
+
+/* Sidebar scrolls independently of the results column. */
+@media screen and (min-width: 1200px) {
+  .marketplace_body {
+    align-items: flex-start;
+  }
+
+  .marketplace_one {
+    position: sticky;
+    top: 0;
+    align-self: flex-start;
+    max-height: 100vh;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    scrollbar-width: thin;
+  }
+
+  .marketplace_one_body {
+    padding: 1.5rem 1rem 2rem;
+  }
+
+  .marketplace_one::-webkit-scrollbar { width: 6px; }
+  .marketplace_one::-webkit-scrollbar-thumb {
+    background: #d9d9d9;
+    border-radius: 10px;
+  }
+}
+
+.filter_glyph {
+  width: clamp(20px, calc(17.6px + 0.58vw), 26px);
+  height: auto;
+  flex-shrink: 0;
+  margin-right: 12px;
+  color: #333333;
+}
+
+/* Figma spacing: ~22px between the "Filter" label and its rule, then a clear
+   gap before the first section. These were collapsing into each other. */
+.marketplace_filter {
+  margin-bottom: 34px;
+}
+
+.marketplace_filter_top {
+  margin-bottom: 14px;
+}
+
+.filter_underline {
+  width: 100%;
+  max-width: 244px;
+}
+
+.category_item {
+  gap: 10px;
+  align-items: center;
+}
+
+.category_item > span {
+  line-height: 1.2;
+}
+
+/* Swatch was ~25px against a 16.7px label — scale it to sit with the text. */
+.category_item > input[type='checkbox'] {
+  width: clamp(15px, calc(13.79px + 0.292vw), 18px);
+  height: clamp(15px, calc(13.79px + 0.292vw), 18px);
+  border-radius: 4px;
+}
+
+.category_item > input[type='checkbox']::before {
+  width: 0.5em;
+  height: 0.28em;
+  border-left-width: 2px;
+  border-bottom-width: 2px;
+}
+
+/* See more: 30px text in a 16px/60px padded box was oversized next to the
+   rest of the scaled-down chrome. */
+.see_more {
+  padding: 26px 0 10px;
+}
+
+.see_more > button {
+  font-size: clamp(14.5px, calc(13.49px + 0.244vw), 17px);
+  line-height: 1;
+  padding: 0 30px;
+  height: clamp(40px, calc(36.8px + 0.78vw), 48px);
+  min-width: clamp(140px, calc(128.8px + 2.73vw), 168px);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.see_more > button:hover {
+  background-color: #333333;
+  color: #ffffff;
+}
+
+/* Breathing room under each filter group, category list especially. */
+.filter_section {
+  margin-bottom: 34px;
+}
+
+.category_options {
+  margin-bottom: 6px;
+}
+
+/* The original layout had a 50px gap after the category list (.by_category);
+   the new section markup dropped it. Put the room back under "By category". */
+.filter_section--category {
+  margin-bottom: 50px;
+}
+
+.filter_section--category.is_closed {
+  margin-bottom: 30px;
+}
+
+/* Space belongs under the section title, between it and its options —
+   the heading was sitting flush against the first checkbox. */
+.by_category_inner {
+  margin-bottom: 18px;
+}
+
+.filter_section--category {
+  margin-bottom: 34px;
+}
+
+.filter_section--category.is_closed {
+  margin-bottom: 26px;
+}
+
+/* Cards open the item detail page. */
+.art_item .art_item_body {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.art_item .art_item_body:hover img { opacity: 0.88; }
+
+/* ---------------------------------------------------------------
+   Card sizing pass.
+   `minmax(250px, 1fr)` only fits 3 columns in a ~1000px results column, so
+   each card rendered ~320px wide against the design's 241px — and with a
+   241/280 image that made every tile ~370px tall. A smaller track minimum
+   fits 4-5 columns and brings the cards back to roughly the drawn size.
+   --------------------------------------------------------------- */
+
+@media screen and (min-width: 768px) {
+  .all_arts {
+    grid-template-columns: repeat(auto-fill, minmax(186px, 1fr));
+    gap: clamp(18px, 2vw, 28px) clamp(14px, 1.6vw, 22px);
+    margin-top: clamp(20px, 2.5vw, 32px);
+  }
+
+  .art_item {
+    padding: 8px;
+    border-radius: 10px;
+    /* 0 34px 68px was a drop shadow sized for a much larger card. */
+    box-shadow: 0 10px 26px rgba(217, 225, 244, 0.5);
+  }
+}
+
+@media screen and (min-width: 1500px) {
+  .all_arts { grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); }
+}
+
+.art_item_text > p {
+  font-size: clamp(13px, calc(12.2px + 0.29vw), 15px);
+  margin: 10px 0 0;
+  line-height: 1.35;
+}
+
+.art_item_text > h3 {
+  font-size: clamp(14px, calc(12.8px + 0.39vw), 18px);
+  margin: 2px 0 0;
+  line-height: 1.3;
 }

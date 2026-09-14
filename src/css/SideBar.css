@@ -23,8 +23,8 @@
 
 .sidebar_top>h2{
  color: #292929;
- font-family: STIX Two Text;
- font-size: 24px;
+ font-family: 'STIX Two Text', Georgia, 'Times New Roman', serif;
+ font-size: clamp(18.7px, calc(16.56px + 0.517vw), 24px);
  font-style: normal;
  font-weight: 700;
  line-height: 51.5px;
@@ -39,8 +39,8 @@
 
 .sidebar_list>a>p{
  color: #333;
- font-family: Satoshi;
- font-size: 24px;
+ font-family: 'Satoshi', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+ font-size: clamp(18.7px, calc(16.56px + 0.517vw), 24px);
  font-style: normal;
  font-weight: 500;
  line-height: 51.5px;
@@ -58,4 +58,100 @@
  .sidebar{
   display: none;
  }
+}
+/* ---------------------------------------------------------------
+   Drawer is React-controlled now (it used to be toggled by class from a
+   useEffect that re-bound its listeners on every render).
+   --------------------------------------------------------------- */
+
+/* `absolute` left the drawer anchored to the top of the document, so opening it
+   part-way down a long page revealed an empty panel. */
+.sidebar {
+  position: fixed;
+  max-width: 420px;
+  transition: transform 0.28s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  overscroll-behavior: contain;
+}
+
+.show_toggle { transition: transform 0.28s ease-in-out; }
+
+.sidebar_scrim {
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  background: rgba(0, 0, 0, 0.45);
+}
+
+.menu_btn,
+.sidebar_cancel_btn {
+  background: none;
+  border: 0;
+  padding: 4px;
+  line-height: 0;
+  cursor: pointer;
+  color: inherit;
+}
+
+.sidebar_list > a { text-decoration: none; }
+
+.sidebar_list > a > p {
+  text-transform: capitalize;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0;
+}
+
+.sidebar_list > a.active > p {
+  color: #000;
+  font-weight: 700;
+}
+
+.sidebar_count {
+  display: inline-grid;
+  place-items: center;
+  min-width: 22px;
+  height: 22px;
+  padding: 0 6px;
+  border-radius: 11px;
+  background: #e4514f;
+  color: #fff;
+  font-family: 'Satoshi', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1;
+}
+
+@media screen and (min-width: 768px) {
+  .sidebar_scrim { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sidebar, .show_toggle { transition: none; }
+}
+
+/* Drawer entry for the notifications modal — a button, styled as a row. */
+.sidebar_notif {
+  display: block;
+  width: 100%;
+  padding: 0;
+  border: 0;
+  background: none;
+  text-align: left;
+  cursor: pointer;
+}
+
+.sidebar_notif > p {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0;
+  color: #333;
+  font-family: 'Satoshi', sans-serif;
+  font-size: clamp(18.7px, calc(16.56px + 0.517vw), 24px);
+  font-weight: 500;
+  line-height: 51.5px;
+  text-transform: capitalize;
 }

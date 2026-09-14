@@ -3,10 +3,10 @@ import Nav from '../components/Nav'
 import '../css/Home.css'
 function Home() {
   // const [scrollImages, setScrollImages] = useState([
-  //   '../../assets/Rectangle 231.png',
-  //   '../../assets/Rectangle 232.png',
-  //   '../../assets/Rectangle 233.png',
-  //   // '../../assets/Rectangle 234.png'])
+  //   '/assets/Rectangle 231.webp',
+  //   '/assets/Rectangle 232.webp',
+  //   '/assets/Rectangle 233.webp',
+  //   // '/assets/Rectangle 234.webp'])
 
 useEffect(()=>{
   const infiniteScrollSmall = () => {
@@ -193,9 +193,9 @@ infiniteScrollLeftSmall()
     </div>
 
     <div className="photography__images">
-      <img src="../../assets/Rectangle 240.png" alt="" className="first" />
-      <img src="../../assets/Rectangle 241.png" alt="" className="second" />
-      <img src="../../assets/Rectangle 242.png" alt="" className="third" />
+      <img src="/assets/Rectangle 240.webp" alt="" className="first" />
+      <img src="/assets/Rectangle 241.webp" alt="" className="second" />
+      <img src="/assets/Rectangle 242.webp" alt="" className="third" />
     </div>
 
     <div className="photography__scroll">
@@ -203,26 +203,26 @@ infiniteScrollLeftSmall()
         <div className="slides_small">
 
             <div className="slide-small" id='last-clone-small'>
-              <img src='../../assets/Rectangle 231.png' alt="" className="scroll_img" />
+              <img src='/assets/Rectangle 231.webp' alt="" className="scroll_img" />
             </div>
 
            <div className="slide-small">
-              <img src='../../assets/Rectangle 231.png' alt="" className="scroll_img" />
+              <img src='/assets/Rectangle 231.webp' alt="" className="scroll_img" />
             </div>
            <div className="slide-small">
-            <img src='../../assets/Rectangle 232.png' alt="" className="scroll_img" />
+            <img src='/assets/Rectangle 232.webp' alt="" className="scroll_img" />
            </div>
            
            <div className="slide-small">
-             <img src='../../assets/Rectangle 233.png' alt="" className="scroll_img" />
+             <img src='/assets/Rectangle 233.webp' alt="" className="scroll_img" />
            </div>
           
           <div className="slide-small">
-            <img src='../../assets/Rectangle 234.png' alt="" className="scroll_img" />
+            <img src='/assets/Rectangle 234.webp' alt="" className="scroll_img" />
           </div>
 
           <div className="slide-small" id='first-clone-small'>
-            <img src='../../assets/Rectangle 231.png' alt="" className="scroll_img" />
+            <img src='/assets/Rectangle 231.webp' alt="" className="scroll_img" />
           </div>
         </div>
            
@@ -232,26 +232,26 @@ infiniteScrollLeftSmall()
         <div className="slides">
 
             <div className="slide" id='last-clone'>
-              <img src='../../assets/Rectangle 231.png' alt="" className="scroll_img" />
+              <img src='/assets/Rectangle 231.webp' alt="" className="scroll_img" />
             </div>
 
            <div className="slide">
-              <img src='../../assets/Rectangle 232.png' alt="" className="scroll_img" />
+              <img src='/assets/Rectangle 232.webp' alt="" className="scroll_img" />
             </div>
            <div className="slide">
-            <img src='../../assets/Rectangle 233.png' alt="" className="scroll_img" />
+            <img src='/assets/Rectangle 233.webp' alt="" className="scroll_img" />
            </div>
            
            <div className="slide">
-             <img src='../../assets/Rectangle 234.png' alt="" className="scroll_img" />
+             <img src='/assets/Rectangle 234.webp' alt="" className="scroll_img" />
            </div>
           
           <div className="slide">
-            <img src='../../assets/Rectangle 231.png' alt="" className="scroll_img" />
+            <img src='/assets/Rectangle 231.webp' alt="" className="scroll_img" />
           </div>
 
           <div className="slide" id='first-clone'>
-            <img src='../../assets/Rectangle 232.png' alt="" className="scroll_img" />
+            <img src='/assets/Rectangle 232.webp' alt="" className="scroll_img" />
           </div>
         </div>
            
@@ -260,26 +260,26 @@ infiniteScrollLeftSmall()
     <div className="scroll__infinite first">
       <div className="slides_left">
           <div className="slide_left" id='last-clone-left'>
-            <img src='../../assets/Rectangle 234.png' alt="last-clone-left" className="scroll_img" />
+            <img src='/assets/Rectangle 234.webp' alt="last-clone-left" className="scroll_img" />
           </div>
 
           <div className="slide_left">
-            <img src='../../assets/Rectangle 233.png' alt="" className="scroll_img" />
+            <img src='/assets/Rectangle 233.webp' alt="" className="scroll_img" />
           </div>
           <div className="slide_left">
-          <img src='../../assets/Rectangle 232.png' alt="" className="scroll_img" />
+          <img src='/assets/Rectangle 232.webp' alt="" className="scroll_img" />
           </div>
           
           <div className="slide_left">
-            <img src='../../assets/Rectangle 231.png' alt="" className="scroll_img" />
+            <img src='/assets/Rectangle 231.webp' alt="" className="scroll_img" />
           </div>
         
         <div className="slide_left">
-          <img src='../../assets/Rectangle 234.png' alt="" className="scroll_img" />
+          <img src='/assets/Rectangle 234.webp' alt="" className="scroll_img" />
         </div>
 
         <div className="slide_left" id='first-clone-left'>
-          <img src='../../assets/Rectangle 233.png' alt="" className="scroll_img" />
+          <img src='/assets/Rectangle 233.webp' alt="" className="scroll_img" />
         </div>
       </div>
           
@@ -289,26 +289,26 @@ infiniteScrollLeftSmall()
     <div className="scroll__mid first">
       <div className="slides_left_small">
           <div className="slide_left_small" id='last-clone-left-small'>
-            <img src='../../assets/Rectangle 231.png' alt="last-clone-left-small" className="scroll_img" />
+            <img src='/assets/Rectangle 231.webp' alt="last-clone-left-small" className="scroll_img" />
           </div>
 
           <div className="slide_left_small">
-            <img src='../../assets/Rectangle 234.png' alt="" className="scroll_img" />
+            <img src='/assets/Rectangle 234.webp' alt="" className="scroll_img" />
           </div>
           <div className="slide_left_small">
-          <img src='../../assets/Rectangle 233.png' alt="" className="scroll_img" />
+          <img src='/assets/Rectangle 233.webp' alt="" className="scroll_img" />
           </div>
           
           <div className="slide_left_small">
-            <img src='../../assets/Rectangle 232.png' alt="" className="scroll_img" />
+            <img src='/assets/Rectangle 232.webp' alt="" className="scroll_img" />
           </div>
         
         <div className="slide_left_small">
-          <img src='../../assets/Rectangle 231.png' alt="" className="scroll_img" />
+          <img src='/assets/Rectangle 231.webp' alt="" className="scroll_img" />
         </div>
 
         <div className="slide_left_small" id='first-clone-left-small'>
-          <img src='../../assets/Rectangle 234.png' alt="" className="scroll_img" />
+          <img src='/assets/Rectangle 234.webp' alt="" className="scroll_img" />
         </div>
       </div>
           
@@ -322,15 +322,15 @@ infiniteScrollLeftSmall()
       <div className="featured__item">
         <div 
         className="featured__item_display" 
-        style={{background:`linear-gradient(0deg, rgba(0, 0, 0, 0.60) 0%, rgba(0, 0, 0, 0.60) 100%), url('../../assets/Rectangle\ 299.png')`}}>
+        style={{background:`linear-gradient(0deg, rgba(0, 0, 0, 0.60) 0%, rgba(0, 0, 0, 0.60) 100%), url('/assets/Rectangle\ 299.webp')`}}>
           <h2>Boolean Egyptian</h2>
 
 
           <div className="display_btn">
-            <img src="../../assets/Variant6.png" alt="" />
+            <img src="/assets/Variant6.webp" alt="" />
           </div>
         </div>
-        <img src="../../assets/Rectangle 299.png" alt="" />
+        <img src="/assets/Rectangle 299.webp" alt="" />
         <div className="featured__contents">
           <h2>The Boolean Egyptian</h2>
           <p>
@@ -342,16 +342,16 @@ infiniteScrollLeftSmall()
           </p>
           <div className="featured__creators">
             <div className="creators__imgs">
-              <img src="../../assets/Ellipse 14.png" alt="" />
-              <img src="../../assets/Ellipse 15.png" alt=""  className='move' />
-              <img src="../../assets/Ellipse 16.png" alt="" className='move'/>
-              <img src="../../assets/Ellipse 17.png" alt="" className='move'/>
-              <img src="../../assets/Ellipse 18.png" alt="" className='move'/>
+              <img src="/assets/Ellipse 14.webp" alt="" />
+              <img src="/assets/Ellipse 15.webp" alt=""  className='move' />
+              <img src="/assets/Ellipse 16.webp" alt="" className='move'/>
+              <img src="/assets/Ellipse 17.webp" alt="" className='move'/>
+              <img src="/assets/Ellipse 18.webp" alt="" className='move'/>
             </div>
 
             <p>64 major creators</p>
             <div className="arrow">
-              <img src="../../assets/Vector (4).png" alt=""/>
+              <img src="/assets/Vector (4).webp" alt=""/>
             </div>
            
             
@@ -363,15 +363,15 @@ infiniteScrollLeftSmall()
 
       {/* featuered  item start*/}
       <div className="featured__item reverse">
-        <div className="featured__item_display" style={{background:`linear-gradient(0deg, rgba(0, 0, 0, 0.60) 0%, rgba(0, 0, 0, 0.60) 100%), url('../../assets/Rectangle\ 299\ (1).png')`}}>
+        <div className="featured__item_display" style={{background:`linear-gradient(0deg, rgba(0, 0, 0, 0.60) 0%, rgba(0, 0, 0, 0.60) 100%), url('/assets/Rectangle\ 299\ (1).webp')`}}>
           <h2>Are we there yet?</h2>
 
 
           <div className="display_btn">
-            <img src="../../assets/Variant6.png" alt="" />
+            <img src="/assets/Variant6.webp" alt="" />
           </div>
         </div>
-        <img src="../../assets/Rectangle 299 (1).png" alt="" />
+        <img src="/assets/Rectangle 299 (1).webp" alt="" />
         <div className="featured__contents">
           <h2>Oloibiri 1997</h2>
           <p>
@@ -383,16 +383,16 @@ infiniteScrollLeftSmall()
           </p>
           <div className="featured__creators">
             <div className="creators__imgs">
-              <img src="../../assets/Ellipse 14.png" alt="" />
-              <img src="../../assets/Ellipse 15.png" alt=""  className='move' />
-              <img src="../../assets/Ellipse 16.png" alt="" className='move'/>
-              <img src="../../assets/Ellipse 17.png" alt="" className='move'/>
-              <img src="../../assets/Ellipse 18.png" alt="" className='move'/>
+              <img src="/assets/Ellipse 14.webp" alt="" />
+              <img src="/assets/Ellipse 15.webp" alt=""  className='move' />
+              <img src="/assets/Ellipse 16.webp" alt="" className='move'/>
+              <img src="/assets/Ellipse 17.webp" alt="" className='move'/>
+              <img src="/assets/Ellipse 18.webp" alt="" className='move'/>
             </div>
 
             <p>64 major creators</p>
             <div className="arrow">
-              <img src="../../assets/Vector (4).png" alt=""/>
+              <img src="/assets/Vector (4).webp" alt=""/>
             </div>
            
             
@@ -404,15 +404,15 @@ infiniteScrollLeftSmall()
 
       {/* featuered  item start*/}
       <div className="featured__item">
-        <div className="featured__item_display" style={{background:`linear-gradient(0deg, rgba(0, 0, 0, 0.60) 0%, rgba(0, 0, 0, 0.60) 100%), url('../../assets/Rectangle\ 299\ (2).png')`}}>
+        <div className="featured__item_display" style={{background:`linear-gradient(0deg, rgba(0, 0, 0, 0.60) 0%, rgba(0, 0, 0, 0.60) 100%), url('/assets/Rectangle\ 299\ (2).webp')`}}>
           <h2>The Boolean Egyptian</h2>
 
 
           <div className="display_btn">
-            <img src="../../assets/Variant6.png" alt="" />
+            <img src="/assets/Variant6.webp" alt="" />
           </div>
         </div>
-        <img src="../../assets/Rectangle 299 (2).png" alt="" />
+        <img src="/assets/Rectangle 299 (2).webp" alt="" />
         <div className="featured__contents">
           <h2>The Boolean Egyptian</h2>
           <p>
@@ -424,16 +424,16 @@ infiniteScrollLeftSmall()
           </p>
           <div className="featured__creators">
             <div className="creators__imgs">
-              <img src="../../assets/Ellipse 14.png" alt="" />
-              <img src="../../assets/Ellipse 15.png" alt=""  className='move' />
-              <img src="../../assets/Ellipse 16.png" alt="" className='move'/>
-              <img src="../../assets/Ellipse 17.png" alt="" className='move'/>
-              <img src="../../assets/Ellipse 18.png" alt="" className='move'/>
+              <img src="/assets/Ellipse 14.webp" alt="" />
+              <img src="/assets/Ellipse 15.webp" alt=""  className='move' />
+              <img src="/assets/Ellipse 16.webp" alt="" className='move'/>
+              <img src="/assets/Ellipse 17.webp" alt="" className='move'/>
+              <img src="/assets/Ellipse 18.webp" alt="" className='move'/>
             </div>
 
             <p>64 major creators</p>
             <div className="arrow">
-              <img src="../../assets/Vector (4).png" alt=""/>
+              <img src="/assets/Vector (4).webp" alt=""/>
             </div>
            
             
@@ -446,7 +446,7 @@ infiniteScrollLeftSmall()
     <section className="auction">
       <div className="auction__title">
         <h2>See Upcoming Auctions and Exhibitions</h2>
-        <img src="../../assets/Arrow 3.png" alt="" />
+        <img src="/assets/Arrow 3.webp" alt="" />
       </div>
 
       <div className="auction__slider">
@@ -454,7 +454,7 @@ infiniteScrollLeftSmall()
           
           <div className="slider_first"><span>01</span>
           <div className="first_contents">
-            <h2><span> <img src="../../assets/Ellipse 6.png" alt="" /> </span>MONALISA REDEFINED IN STYLE.</h2>
+            <h2><span> <img src="/assets/Ellipse 6.webp" alt="" /> </span>MONALISA REDEFINED IN STYLE.</h2>
             <small> Start on : 08:00 GTS . Monday</small>
             <p>
               GET EXCLUSIVE VIEWING OF CONTEMPORARY 
@@ -478,11 +478,11 @@ infiniteScrollLeftSmall()
       <div className="auction__bottom">
         <div className="btns">
           <div className="btn">
-            <img src="../../assets/Vector (7).png" alt="" />
+            <img src="/assets/Vector (7).webp" alt="" />
           </div>
 
            <div className="btn">
-            <img src="../../assets/Vector (5).png" alt="" />
+            <img src="/assets/Vector (5).webp" alt="" />
           </div>
         </div>
       </div>
@@ -490,12 +490,12 @@ infiniteScrollLeftSmall()
     <section className="explore">
       <div className="explore_item first">
         <h2>Explore marketplace</h2>
-        <img src="../../assets/Vector (6).png" alt="" />
+        <img src="/assets/Vector (6).webp" alt="" />
       </div>
 
        <div className="explore_item">
         <h2>See auctions </h2>
-        <img src="../../assets/Vector (6).png" alt="" />
+        <img src="/assets/Vector (6).webp" alt="" />
       </div>
     </section>
     <section className="top_creator">
@@ -528,7 +528,7 @@ infiniteScrollLeftSmall()
           </div>
     
         </div>
-     <img src="../../assets/Rectangle 299 (3).png" alt="" className="woman" />
+     <img src="/assets/Rectangle 299 (3).webp" alt="" className="woman" />
       </div>
       
     </section>
@@ -566,8 +566,8 @@ infiniteScrollLeftSmall()
         </div>
 
         <div className="footer_inner_four">
-          <p> <img src="../../assets/email_icon.png" alt="" /> artsystudios@gmail.com</p>
-          <p> <img src="../../assets/location_icon.png" alt="" /> Lagos, Nigeria</p>
+          <p> <img src="/assets/mail_icon.svg" alt="" /> artsystudios@gmail.com</p>
+          <p> <img src="/assets/location_pin.svg" alt="" /> Lagos, Nigeria</p>
         </div>
       </div>
       <div className="footer_end">

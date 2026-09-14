@@ -1,13 +1,41 @@
-@import url("https://api.fontshare.com/v2/css?f[]=satoshi@500,300&display=swap");
-@import url('https://fonts.cdnfonts.com/css/clash-display');
+/* Tailwind v4, utilities + theme only.
+   Preflight is deliberately NOT imported: it would reset margins, headings and
+   form controls across the 4.5k lines of existing page CSS. */
+@layer theme, base, components, utilities;
+@import 'tailwindcss/theme.css' layer(theme);
+@import 'tailwindcss/utilities.css' layer(utilities);
+
+/* Fonts are loaded via <link> in index.html (preconnect + one request per provider)
+   rather than CSS @import, which serializes downloads behind the stylesheet. */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  /* Stop any single wide child from side-scrolling the whole page. */
+  overflow-x: hidden;
+}
 
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: 'Satoshi', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto',
+    'Helvetica Neue', Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+/* Media should never be able to push a layout wider than its column. */
+img,
+video,
+svg {
+  max-width: 100%;
+}
+
+img {
+  height: auto;
 }
 
 code {

@@ -1,82 +1,192 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import '../css/Nav.css';
 import '../css/SideBar.css';
-import { NavLink } from 'react-router-dom';
+import { Link, NavLink, useLocation } from 'react-router-dom';
 import MenuIcon from '@mui/icons-material/Menu';
 import SearchIcon from '@mui/icons-material/Search';
 import NotificationsNoneIcon from '@mui/icons-material/NotificationsNone';
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 import ClearOutlinedIcon from '@mui/icons-material/ClearOutlined';
+import { useCart } from '../context/CartContext';
+import { useNotifications } from '../context/NotificationsContext';
+import { useBump } from '../hooks/useMotion';
+import NotificationsPanel from './NotificationsPanel';
 
+const LINKS = [
+  { to: '/', label: 'home' },
+  { to: '/marketplace', label: 'marketplace' },
+  { to: '/auctions', label: 'auctions' },
+  { to: '/drops', label: 'drop' },
+];
 
 function Nav() {
-  useEffect(()=>{
-    const sidebar = document.querySelector('.sidebar')
-    const menuBtn = document.querySelector('.menu')
-    const closeBtn = document.querySelector('.sidebar_cancel')
+  const [open, setOpen] = useState(false);
+  const [notifOpen, setNotifOpen] = useState(false);
+  const { count } = useCart();
+  const { unread } = useNotifications();
+  const { pathname } = useLocation();
 
-    menuBtn.addEventListener('click', ()=>{
-      sidebar.classList.add('show_toggle')
-    })
+  // Both badges pop when their number grows, so an add or an arrival registers
+  // without interrupting whatever you were doing.
+  const cartBumping = useBump(count);
+  const bellBumping = useBump(unread);
 
-    closeBtn.addEventListener('click', ()=> {
-      sidebar.classList.remove('show_toggle')
-    })
-  })
+  // Navigating away should leave the drawer behind.
+  useEffect(() => {
+    setOpen(false);
+    setNotifOpen(false);
+  }, [pathname]);
+
+  // Don't let the page scroll behind an open drawer.
+  useEffect(() => {
+    if (!open) return undefined;
+    const previous = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    const onKey = (e) => e.key === 'Escape' && setOpen(false);
+    window.addEventListener('keydown', onKey);
+    return () => {
+      document.body.style.overflow = previous;
+      window.removeEventListener('keydown', onKey);
+    };
+  }, [open]);
+
+  const cartLabel = count
+    ? `Cart, ${count} item${count === 1 ? '' : 's'}`
+    : 'Cart, empty';
+
   return (
     <div className="nav">
-       <nav>
-      <div className="mobile_icon">
-        <MenuIcon  className='menu'/>
-      </div>
-      <p>artsy.</p>
+      <nav>
+        <div className="mobile_icon">
+          <button
+            type="button"
+            className="menu_btn"
+            onClick={() => setOpen(true)}
+            aria-label="Open menu"
+            aria-expanded={open}
+          >
+            <MenuIcon className="menu" />
+          </button>
+        </div>
+        <p>artsy.</p>
 
-      <ul>
-        <NavLink to="/" className={({isActive}) =>(isActive)?'active':'toggle'}>home</NavLink> 
-        <NavLink to="/marketplace" className={({isActive}) =>(isActive)?'active':'toggle'}>marketplace</NavLink> 
-        <NavLink to="/auctions" className={({isActive}) =>(isActive)?'active':'toggle'}>auctions</NavLink> 
-        <NavLink to="/drops" className={({isActive}) =>(isActive)?'active':'toggle'}>drop</NavLink> 
-      
-      </ul>
+        <ul>
+          {LINKS.map((l) => (
+            <NavLink
+              key={l.to}
+              to={l.to}
+              end={l.to === '/'}
+              className={({ isActive }) => (isActive ? 'active' : 'toggle')}
+            >
+              {l.label}
+            </NavLink>
+          ))}
+        </ul>
 
-      <div className="nav__icons">
-        <SearchIcon className='search'/>
-        <ShoppingCartOutlinedIcon className='cart'/>
-        <NotificationsNoneIcon className='bell' />
-      </div>
-    </nav>
-    <aside className="sidebar">
-      <div className="sidebar_top">
-        <h2>artsy.</h2>
-        <ClearOutlinedIcon className='sidebar_cancel'/>
-      </div>
+        <div className="nav__icons">
+          <SearchIcon className="search" />
 
-      <div className="sidebar_list">
-        <a href="/">
-          <p>Home</p>
-        </a>
+          <Link to="/checkout" className="cart_link" aria-label={cartLabel} title={cartLabel}>
+            <ShoppingCartOutlinedIcon className="cart" />
+            {count > 0 && (
+              <>
+                <span
+                  className={'cart_dot' + (cartBumping ? ' is_bumping' : '')}
+                  aria-hidden="true"
+                />
+                <span
+                  className={'cart_count' + (cartBumping ? ' is_bumping' : '')}
+                  aria-hidden="true"
+                >
+                  {count > 9 ? '9+' : count}
+                </span>
+              </>
+            )}
+          </Link>
 
-        <a href="/auctions">
-          <p>Auctions</p>
-        </a>
+          {/* The panel is a popover anchored to this button on desktop, so it
+              lives inside the anchor rather than at the page root. */}
+          <div className="notif_anchor">
+            <button
+              type="button"
+              className={'bell_btn' + (bellBumping ? ' is_ringing' : '')}
+              onClick={() => setNotifOpen((o) => !o)}
+              aria-label={
+                unread ? `Notifications, ${unread} unread` : 'Notifications'
+              }
+              aria-haspopup="dialog"
+              aria-expanded={notifOpen}
+            >
+              <NotificationsNoneIcon className="bell" />
+              {unread > 0 && (
+                <>
+                  <span
+                    className={'bell_dot' + (bellBumping ? ' is_bumping' : '')}
+                    aria-hidden="true"
+                  />
+                  <span
+                    className={'bell_count' + (bellBumping ? ' is_bumping' : '')}
+                    aria-hidden="true"
+                  >
+                    {unread > 9 ? '9+' : unread}
+                  </span>
+                </>
+              )}
+            </button>
 
-        <a href="/marketplace">
-          <p>Marketplace</p>
-        </a>
+            {notifOpen && <NotificationsPanel onClose={() => setNotifOpen(false)} />}
+          </div>
+        </div>
+      </nav>
 
-        <a href="/drops">
-          <p>Drops</p>
-        </a>
+      {open && <div className="sidebar_scrim" onClick={() => setOpen(false)} />}
 
-      </div>
+      <aside className={'sidebar' + (open ? ' show_toggle' : '')} aria-hidden={!open}>
+        <div className="sidebar_top">
+          <h2>artsy.</h2>
+          <button
+            type="button"
+            className="sidebar_cancel_btn"
+            onClick={() => setOpen(false)}
+            aria-label="Close menu"
+          >
+            <ClearOutlinedIcon className="sidebar_cancel" />
+          </button>
+        </div>
 
-      <div className="sidebar_chat">
-        <img src="../../assets/chat.svg" alt="" />
-      </div>
-   </aside>
-  </div>
-   
-  )
+        <div className="sidebar_list">
+          {LINKS.map((l) => (
+            <NavLink key={l.to} to={l.to} end={l.to === '/'}>
+              <p>{l.label}</p>
+            </NavLink>
+          ))}
+          <NavLink to="/checkout">
+            <p>
+              cart
+              {count > 0 && <span className="sidebar_count">{count}</span>}
+            </p>
+          </NavLink>
+          <button
+            type="button"
+            className="sidebar_notif"
+            onClick={() => {
+              setOpen(false);
+              setNotifOpen(true);
+            }}
+          >
+            <p>
+              notifications
+              {unread > 0 && <span className="sidebar_count">{unread}</span>}
+            </p>
+          </button>
+        </div>
+
+        <div className="sidebar_chat">
+          <img src="/assets/chat.svg" alt="" />
+        </div>
+      </aside>
+    </div>
+  );
 }
 
-export default Nav
+export default Nav;

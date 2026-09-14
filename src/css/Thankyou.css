@@ -1,113 +1,183 @@
-.thank_you{
- min-height: 100vh;
- display: flex;
- flex-direction: column;
+/* ---------------------------------------------------------------
+   Figma THANK YOU (247:1261).
+
+   Rewritten: the sheet sized the illustration at a flat 455x406 and the
+   decorative blobs at their natural size from 768px up, so on a laptop the
+   artwork alone was taller than the viewport. Everything now scales with the
+   window, and the blobs are capped as a share of it.
+   --------------------------------------------------------------- */
+
+.thank_you {
+  min-height: 100vh;
+  min-height: 100dvh;
+  display: flex;
+  flex-direction: column;
+  background-repeat: no-repeat;
+  /* Blobs are decoration — never let them set the page's size. */
+  background-size: clamp(90px, 22vw, 260px) auto;
 }
 
-.thank_you_body{
- display: flex;
- flex-direction: column;
- justify-content: center;
- align-items: center;
- flex: 1;
+.thank_you_body {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: clamp(8px, 2vw, 24px) clamp(16px, 5vw, 48px) clamp(32px, 6vw, 72px);
 }
 
-
-
-.thank_you_body>small>img{
- width: 101.463px;
- height: 101.463px;
+.thank_you_body > img {
+  width: clamp(180px, 32vw, 380px);
+  max-width: 100%;
+  height: auto;
 }
 
-@media screen and (min-width: 320px){
- .thank_you {
-  background: url('../../public/assets/Thankyou/blue.png') top left no-repeat,
-  url('../../public/assets/Thankyou/purple.png') top center no-repeat, url('../../public/assets/Thankyou/red.png') center right no-repeat;
- }
-
- .thank_you_body>img{
-  width: 275px;
-  height: 246px;
- }
-
- .thank_you_body>h2 {
+.thank_you_body > h2 {
+  margin: clamp(16px, 2.4vw, 28px) 0 8px;
+  max-width: 24ch;
   color: #000;
-  font-family: Satoshi;
-  font-size: 18px;
-  font-style: normal;
+  font-family: 'Satoshi', sans-serif;
+  font-size: clamp(19px, calc(13.4px + 1.75vw), 38px);
   font-weight: 500;
-  line-height: 28px;
-  /* 63.545px */
-  text-align: center;
- }
+  line-height: 1.3;
+}
 
- .thank_you_body>small {
+.thank_you_body > small {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 8px;
   color: #000;
-  font-family: Satoshi;
-  font-size: 16px;
-  font-style: normal;
+  font-family: 'Satoshi', sans-serif;
+  font-size: clamp(14px, calc(11.2px + 0.88vw), 24px);
   font-weight: 400;
-  line-height: 25px;
-  text-align: center;
-  /* 47.659px */
- }
+  line-height: 1.5;
+}
 
- .thank_you_body>small>img {
-  display: none;
- }
-
- .thank_you_body>small>span {
-  background: linear-gradient(181deg, #006CA2 0%, rgba(192, 86, 9, 0.49) 100%);
+/* Figma gradient: 191deg, #006CA2 -> rgba(192,86,9,.49). Over a short line the
+   angle lands mostly in the faded orange stop, so the blue is weighted to
+   dominate as it reads in the Figma render. */
+.thank_you_body > small > span {
+  background: linear-gradient(191deg, #006ca2 0%, #0b7fb8 45%, rgba(192, 86, 9, 0.62) 115%);
   background-clip: text;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
-  font-family: Satoshi;
-  font-size: 16px;
-  font-style: normal;
   font-weight: 500;
-  /* line-height: 156.7%; */
- }
+  font-size: inherit;
+}
+
+/* Inline with the sentence and scaled to it, rather than a fixed 101px block
+   floating above it. */
+.thank_you_body > small > img {
+  width: clamp(26px, calc(20.4px + 1.75vw), 46px);
+  height: auto;
+  flex-shrink: 0;
+  vertical-align: middle;
+}
+
+/* ---------------- receipt ---------------- */
+
+/* A receipt is reference text, not a headline — it does not need to scale with
+   the window the way the illustration and greeting do. */
+.order_receipt {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px 28px;
+  width: 100%;
+  max-width: 440px;
+  margin: clamp(18px, 2.4vw, 26px) 0 0;
+  padding: 14px 20px;
+  border: 1px solid #ececec;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.78);
+  backdrop-filter: blur(2px);
+}
+
+.order_receipt > div {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 68px;
+}
+
+.order_receipt dt {
+  color: #9a9a9a;
+  font-family: 'Satoshi', sans-serif;
+  font-size: 10.5px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  line-height: 1.2;
+}
+
+.order_receipt dd {
+  margin: 0;
+  color: #292929;
+  font-family: 'Satoshi', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.3;
+  font-variant-numeric: tabular-nums;
+}
+
+/* ---------------- actions ---------------- */
+
+.thank_you_actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-top: clamp(18px, 2.4vw, 28px);
+}
+
+.thank_you_actions > a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 46px;
+  padding: 0 26px;
+  border-radius: 6px;
+  font-family: 'Satoshi', sans-serif;
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.thank_you_actions > .keep_shopping {
+  background: #272727;
+  border: 1px solid #272727;
+  color: #fff;
+}
+
+.thank_you_actions > .keep_shopping:hover { background: #000; }
+
+.thank_you_actions > .see_drops {
+  border: 1px solid #272727;
+  color: #272727;
+}
+
+.thank_you_actions > .see_drops:hover { background: #f2f2f2; }
+
+/* ---------------- decorative blobs ---------------- */
+
+.thank_you {
+  background-image:
+    url('/assets/Thankyou/blue.webp'),
+    url('/assets/Thankyou/purple.webp'),
+    url('/assets/Thankyou/red.webp');
+  background-position: top left, top center, center right;
 }
 
 @media screen and (min-width: 768px) {
- .thank_you{
-  background: url('../../public/assets/Thankyou/Ellipse\ 7.png') no-repeat,
-  url('../../public/assets/Thankyou/Ellipse\ 8.png') no-repeat;
- }
-
- .thank_you_body>img {
-  width: 455px;
-  height: 406px;
-  
- }
-
- .thank_you_body>h2 {
-  font-size: 24px;
- }
-
- .thank_you_body>small {
-  font-size: 30.414px;
-  line-height: 47.659px;
- }
-
- .thank_you_body>small>img {
-  width: 101.463px;
-  height: 101.463px;
-  display: initial;
- }
-
- .thank_you_body>small>span {
-  font-size: 30.414px;
- }
+  .thank_you {
+    background-image:
+      url('/assets/Thankyou/Ellipse 7.webp'),
+      url('/assets/Thankyou/Ellipse 8.webp');
+    background-position: top left, bottom right;
+    background-size: clamp(140px, 20vw, 300px) auto;
+  }
 }
-
-@media screen and (min-width: 1024px) {
- .thank_you_body>h2 {
-  font-size: 40.552px;
- }
-}
-
-@media screen and (min-width: 1330px) {
-
-}
-

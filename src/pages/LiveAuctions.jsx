@@ -1,266 +1,289 @@
-import React from 'react'
-import '../css/LiveAuctions.css'
+import React, { useEffect, useMemo, useRef, useState } from 'react';
+import { Link, useParams } from 'react-router-dom';
+import Nav from '../components/Nav';
+import {
+  SEED_COMMENTS,
+  YOUR_AVATAR,
+  nextActivity,
+  parseBid,
+} from '../data/liveAuction';
+import { getLot, formatClock } from '../data/auctions';
+import { useBump } from '../hooks/useMotion';
+import '../css/LiveAuctions.css';
+
+const HEART_COLOURS = ['#4693ed', '#e8505b', '#37c978', '#8b5cf6', '#f59e0b', '#ec4899'];
+
+const CloseGlyph = () => (
+  <svg viewBox="0 0 28 28" fill="none" aria-hidden="true">
+    <path d="M1 1l26 26M27 1L1 27" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" />
+  </svg>
+);
+
+function Comment({ c }) {
+  return (
+    <li className={'comment_display_item' + (c.mine ? ' is_mine' : '')}>
+      <div className="commenter_img">
+        <img src={c.avatar} alt="" loading="lazy" />
+      </div>
+      <div className="commenter_content">
+        <p className="commenter_name">{c.name}</p>
+        <p className="comment_text">{c.text}</p>
+      </div>
+    </li>
+  );
+}
 
 function LiveAuctions() {
+  const { id } = useParams();
+  // The room is whichever lot you opened; /auctions/live falls back to the first.
+  const lot = useMemo(() => getLot(id), [id]);
+
+  const [comments, setComments] = useState(SEED_COMMENTS);
+  const [draft, setDraft] = useState('');
+  const [bid, setBid] = useState(lot.openingBid);
+  const [leader, setLeader] = useState(lot.creator);
+  const [viewers, setViewers] = useState(295);
+  const [left, setLeft] = useState(lot.endsIn);
+  const [hearts, setHearts] = useState([]);
+
+  const feedRef = useRef(null);
+  const nextId = useRef(1000);
+
+  // Switching rooms resets the room, not just the picture behind it.
+  useEffect(() => {
+    setComments(SEED_COMMENTS);
+    setBid(lot.openingBid);
+    setLeader(lot.creator);
+    setLeft(lot.endsIn);
+    setViewers(180 + Math.floor(Math.random() * 260));
+  }, [lot]);
+
+  // Keep the feed pinned to the newest message.
+  useEffect(() => {
+    const el = feedRef.current;
+    if (el) el.scrollTop = el.scrollHeight;
+  }, [comments]);
+
+  // Lot clock.
+  useEffect(() => {
+    const t = setInterval(() => setLeft((s) => Math.max(0, s - 1)), 1000);
+    return () => clearInterval(t);
+  }, [lot]);
+
+  const ended = left <= 0;
+  // The one figure in the room that matters gets a beat when someone raises.
+  const bidBumping = useBump(bid);
+
+  // Rival bids + drifting viewer count, so the room reads as live. Both stop
+  // once the clock runs out. The standing bid is mirrored in a ref because the
+  // interval needs to read it without queueing a side effect from inside a
+  // state updater (StrictMode runs those twice).
+  const bidRef = useRef(bid);
+  useEffect(() => {
+    bidRef.current = bid;
+  }, [bid]);
+
+  useEffect(() => {
+    if (ended) return undefined;
+    const chat = setInterval(() => {
+      const { bid: raised, comment } = nextActivity(bidRef.current);
+      const entry = { ...comment, id: (nextId.current += 1) };
+      setComments((cur) => [...cur, entry].slice(-40));
+      if (raised) {
+        bidRef.current = raised;
+        setBid(raised);
+        setLeader(comment.name);
+      }
+    }, 6500);
+    const people = setInterval(
+      () => setViewers((v) => Math.max(120, v + Math.floor(Math.random() * 11) - 5)),
+      3000
+    );
+    return () => {
+      clearInterval(chat);
+      clearInterval(people);
+    };
+  }, [ended]);
+
+  // Drop the heart from the state list once its animation is done.
+  const popHeart = () => {
+    const h = {
+      id: (nextId.current += 1),
+      left: 4 + Math.random() * 62,
+      colour: HEART_COLOURS[Math.floor(Math.random() * HEART_COLOURS.length)],
+      scale: 0.7 + Math.random() * 0.6,
+    };
+    setHearts((cur) => [...cur, h]);
+    setTimeout(() => setHearts((cur) => cur.filter((x) => x.id !== h.id)), 2600);
+  };
+
+  const say = (text) => {
+    const entry = { id: (nextId.current += 1), name: 'You', text, avatar: YOUR_AVATAR, mine: true };
+    setComments((cur) => [...cur, entry]);
+  };
+
+  const send = (e) => {
+    e.preventDefault();
+    const text = draft.trim();
+    if (!text || ended) return;
+    say(text);
+    const amount = parseBid(text);
+    if (amount && amount > bid) {
+      setBid(amount);
+      setLeader('You');
+    }
+    setDraft('');
+  };
+
+  // One-tap raise, for when you don't want to type a figure.
+  const raise = () => {
+    if (ended) return;
+    const step = Math.max(50, Math.round((bid * 0.05) / 50) * 50);
+    const amount = bid + step;
+    setBid(amount);
+    setLeader('You');
+    say('$' + amount.toLocaleString() + ' from me');
+  };
+
   return (
-    <div className='liveauctions'>
-      <h2>Home/ Auctions/ <span>Live bid </span> </h2>
+    <div className="liveauctions">
+      <Nav />
+
+      <h2 className="liveauctions_crumbs">
+        <Link to="/">Home</Link>/ <Link to="/auctions">Auctions</Link>/{' '}
+        <span>{lot.title}</span>
+      </h2>
 
       <div className="liveauctions_contents">
-       <div className="liveauction_display" style={{backgroundImage:`url("../assets/Liveauctions/Rectangle 247.png")`}}>
-        <div className="display_live">
-         <div className='cancel'>
-          {/* <svg xmlns="http://www.w3.org/2000/svg" width="49" height="49" viewBox="0 0 49 49" fill="none">
-           <circle cx="24.5" cy="24.5" r="24.5" fill="#B8B4B4" fill-opacity="0.49"/> */}
-           <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none">
-           <path d="M0.329921 1.92292C0.225323 1.81832 0.142352 1.69415 0.0857438 1.55748C0.0291358 1.42082 1.10212e-09 1.27434 0 1.12642C-1.10212e-09 0.978497 0.0291358 0.832022 0.0857438 0.695358C0.142352 0.558695 0.225323 0.434519 0.329921 0.329921C0.434519 0.225323 0.558695 0.142352 0.695358 0.0857438C0.832022 0.0291358 0.978497 -1.10212e-09 1.12642 0C1.27434 1.10212e-09 1.42082 0.0291358 1.55748 0.0857438C1.69415 0.142352 1.81832 0.225323 1.92292 0.329921L13.5014 11.9107L25.0799 0.329921C25.1845 0.225323 25.3087 0.142352 25.4454 0.0857438C25.582 0.0291358 25.7285 0 25.8764 0C26.0243 0 26.1708 0.0291358 26.3075 0.0857438C26.4441 0.142352 26.5683 0.225323 26.6729 0.329921C26.7775 0.434519 26.8605 0.558695 26.9171 0.695358C26.9737 0.832022 27.0028 0.978497 27.0028 1.12642C27.0028 1.27434 26.9737 1.42082 26.9171 1.55748C26.8605 1.69415 26.7775 1.81832 26.6729 1.92292L15.0922 13.5014L26.6729 25.0799C26.7775 25.1845 26.8605 25.3087 26.9171 25.4454C26.9737 25.582 27.0028 25.7285 27.0028 25.8764C27.0028 26.0243 26.9737 26.1708 26.9171 26.3075C26.8605 26.4441 26.7775 26.5683 26.6729 26.6729C26.5683 26.7775 26.4441 26.8605 26.3075 26.9171C26.1708 26.9737 26.0243 27.0028 25.8764 27.0028C25.7285 27.0028 25.582 26.9737 25.4454 26.9171C25.3087 26.8605 25.1845 26.7775 25.0799 26.6729L13.5014 15.0922L1.92292 26.6729C1.81832 26.7775 1.69415 26.8605 1.55748 26.9171C1.42082 26.9737 1.27434 27.0028 1.12642 27.0028C0.978497 27.0028 0.832022 26.9737 0.695358 26.9171C0.558695 26.8605 0.434519 26.7775 0.329921 26.6729C0.225323 26.5683 0.142352 26.4441 0.0857438 26.3075C0.0291358 26.1708 0 26.0243 0 25.8764C0 25.7285 0.0291358 25.582 0.0857438 25.4454C0.142352 25.3087 0.225323 25.1845 0.329921 25.0799L11.9107 13.5014L0.329921 1.92292Z" fill="white"/>
-           </svg>
-          {/* </svg> */}
-         </div>
-         <div className='live'>live</div>
-        </div>
-
-        <div className="display_live_mobile">
-          <div className="display_tag_mobile">
-            <span>Tag:</span>  Lost or Wither
-          </div>
-
-           <div className="display_second">
-            <div className='live_mobile'>live</div>
-            <div className="viewers_count"> <img src="../assets/Liveauctions/Group 496.png" alt="" /> 295</div>
-
-            <div className='cancel_mobile'>
-              <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 28 28" fill="none">
-              <path d="M0.329921 1.92292C0.225323 1.81832 0.142352 1.69415 0.0857438 1.55748C0.0291358 1.42082 1.10212e-09 1.27434 0 1.12642C-1.10212e-09 0.978497 0.0291358 0.832022 0.0857438 0.695358C0.142352 0.558695 0.225323 0.434519 0.329921 0.329921C0.434519 0.225323 0.558695 0.142352 0.695358 0.0857438C0.832022 0.0291358 0.978497 -1.10212e-09 1.12642 0C1.27434 1.10212e-09 1.42082 0.0291358 1.55748 0.0857438C1.69415 0.142352 1.81832 0.225323 1.92292 0.329921L13.5014 11.9107L25.0799 0.329921C25.1845 0.225323 25.3087 0.142352 25.4454 0.0857438C25.582 0.0291358 25.7285 0 25.8764 0C26.0243 0 26.1708 0.0291358 26.3075 0.0857438C26.4441 0.142352 26.5683 0.225323 26.6729 0.329921C26.7775 0.434519 26.8605 0.558695 26.9171 0.695358C26.9737 0.832022 27.0028 0.978497 27.0028 1.12642C27.0028 1.27434 26.9737 1.42082 26.9171 1.55748C26.8605 1.69415 26.7775 1.81832 26.6729 1.92292L15.0922 13.5014L26.6729 25.0799C26.7775 25.1845 26.8605 25.3087 26.9171 25.4454C26.9737 25.582 27.0028 25.7285 27.0028 25.8764C27.0028 26.0243 26.9737 26.1708 26.9171 26.3075C26.8605 26.4441 26.7775 26.5683 26.6729 26.6729C26.5683 26.7775 26.4441 26.8605 26.3075 26.9171C26.1708 26.9737 26.0243 27.0028 25.8764 27.0028C25.7285 27.0028 25.582 26.9737 25.4454 26.9171C25.3087 26.8605 25.1845 26.7775 25.0799 26.6729L13.5014 15.0922L1.92292 26.6729C1.81832 26.7775 1.69415 26.8605 1.55748 26.9171C1.42082 26.9737 1.27434 27.0028 1.12642 27.0028C0.978497 27.0028 0.832022 26.9737 0.695358 26.9171C0.558695 26.8605 0.434519 26.7775 0.329921 26.6729C0.225323 26.5683 0.142352 26.4441 0.0857438 26.3075C0.0291358 26.1708 0 26.0243 0 25.8764C0 25.7285 0.0291358 25.582 0.0857438 25.4454C0.142352 25.3087 0.225323 25.1845 0.329921 25.0799L11.9107 13.5014L0.329921 1.92292Z" fill="white"/>
-              </svg>
+        <div
+          className="liveauction_display"
+          style={{ backgroundImage: 'url("' + lot.img + '")' }}
+        >
+          <div className="display_topbar">
+            <div className="display_status">
+              <span className={'live' + (ended ? ' is_ended' : '')}>
+                {ended ? 'ended' : 'live'}
+              </span>
+              <span className="viewers_count">
+                <img src="/assets/Liveauctions/Group 496.webp" alt="" />
+                {viewers}
+              </span>
+              <span className="lot_clock" title="Time left on this lot">
+                {formatClock(left)}
+              </span>
             </div>
-           </div>
-         
+
+            <Link to="/auctions" className="cancel" aria-label="Close live auction">
+              <CloseGlyph />
+            </Link>
+          </div>
+
+          <div className="display_bid">
+            <span className="display_bid_label">Current bid</span>
+            <strong
+              className={'display_bid_value' + (bidBumping ? ' is_bumping' : '')}
+            >
+              ${bid.toLocaleString()}
+            </strong>
+            <span className="display_bid_leader">
+              {ended ? 'Won by' : 'Leading'} : {leader}
+            </span>
+          </div>
+
+          <div className="display_tag">
+            <span>Tag:</span> {lot.tag}
+          </div>
         </div>
 
-
-        <div className="display_bid">
-         Current bid $4500
-        </div>
-        
-        <div className='comments_outer'>
-        <div className="comments_display_mobile">
-         {/* comment start */}
-         <div className="comment_display_item">
-          <div className="commenter_img">
-            <img src="../assets/Liveauctions/Ellipse 45.png" alt="" />
-          </div>
-          <div className="commenter_content">
-           <p className="commenter_name">
-            Ella Flynn
-           </p>
-           <p className="comment_text">
-            Tight bid
-           </p>
-          </div>
-         </div>
-         {/* comment end */}
-
-
-          {/* comment start */}
-         <div className="comment_display_item">
-          <div className="commenter_img">
-            <img src="../assets/Liveauctions/Ellipse 46.png" alt="" />
-          </div>
-          <div className="commenter_content">
-           <p className="commenter_name">
-            Uncle Luca
-           </p>
-           <p className="comment_text">
-             instant bid
-           </p>
-          </div>
-         </div>
-         {/* comment end */}
-
-          {/* comment start */}
-         <div className="comment_display_item">
-          <div className="commenter_img">
-            <img src="../assets/Liveauctions/Ellipse 47.png" alt="" />
-          </div>
-          <div className="commenter_content">
-           <p className="commenter_name">
-            Opeyemi Tiwalope
-           </p>
-           <p className="comment_text">
-            $45.00 
-           </p>
-          </div>
-         </div>
-         {/* comment end */}
-
-          {/* comment start */}
-         <div className="comment_display_item">
-          <div className="commenter_img">
-            <img src="../assets/Liveauctions/Ellipse 48.png" alt="" />
-          </div>
-          <div className="commenter_content">
-           <p className="commenter_name">
-            Celestina Quinn
-           </p>
-           <p className="comment_text">
-            gm frens! ready to bidddd
-           </p>
-          </div>
-         </div>
-         {/* comment end */}
-
-          {/* comment start */}
-         <div className="comment_display_item">
-          <div className="commenter_img">
-            <img src="../assets/Liveauctions/Ellipse 49.png" alt="" />
-          </div>
-          <div className="commenter_content">
-           <p className="commenter_name">
-            Samy Ellen
-           </p>
-           <p className="comment_text">
-            i love this. $20.00 for me
-           </p>
-          </div>
-         </div>
-         {/* comment end */}
-
-
-        </div>
-
-        <div className="bid_all">
-         <div className="place_bid">
-          <small>Creator : Stormi Rylie</small>
-          <div className="place_bid_content">
-           <div className="place_bid_input">
-            <input type="text" placeholder='Join Conversation...'/>
-            <img src="../assets/Liveauctions/white_arrow.svg" alt="" />
-           </div>
-
-          </div>
-         </div>
-         <img src="../assets/Liveauctions/Frame 110.png" alt="" />
-
-        </div>
-       
-        </div>
-        <div className="display_tag">
-         <span>Tag:</span>  Lost or Wither
-        </div>
-       </div>
-       <div className="liveauction_comments">
-
-        <div className="comments_display">
-         {/* comment start */}
-         <div className="comment_display_item">
-          <div className="commenter_img">
-            <img src="../assets/Liveauctions/Ellipse 45.png" alt="" />
-          </div>
-          <div className="commenter_content">
-           <p className="commenter_name">
-            Ella Flynn
-           </p>
-           <p className="comment_text">
-            Tight bid
-           </p>
-          </div>
-         </div>
-         {/* comment end */}
-
-
-          {/* comment start */}
-         <div className="comment_display_item">
-          <div className="commenter_img">
-            <img src="../assets/Liveauctions/Ellipse 46.png" alt="" />
-          </div>
-          <div className="commenter_content">
-           <p className="commenter_name">
-            Uncle Luca
-           </p>
-           <p className="comment_text">
-             instant bid
-           </p>
-          </div>
-         </div>
-         {/* comment end */}
-
-          {/* comment start */}
-         <div className="comment_display_item">
-          <div className="commenter_img">
-            <img src="../assets/Liveauctions/Ellipse 47.png" alt="" />
-          </div>
-          <div className="commenter_content">
-           <p className="commenter_name">
-            Opeyemi Tiwalope
-           </p>
-           <p className="comment_text">
-            $45.00 
-           </p>
-          </div>
-         </div>
-         {/* comment end */}
-
-          {/* comment start */}
-         <div className="comment_display_item">
-          <div className="commenter_img">
-            <img src="../assets/Liveauctions/Ellipse 48.png" alt="" />
-          </div>
-          <div className="commenter_content">
-           <p className="commenter_name">
-            Celestina Quinn
-           </p>
-           <p className="comment_text">
-            gm frens! ready to bidddd
-           </p>
-          </div>
-         </div>
-         {/* comment end */}
-
-          {/* comment start */}
-         <div className="comment_display_item">
-          <div className="commenter_img">
-            <img src="../assets/Liveauctions/Ellipse 49.png" alt="" />
-          </div>
-          <div className="commenter_content">
-           <p className="commenter_name">
-            Samy Ellen
-           </p>
-           <p className="comment_text">
-            i love this. $20.00 for me
-           </p>
-          </div>
-        </div>
-         {/* comment end */}
+        <div className="liveauction_comments">
+          <ul className="comments_display" ref={feedRef}>
+            {comments.map((c) => (
+              <Comment c={c} key={c.id} />
+            ))}
+          </ul>
 
           <div className="bid_all">
             <div className="place_bid">
-              <small>Creator : Stormi Rylie</small>
-              <div className="place_bid_content">
-              <div className="place_bid_input">
-                <input type="text" placeholder='Place a bid...'/>
-                <img src="../assets/Liveauctions/Vector (7).png" alt="" />
-              </div>
-
-              </div>
+              <small>Creator : {lot.creator}</small>
+              <form className="place_bid_content" onSubmit={send}>
+                <div className="place_bid_input">
+                  <input
+                    type="text"
+                    value={draft}
+                    onChange={(e) => setDraft(e.target.value)}
+                    placeholder={ended ? 'Bidding has closed' : 'Place a bid...'}
+                    aria-label="Place a bid"
+                    disabled={ended}
+                    id="bid_input"
+                  />
+                  <button
+                    type="submit"
+                    className="send_bid"
+                    aria-label="Send bid"
+                    disabled={ended}
+                  >
+                    <svg viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                      <path
+                        d="M3 11.5L21 3l-8.5 18-2.2-7.3L3 11.5z"
+                        stroke="currentColor"
+                        strokeWidth="1.8"
+                        strokeLinejoin="round"
+                      />
+                    </svg>
+                  </button>
+                </div>
+              </form>
             </div>
-            <img src="../assets/Liveauctions/Frame 110.png" alt="" />
 
+            <button
+              type="button"
+              className="raise_btn"
+              onClick={raise}
+              disabled={ended}
+            >
+              Raise
+            </button>
+
+            <button
+              type="button"
+              className="heart_btn"
+              onClick={popHeart}
+              aria-label="Send a heart"
+            >
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M12 21s-7.5-4.7-9.3-9A5.2 5.2 0 0 1 12 6.6 5.2 5.2 0 0 1 21.3 12c-1.8 4.3-9.3 9-9.3 9z"
+                  fill="#e8505b"
+                />
+              </svg>
+              <span className="hearts_stream" aria-hidden="true">
+                {hearts.map((h) => (
+                  <svg
+                    key={h.id}
+                    className="float_heart"
+                    viewBox="0 0 24 24"
+                    style={{ left: h.left + '%', color: h.colour, '--s': h.scale }}
+                  >
+                    <path
+                      d="M12 21s-7.5-4.7-9.3-9A5.2 5.2 0 0 1 12 6.6 5.2 5.2 0 0 1 21.3 12c-1.8 4.3-9.3 9-9.3 9z"
+                      fill="currentColor"
+                    />
+                  </svg>
+                ))}
+              </span>
+            </button>
           </div>
         </div>
-       
-         
-       </div>
-       
       </div>
-     <a href="/drops">
-      <div className="auctions_upcoming">
-       <p>See upcoming drops</p>
-       <img src="../assets/Liveauctions/arrow_upcoming.png" alt="" />
-      </div>
-     </a>
+
+      <Link to="/drops" className="auctions_upcoming_link">
+        <div className="auctions_upcoming">
+          <p>See upcoming drops</p>
+          <img src="/assets/Liveauctions/arrow_upcoming.webp" alt="" />
+        </div>
+      </Link>
     </div>
-  )
+  );
 }
 
-export default LiveAuctions
+export default LiveAuctions;
