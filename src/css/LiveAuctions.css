@@ -1,594 +1,545 @@
-.liveauctions>h2>span{
- color: #333;
- font-family: Satoshi;
- font-size: 24px;
- font-style: normal;
- font-weight: 500;
- line-height: 51.5px;
+/* ---------------------------------------------------------------
+   Live auction room. Figma LIVE AUCTION WEB (560:153).
+
+   Rewritten from a set of stacked, overlapping media queries. The old sheet
+   only switched to the two-column desktop layout at 1300px, so every laptop
+   between 1024 and 1299 got the full-bleed phone layout, and above 1300 it
+   padded the page by a flat 100px with type scaled off a 1920px design — which
+   is what made the page read as "too big". Sizes are now driven by the
+   viewport, and the split happens at 900px.
+   --------------------------------------------------------------- */
+
+.liveauctions {
+  --gutter: clamp(16px, 4vw, 56px);
+  --feed-fg: #fff;
+  --feed-dim: rgba(255, 255, 255, 0.72);
+  --control-border: rgba(255, 255, 255, 0.8);
+
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  min-height: 100dvh;
 }
 
-.cancel{
- width: 49px;
- height: 49px;
- flex-shrink: 0;
- background-color: rgba(184, 180, 180, 0.49);
- display: flex;
- justify-content: center;
- align-items: center;
- border-radius: 50%;
+.liveauctions a { text-decoration: none; }
+
+/* ---------------- breadcrumbs ---------------- */
+
+.liveauctions_crumbs {
+  margin: 0;
+  padding: 4px var(--gutter) 12px;
+  color: #bcb7b7;
+  font-family: 'Satoshi', sans-serif;
+  font-size: clamp(13px, calc(11.8px + 0.39vw), 17px);
+  font-weight: 500;
+  line-height: 1.6;
 }
 
-.live{
- width: 104px;
- height: 39px;
- flex-shrink: 0;
- border-radius: 20px;
- background: #4693ED;
- color: #FFF;
- font-family: Inter;
- font-size: 20px;
- font-style: normal;
- font-weight: 500;
- line-height: normal;
- text-transform: uppercase;
- display: flex;
- justify-content: center;
- align-items: center;
+.liveauctions_crumbs a { color: inherit; }
+.liveauctions_crumbs a:hover { color: #8d8989; }
+.liveauctions_crumbs > span { color: #333; }
+
+/* ---------------- layout ---------------- */
+
+.liveauctions_contents {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  min-height: 0;
 }
 
-.display_second{
+.liveauction_display {
+  position: relative;
+  flex: 1;
+  min-height: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+
+/* The chat sits over the image on phones, so it needs a scrim to stay legible
+   against a light photograph. */
+.liveauction_display::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.45) 0%,
+    rgba(0, 0, 0, 0.1) 28%,
+    rgba(0, 0, 0, 0.12) 52%,
+    rgba(0, 0, 0, 0.72) 100%
+  );
+}
+
+.liveauction_display > * {
+  position: relative;
+  z-index: 1;
+}
+
+/* ---------------- status bar over the image ---------------- */
+
+.display_topbar {
   display: flex;
   align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: clamp(12px, 3vw, 26px) clamp(14px, 3vw, 30px);
 }
 
-.viewers_count>img{
+.display_status {
+  display: flex;
+  align-items: center;
+  gap: clamp(8px, 1.6vw, 16px);
+  flex-wrap: wrap;
+}
+
+.live {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: clamp(26px, calc(23.2px + 0.88vw), 36px);
+  padding: 0 clamp(12px, 1.8vw, 22px);
+  border-radius: 6px;
+  background: #006ca2;
+  color: #fff;
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(11px, calc(10.2px + 0.29vw), 15px);
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+.live.is_ended { background: #6b6b6b; }
+
+.viewers_count,
+.lot_clock {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  height: clamp(22px, calc(19.6px + 0.78vw), 30px);
+  padding: 0 9px;
+  border-radius: 5px;
+  background: rgba(255, 255, 255, 0.35);
+  backdrop-filter: blur(2px);
+  color: #fff;
+  font-family: 'Satoshi', sans-serif;
+  font-size: clamp(11px, calc(10.2px + 0.29vw), 14px);
+  font-weight: 500;
+  line-height: 1;
+}
+
+.viewers_count > img {
   width: 15px;
-  height: 11px;
+  height: auto;
+  flex-shrink: 0;
 }
 
+.lot_clock { font-variant-numeric: tabular-nums; }
 
-.display_tag>span{
- color: #FFF;
- font-family: Inter;
- font-size: 24px;
- font-style: normal;
- font-weight: 400;
- line-height: 37px;
-  /* 37.824px */
+.cancel {
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  width: clamp(30px, calc(25.2px + 1.5vw), 46px);
+  height: clamp(30px, calc(25.2px + 1.5vw), 46px);
+  border-radius: 50%;
+  background: rgba(184, 180, 180, 0.49);
+  color: #fff;
 }
 
-.display_bid{
- display: flex;
- justify-content: center;
- align-items: center;
+.cancel:hover { background: rgba(0, 0, 0, 0.4); }
+.cancel > svg { width: 42%; height: 42%; }
+
+/* ---------------- headline bid ---------------- */
+
+.display_bid {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+  text-align: center;
+  padding: 0 16px;
+  color: #fff;
+  text-shadow: 0 2px 14px rgba(0, 0, 0, 0.5);
 }
 
-.comments_display{
- height: 80%;
- width: 100%;
- overflow-y: scroll;
- /* background: red; */
+.display_bid_label {
+  font-family: 'Satoshi', sans-serif;
+  font-size: clamp(12px, calc(11.2px + 0.29vw), 16px);
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  opacity: 0.85;
 }
 
-.comments_display::-webkit-scrollbar{
- display: none;
+.display_bid_value {
+  font-family: 'Inter', 'Satoshi', sans-serif;
+  font-size: clamp(30px, calc(21.6px + 2.73vw), 64px);
+  font-weight: 600;
+  line-height: 1.1;
+  font-variant-numeric: tabular-nums;
 }
 
-.bid_all{
- display: flex;
- align-items: center;
- justify-content: space-between;
+.display_bid_leader {
+  font-family: 'Satoshi', sans-serif;
+  font-size: clamp(12px, calc(11.2px + 0.29vw), 16px);
+  font-weight: 500;
+  opacity: 0.85;
 }
 
-.place_bid{
- margin-bottom: 20px;
- display: flex;
- flex-direction: column;
- width: 100%;
+.display_tag {
+  padding: 0 clamp(14px, 3vw, 30px) clamp(12px, 2.4vw, 24px);
+  color: #fff;
+  font-family: 'Inter', 'Satoshi', sans-serif;
+  font-size: clamp(12px, calc(11.2px + 0.29vw), 16px);
+  font-weight: 500;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.45);
 }
 
+.display_tag > span { opacity: 0.8; font-weight: 400; }
 
-.place_bid_input{
- display: flex;
- align-items: center;
- width: 70%;
- justify-content: space-between;
- flex: 1;
- padding: 5px;
- border-radius: 25px;
+/* ---------------- comment feed ---------------- */
+
+.liveauction_comments {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  min-height: 0;
+  gap: 12px;
 }
 
-.place_bid_input>input{
- width: 83%;
- height: 31px;
- margin-left: 10px;
- border: none;
- display: flex;
- align-items: center;
- outline: none;
+.comments_display {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  /* A flex item defaults to min-height:auto, which means it grows to fit its
+     content instead of scrolling — this is why the room got taller with every
+     new comment rather than the feed scrolling. */
+  min-height: 0;
+  overflow-y: auto;
+  overscroll-behavior: contain;
+  scrollbar-width: thin;
+  scroll-behavior: smooth;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(8px, 1.2vw, 16px);
 }
 
-.place_bid_input>img{
- width: 34px;
- height: 31px;
- margin-right: 10px;
+.comments_display::-webkit-scrollbar { width: 6px; }
+.comments_display::-webkit-scrollbar-thumb {
+  background: rgba(128, 128, 128, 0.35);
+  border-radius: 10px;
 }
 
-.place_bid_input>input::placeholder{
- color: #616161;
- font-family: Satoshi;
- font-size: 22px;
- font-style: normal;
- font-weight: 500;
- line-height: 34px;
- /* 34.672px */
+.comment_display_item {
+  display: flex;
+  align-items: center;
+  gap: clamp(10px, 1.4vw, 18px);
 }
 
-.comment_display_item{
- display: flex;
- align-items: center;
+.commenter_img > img {
+  width: clamp(30px, calc(25.2px + 1.5vw), 46px);
+  height: clamp(30px, calc(25.2px + 1.5vw), 46px);
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
 }
 
-.commenter_img{
- margin-right: 25px;
+.commenter_content { min-width: 0; }
+
+.commenter_name,
+.comment_text {
+  margin: 0;
+  font-family: 'Satoshi', sans-serif;
+  font-size: clamp(12px, calc(11.2px + 0.29vw), 16px);
+  line-height: 1.45;
+  overflow-wrap: anywhere;
 }
 
-.auctions_upcoming>p{
- color: #000;
- font-family: Satoshi;
- font-size: 36px;
- font-style: normal;
- font-weight: 500;
- line-height: 64px;
- /* 177.778% */
- margin-right: 20px;
+.commenter_name { color: var(--feed-dim); font-weight: 500; }
+.comment_text { color: var(--feed-fg); font-weight: 400; }
+.comment_display_item.is_mine .commenter_name { font-weight: 700; color: var(--feed-fg); }
+
+/* ---------------- bid controls ---------------- */
+
+.bid_all {
+  display: flex;
+  align-items: flex-end;
+  gap: clamp(8px, 1.2vw, 14px);
 }
 
-.auctions_upcoming>img{
- border: 1px solid #333;
- padding: 30px;
- border-radius: 50%;
+.place_bid {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex: 1;
+  min-width: 0;
 }
 
-a{
- text-decoration: none;
+.place_bid > small {
+  color: var(--feed-dim);
+  font-family: 'Inter', sans-serif;
+  font-size: clamp(12px, calc(11.2px + 0.29vw), 15px);
+  font-style: italic;
+  font-weight: 500;
 }
 
-/* resposiveness */
-@media screen and (min-width: 320px){
-  .liveauctions>h2 {
-   display: none;
+.place_bid_content { width: 100%; }
+
+.place_bid_input {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 100%;
+  padding: 4px 10px 4px 14px;
+  border: 1px solid var(--control-border);
+  border-radius: 25px;
+}
+
+.place_bid_input > input {
+  flex: 1;
+  min-width: 0;
+  height: clamp(32px, calc(29.6px + 0.78vw), 42px);
+  border: none;
+  outline: none;
+  background: transparent;
+  color: var(--feed-fg);
+  font-family: 'Satoshi', sans-serif;
+  font-size: clamp(12px, calc(11.2px + 0.29vw), 16px);
+  font-weight: 500;
+}
+
+.place_bid_input > input::placeholder {
+  color: var(--feed-dim);
+  font-weight: 400;
+}
+
+.place_bid_input > input:disabled { cursor: not-allowed; }
+
+.send_bid {
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  width: clamp(24px, calc(22.4px + 0.49vw), 30px);
+  aspect-ratio: 1;
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--feed-fg);
+  cursor: pointer;
+}
+
+.send_bid > svg { width: 100%; height: 100%; }
+.send_bid:hover { opacity: 0.65; }
+.send_bid:disabled { opacity: 0.35; cursor: not-allowed; }
+
+.raise_btn {
+  flex-shrink: 0;
+  height: clamp(38px, calc(34.8px + 1vw), 50px);
+  padding: 0 clamp(14px, 1.6vw, 22px);
+  border: 1px solid var(--control-border);
+  border-radius: 25px;
+  background: transparent;
+  color: var(--feed-fg);
+  font-family: 'Satoshi', sans-serif;
+  font-size: clamp(12px, calc(11.2px + 0.29vw), 15px);
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.raise_btn:hover:not(:disabled) { background: var(--feed-fg); color: #111; }
+.raise_btn:disabled { opacity: 0.4; cursor: not-allowed; }
+
+/* Figma: a circle holding a red heart. */
+.heart_btn {
+  position: relative;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  width: clamp(38px, calc(34.8px + 1vw), 50px);
+  height: clamp(38px, calc(34.8px + 1vw), 50px);
+  padding: 0;
+  border: 1px solid var(--control-border);
+  border-radius: 50%;
+  background: transparent;
+  cursor: pointer;
+}
+
+.heart_btn > svg {
+  width: 56%;
+  height: 56%;
+  transition: transform 0.12s ease;
+}
+
+.heart_btn:active > svg { transform: scale(0.82); }
+
+/* Hearts drift up out of the button. Anchored to its right edge so the stream
+   can never push the page wider than the column. */
+.hearts_stream {
+  position: absolute;
+  bottom: 100%;
+  right: 0;
+  width: min(110px, 28vw);
+  height: 190px;
+  pointer-events: none;
+  overflow: visible;
+}
+
+.float_heart {
+  position: absolute;
+  bottom: 0;
+  width: 24px;
+  height: 24px;
+  opacity: 0;
+  animation: heart_rise 2.5s ease-out forwards;
+}
+
+@keyframes heart_rise {
+  0%   { opacity: 0; transform: translateY(0) scale(calc(var(--s) * 0.4)); }
+  12%  { opacity: 1; }
+  70%  { opacity: 1; }
+  100% { opacity: 0; transform: translateY(-165px) translateX(14px) scale(var(--s)); }
+}
+
+/* ---------------- footer link ---------------- */
+
+.auctions_upcoming {
+  display: flex;
+  align-items: center;
+  gap: clamp(10px, 1.4vw, 20px);
+  padding: clamp(20px, 3vw, 40px) var(--gutter);
+  cursor: pointer;
+}
+
+.auctions_upcoming > p {
+  margin: 0;
+  color: #000;
+  font-family: 'Satoshi', sans-serif;
+  font-size: clamp(16px, calc(12.8px + 1vw), 32px);
+  font-weight: 500;
+}
+
+.auctions_upcoming > img {
+  width: clamp(38px, calc(31.6px + 2vw), 70px);
+  height: auto;
+  padding: clamp(10px, 1.2vw, 18px);
+  border: 1px solid #333;
+  border-radius: 50%;
+  box-sizing: content-box;
+}
+
+.auctions_upcoming_link:hover .auctions_upcoming > img { background: #f2f2f2; }
+
+/* ---------------------------------------------------------------
+   Phone / small tablet: the image fills the screen and the feed floats over
+   its lower half.
+   --------------------------------------------------------------- */
+
+@media screen and (max-width: 899px) {
+  .liveauctions_crumbs { display: none; }
+
+  /* Leave the nav its own height and give the rest of the screen to the room.
+     `relative` so the floating feed below anchors to the panel, not the page. */
+  .liveauctions_contents {
+    position: relative;
+    flex: 0 0 auto;
+    height: calc(100dvh - 88px);
+    min-height: 420px;
   }
 
-  .liveauctions_contents{
-    height: 100vh;
-  }
+  .display_bid { flex: 1; }
 
   .liveauction_comments {
-    display: none;
+    position: absolute;
+    z-index: 2;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: min(46%, 300px);
+    padding: 0 clamp(14px, 3vw, 24px) clamp(14px, 3vw, 22px);
   }
 
-  .auctions_upcoming {
-    display: none;
-  }
+  .comments_display { flex: 1; }
 
-  .liveauction_display {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    height: 100%;
-    /* flex: 0.5; */
-    /* width: 100%; */
-    /* background: blue; */
-    background-repeat: no-repeat;
-    background-size: cover;
-    object-fit: cover;
-    background-position: center;
-  }
+  /* The lot tag already shows in the top bar area on a phone; keep the bottom
+     of the image clear for the feed. */
+  .display_tag { display: none; }
 
-  .display_bid{
-    color: #FFF;
-    font-family: Satoshi;
-    font-size: 30px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: 47px;
-  }
-  
-  .display_tag {
-   display: none;
-  }
-
-  .comments_outer{
-    height: 40vh;
-    padding: 15px;
-  }
-
-  .comments_display_mobile{
-    height: 75%;
-    overflow-y: scroll;
-    margin-bottom: 20px;
-  }
-
-
-  .comment_text {
-    color: #fff;
-    font-family: Satoshi;
-    font-size: 13px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 20px;
-  }
-
-  .commenter_name {
-    color: #fff;
-    font-family: Satoshi;
-    font-size: 13px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 20px;
-    /* 34.672px */
-  }
-
-  .commenter_img>img{
-    height: 32px;
-    width: 32px;
-  }
-
-  .place_bid>small {
-   display: none;
-  }
-
-  .place_bid_input {
-    border: 1px solid #fff;
-  }
-
-  .place_bid_input>input {
-    /* border: 1px solid #fff; */
-    background: transparent;
-  }
-
-  .place_bid_input>input::placeholder{
-    color: #fff;
-    font-size: 11px;
-    font-weight: 400px;
-    line-height: 17px;
-  }
-
-  .display_tag_mobile{
-    color: #FFF;
-    font-family: Satoshi;
-    font-size: 12px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 25px;
-  }
-
-  .display_live {
-    display: none;
-  }
-
-  .display_live_mobile {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 10px 15px;
-  }
-
-  .bid_all>img {
-    border: 1px solid #fff;
-    border-radius: 50%;
-  }
-
-  .live_mobile {
-    width: 64px;
-    height: 29px;
-    flex-shrink: 0;
-    border-radius: 5px;
-    background: #006CA2;
-    color: #FFF;
-    font-family: Inter;
-    font-size: 12px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: normal;
-    text-transform: uppercase;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    margin-right: 5px;
-  }
-
-  .viewers_count {
-    color: #FFF;
-    font-family: Satoshi;
-    font-size: 15px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 20px;
-    width: 40px;
-    height: 18px;
-    flex-shrink: 0;
-    border-radius: 5px;
-    background: rgba(255, 255, 255, 0.40);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 3px;
-  }
-
-  .cancel_mobile {
-    margin-left: 5px;
-  }
-
-  .cancel_mobile>svg{
-    width: 20px;
-    height: 20px;
-  }
+  .auctions_upcoming_link { display: none; }
 }
 
-@media screen and (min-width: 360px){
+/* ---------------------------------------------------------------
+   Laptop and up: image left, feed right, both inside one bordered panel.
+   --------------------------------------------------------------- */
 
-  .live_mobile{
-    margin-left: 7px;
-  }
-  .cancel_mobile {
-    margin-left: 7px;
-  }
-
-  .display_tag_mobile {
-    color: #FFF;
-    font-family: Satoshi;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 25px;
-  }
-}
-
-@media screen and (min-width: 425px){
-.live_mobile {
-    width: 84px;
-    height: 29px;
-    flex-shrink: 0;
-    border-radius: 5px;
-    background: #006CA2;
-    color: #FFF;
-    font-family: Inter;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: normal;
-    text-transform: uppercase;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    margin-right: 15px;
-  }
-
-  .viewers_count {
-    color: #FFF;
-    font-family: Satoshi;
-    font-size: 15px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 20px;
-    width: 50px;
-    height: 25px;
-    flex-shrink: 0;
-    border-radius: 5px;
-    background: rgba(255, 255, 255, 0.40);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 3px;
-  }
-
-  .cancel_mobile {
-    margin-left: 15px;
-  }
-
-  .display_live_mobile {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 20px 30px;
-  }
-}
-
-@media screen and (min-width: 768px) {
-  .live_mobile {
-    width: 104px;
-    height: 39px;
-    flex-shrink: 0;
-    border-radius: 5px;
-    background: #006CA2;
-    color: #FFF;
-    font-family: Inter;
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: normal;
-    text-transform: uppercase;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-
-    margin-right: 25px;
-  }
-
-  .viewers_count {
-    color: #FFF;
-    font-family: Satoshi;
-    font-size: 15px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 20px;
-    width: 60px;
-    height: 27px;
-    flex-shrink: 0;
-    border-radius: 5px;
-    background: rgba(255, 255, 255, 0.40);
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 7px;
-  }
-
-  .cancel_mobile {
-    margin-left: 25px;
-  }
-
-  .cancel_mobile>svg {
-    width: 28px;
-    height: 28px;
-  }
-}
-
-@media screen and (min-width: 1024px) {
-
-}
-
-@media screen and (min-width: 1300px) {
+@media screen and (min-width: 900px) {
   .liveauctions {
-    padding: 100px;
-    max-height: 100vh;
+    --feed-fg: #333;
+    --feed-dim: #8f8c8c;
+    --control-border: #333;
+
+    padding: 0 0 clamp(16px, 2vw, 32px);
   }
 
   .liveauctions_contents {
-    display: flex;
-    width: 100%;
-    height: 80%;
-    flex: 1;
-    border: 1px solid #000;
+    flex-direction: row;
+    align-items: stretch;
+    margin: 0 var(--gutter);
+    border: 1px solid #d8d8d8;
+    /* Fits the panel to what is left of the viewport under the nav and
+       breadcrumbs, with a floor so it stays usable on a short window.
+       `flex: 1` would zero the basis and make this height inert. */
+    flex: 0 0 auto;
+    height: clamp(420px, calc(100dvh - 230px), 640px);
   }
 
-  .liveauctions>h2 {
-    color: #BCB7B7;
-    font-family: Satoshi;
-    font-size: 24px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 51.5px;
-    display: initial;
+  .liveauction_display { flex: 1 1 52%; }
+
+  /* Over a photo the chat needed a scrim; beside it on white it does not. */
+  .liveauction_display::after {
+    background: linear-gradient(
+      to bottom,
+      rgba(0, 0, 0, 0.4) 0%,
+      rgba(0, 0, 0, 0.05) 30%,
+      rgba(0, 0, 0, 0.05) 62%,
+      rgba(0, 0, 0, 0.55) 100%
+    );
   }
 
   .liveauction_comments {
-    flex: 0.5;
-    height: 100%;
-    /* background: red; */
-    display: flex;
-    justify-content: space-between;
-    flex-direction: column;
-    /* padding: 20px 0 20px 20px; */
-    padding: 0 20px;
+    flex: 1 1 48%;
+    min-width: 0;
+    padding: clamp(16px, 1.8vw, 26px);
+    gap: clamp(12px, 1.4vw, 20px);
   }
 
+  .comments_display { flex: 1; }
+
+  .place_bid_input { border-color: #333; }
+  .send_bid { color: #333; }
+}
+
+@media screen and (min-width: 1600px) {
+  .liveauctions_contents {
+    max-width: 1500px;
+    margin-inline: auto;
+  }
+
+  .liveauctions_crumbs,
   .auctions_upcoming {
-    display: flex;
-    align-items: center;
-    cursor: pointer;
-  }
-
-  .liveauction_display {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    flex: 0.5;
-    /* width: 100%; */
-    height: initial;
-    /* background: blue; */
-    background-repeat: no-repeat;
-    background-size: cover;
-    object-fit: cover;
-    background-position: center;
-  }
-
-  .display_bid {
-    color: #FFF;
-    font-family: Inter;
-    font-size: 48px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: 75px;
-    /* 75.648px */
-  }
-
-  .display_tag {
-    color: #FFF;
-    font-family: Inter;
-    font-size: 24px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 37px;
-    padding: 50px;
-    display: initial;
-  }
-
-  .comment_text {
-    color: #333;
-    font-family: Satoshi;
-    font-size: 22px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: 34px;
-  }
-
-  .commenter_name {
-    color: #333;
-    font-family: Satoshi;
-    font-size: 22px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 34px;
-    /* 34.672px */
-  }
-
-  .commenter_img>img {
-    height: 70px;
-    width: 70px;
-  }
-
-  .place_bid>small {
-    display: initial;
-    color: #BAB9B9;
-    font-family: Inter;
-    font-size: 20px;
-    font-style: italic;
-    font-weight: 500;
-    line-height: 31px;
-    /* 31.52px */
-  }
-
-  .place_bid_input{
-    border: 1px solid black;
-  }
-
-  .comments_outer{
-    display: none;
-  }
-
-  .display_live {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 20px 30px;
-  }
-
-  .display_live_mobile {
-    display: none;
-  }
-
-  .bid_all>img {
-    border: 1px solid #000;
-    border-radius: 50%;
+    max-width: 1500px;
+    margin-inline: auto;
   }
 }
 
-@media screen and (min-width: 1440px) {
-  .liveauctions {
-    padding: 100px;
-  }
+@media (prefers-reduced-motion: reduce) {
+  .float_heart { animation-duration: 0.01ms; }
+  .comments_display { scroll-behavior: auto; }
 }
