@@ -1,0 +1,210 @@
+/* ---------------------------------------------------------------
+   Hover and focus states for controls that had none.
+
+   Imported last from App.jsx so it lands after every page sheet in the
+   cascade. Two treatments, matching what the app already does:
+
+   - Ghost text buttons fill with their border colour and invert their label,
+     the way "See more" already behaves on Marketplace and Auctions.
+   - Icon buttons (circles, steppers, close controls) take a light tint and a
+     darker border instead, since inverting an icon reads as a state change
+     rather than a hover.
+
+   Every control also gets a :focus-visible ring. A hover-only affordance
+   leaves keyboard users with nothing, and :focus-visible does not fire on
+   mouse clicks, so it costs sighted mouse users nothing.
+   --------------------------------------------------------------- */
+
+/* ---------------- ghost text buttons ---------------- */
+
+.newsletter_input > button,
+button.notify,
+.slider__second > button {
+  cursor: pointer;
+  transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+
+button.notify:hover,
+.slider__second > button:hover {
+  background: #000;
+  color: #fff;
+}
+
+.newsletter_input > button:hover { filter: brightness(1.12); }
+
+/* ---------------- icon buttons ---------------- */
+
+.heart_btn,
+.cart_cta > .like_btn,
+.top_bid_heart,
+.details_cart .counter_div > button,
+.menu_btn,
+.sidebar_cancel_btn,
+.notif_close,
+.cancel,
+.send_bid {
+  cursor: pointer;
+  transition: background-color 0.15s ease, border-color 0.15s ease,
+    opacity 0.15s ease, transform 0.15s ease;
+}
+
+/* The live room's heart sits on a photo on mobile and on white on desktop, so
+   tint with the current foreground rather than a fixed colour. */
+.heart_btn:hover {
+  background: color-mix(in srgb, var(--feed-fg) 12%, transparent);
+  border-color: var(--feed-fg);
+}
+
+.cart_cta > .like_btn:hover {
+  background: #fff5f5;
+  border-color: #f3c9c8;
+}
+
+/* This targeted `> img`, but the glyph became an inline <svg> when the liked
+   state was added — so the card's heart has had no hover since. */
+.top_bid_heart:hover {
+  border-color: #d5d5d5;
+  background: #fafafa;
+}
+
+.top_bid_heart:hover .heart_glyph { transform: scale(1.12); }
+.top_bid_heart .heart_glyph { transition: transform 0.15s ease; }
+
+.details_cart .counter_div > button {
+  border-radius: 6px;
+  padding: 0 8px;
+}
+
+.details_cart .counter_div > button:hover {
+  background: #f2f2f2;
+  color: #000;
+}
+
+.menu_btn:hover,
+.sidebar_cancel_btn:hover { opacity: 0.6; }
+
+/* ---------------- rows and disclosure controls ---------------- */
+
+.drop_item_head,
+.by_category_inner {
+  cursor: pointer;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.drop_item_head:hover { background: #fafafa; }
+.drop_item_head:hover > p { color: #000; }
+
+.by_category_inner:hover > p { color: #000; }
+
+.sidebar_list > a,
+.sidebar_notif {
+  transition: color 0.15s ease, opacity 0.15s ease;
+}
+
+.sidebar_list > a:hover > p,
+.sidebar_notif:hover > p { color: #000; }
+
+/* ---------------- links styled as actions ---------------- */
+
+.continue_shopping,
+.notif_mark_all {
+  transition: color 0.15s ease, opacity 0.15s ease;
+}
+
+.continue_shopping:hover { color: #000; }
+.notif_mark_all:not(:disabled):hover { color: #000; }
+
+.notif_filter { transition: background-color 0.15s ease, color 0.15s ease; }
+.notif_filter:not(.is_active):hover {
+  background: rgba(0, 0, 0, 0.05);
+  color: #292929;
+}
+
+/* ---------------- filled buttons ---------------- */
+
+.current_bid_two > button,
+.cart_cta > button:first-child {
+  cursor: pointer;
+  transition: background-color 0.15s ease, border-color 0.15s ease;
+}
+
+.current_bid_two > button:hover,
+.cart_cta > button:first-child:hover {
+  background: #000;
+  border-color: #000;
+}
+
+/* ---------------- cards and media links ---------------- */
+
+.swiper-slide.slide .lot_link { transition: opacity 0.15s ease; }
+.swiper-slide.slide .lot_link:hover { opacity: 0.88; }
+
+.btns > .btn {
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+.btns > .btn:hover { background: rgba(255, 255, 255, 0.34); }
+
+/* ---------------- shared focus ring ---------------- */
+
+.heart_btn:focus-visible,
+.raise_btn:focus-visible,
+.cart_cta > .like_btn:focus-visible,
+.cart_cta > button:focus-visible,
+.top_bid_heart:focus-visible,
+.details_cart .counter_div > button:focus-visible,
+.shopping_tab .counter_div > button:focus-visible,
+.drop_item_head:focus-visible,
+.by_category_inner:focus-visible,
+.notif_filter:focus-visible,
+.notif_mark_all:focus-visible,
+.notif_close:focus-visible,
+.notif_link:focus-visible,
+.continue_shopping:focus-visible,
+.current_bid_two > button:focus-visible,
+.see_more > button:focus-visible,
+.see_more_auctions > button:focus-visible,
+.explore_all_cta:focus-visible,
+.explore_page_item:focus-visible,
+.thank_you_actions > a:focus-visible,
+.tab-btn:focus-visible,
+.wallet_div > .wallet_option:focus-visible,
+.cart_second > .remove_item:focus-visible,
+.checkout-btn:focus-visible,
+button.payment:focus-visible,
+.confirm:focus-visible,
+button.notify:focus-visible,
+.drop_pill:focus-visible,
+.drop_cta:focus-visible,
+.slider__second > button:focus-visible,
+.newsletter_input > button:focus-visible,
+.sidebar_list > a:focus-visible,
+.sidebar_notif:focus-visible,
+.lot_link:focus-visible,
+.art_item .art_item_body:focus-visible,
+.cancel:focus-visible,
+.send_bid:focus-visible,
+.menu_btn:focus-visible,
+.sidebar_cancel_btn:focus-visible {
+  outline: 2px solid #292929;
+  outline-offset: 2px;
+  border-radius: 4px;
+}
+
+/* On dark ground the dark ring disappears. */
+.heart_btn:focus-visible,
+.raise_btn:focus-visible,
+.cancel:focus-visible,
+.send_bid:focus-visible,
+.lot_link:focus-visible {
+  outline-color: currentColor;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .heart_btn,
+  .top_bid_heart .heart_glyph,
+  .btns > .btn,
+  .drop_item_head,
+  .notif_filter { transition: none; }
+}
