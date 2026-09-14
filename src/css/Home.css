@@ -3,7 +3,7 @@
 .footer_inner_four>p,
 .footer_inner_two>p,
 .footer_inner_three>p {
-  font-family: 'Satoshi';
+  font-family: 'Satoshi', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
   font-weight: 400;
   font-size: clamp(18.2px, calc(15.05px + 0.76vw), 26px);
   line-height: 1.4;
@@ -102,7 +102,7 @@
 }
 
 .featured> h2 {
- font-family: 'Satoshi';
+ font-family: 'Satoshi', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
  font-style: normal;
  font-weight: 500;
  font-size: clamp(28.8px, calc(21.05px + 1.871vw), 48px);
@@ -120,7 +120,7 @@
 }
 
 .featured__contents>h2{
- font-family: 'STIX Two Text';
+ font-family: 'STIX Two Text', Georgia, 'Times New Roman', serif;
  font-weight: 700;
  font-size: clamp(24px, calc(17.54px + 1.559vw), 40px);
  line-height: 50px;
@@ -129,7 +129,7 @@
 }
 
 .featured__contents> p{
- font-family: 'Satoshi';
+ font-family: 'Satoshi', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
  font-style: normal;
  font-weight: 400;
  font-size: clamp(18.7px, calc(16.56px + 0.517vw), 24px);
@@ -155,7 +155,7 @@
 }
 
 .featured__creators > p {
- font-family: 'Satoshi';
+ font-family: 'Satoshi', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
  font-style: normal;
  font-weight: 500;
  font-size: clamp(18.7px, calc(16.56px + 0.517vw), 24px);
@@ -210,7 +210,7 @@
 }
 
 .first_contents>small {
- font-family: 'Poppins';
+ font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
  font-style: normal;
  font-weight: 400;
  font-size: 13.46px;
@@ -220,7 +220,7 @@
 }
 
 .slider_first>p{
- font-family: 'Satoshi';
+ font-family: 'Satoshi', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
  font-style: normal;
  font-weight: 500;
  font-size: 15.8576px;
@@ -237,7 +237,7 @@
 }
 
 .see_more>a>p {
- font-family: 'Satoshi';
+ font-family: 'Satoshi', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
  font-style: normal;
  font-weight: 400;
  font-size: clamp(18.7px, calc(16.56px + 0.517vw), 24px);
@@ -283,7 +283,7 @@
 }
 
 .explore_item>h2 {
- font-family: 'Satoshi';
+ font-family: 'Satoshi', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
  font-style: normal;
  font-weight: 500;
  line-height: 65px;
@@ -317,7 +317,7 @@
 
 .top_creator_second>p{
  max-width: 1000px;
- font-family: 'Clash Display';
+ font-family: 'Clash Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
  font-style: normal;
  font-weight: 200;
  color: rgba(0, 0, 0, 0.57);
@@ -333,7 +333,7 @@
 }
 
 .over_conts>h2 {
- font-family: 'Clash Display';
+ font-family: 'Clash Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
  font-style: normal;
  font-weight: 700;
  /* line-height: 155.5%; */
@@ -343,7 +343,7 @@
 }
 
 .over_conts>h1{
- font-family: 'Clash Display';
+ font-family: 'Clash Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
  font-style: normal;
  font-weight: 700;
  text-decoration-line: line-through;
@@ -436,7 +436,7 @@
 
   .featured__item_display>h2{
     color: #FFF;
-    font-family: Clash Display;
+    font-family: 'Clash Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
     font-size: clamp(21px, calc(17.37px + 0.877vw), 30px);
     font-style: normal;
     font-weight: 600;
@@ -453,7 +453,7 @@
 
 
   .photography>h1 {
-    font-family: 'Clash Display';
+    font-family: 'Clash Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
     font-weight: 500;
     font-size: clamp(21px, calc(17.37px + 0.877vw), 30px);
     line-height: 45px;
@@ -463,7 +463,7 @@
   }
 
   .photography>p {
-    font-family: 'Satoshi';
+    font-family: 'Satoshi', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
     font-style: normal;
     font-weight: 500;
     font-size: 16px;
@@ -482,7 +482,7 @@
   }
 
   .first_contents>h2 {
-    font-family: 'Bellefair';
+    font-family: 'Bellefair', Georgia, 'Times New Roman', serif;
     font-style: normal;
     font-weight: 400;
     font-size: clamp(17px, calc(15.79px + 0.292vw), 20px);
@@ -502,7 +502,7 @@
     border: 1px solid #FFFFFF;
     border-radius: 10px;
     background: transparent;
-    font-family: 'Satoshi';
+    font-family: 'Satoshi', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
     font-style: normal;
     font-weight: 400;
     font-size: 14px;
@@ -511,7 +511,7 @@
   }
 
   .slider_first>span {
-    font-family: 'Bellefair';
+    font-family: 'Bellefair', Georgia, 'Times New Roman', serif;
     font-style: normal;
     font-weight: 400;
     font-size: clamp(24px, calc(17.54px + 1.559vw), 40px);
@@ -533,7 +533,7 @@
   }
 
   .creator_title>p {
-    font-family: 'Clash Display';
+    font-family: 'Clash Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
     font-style: normal;
     font-weight: 600;
     font-size: clamp(18.7px, calc(16.56px + 0.517vw), 24px);
@@ -556,7 +556,7 @@
   }
 
   .creator_segments>p {
-    font-family: 'Clash Display';
+    font-family: 'Clash Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
     font-style: normal;
     font-weight: 400;
     font-size: clamp(24px, calc(17.54px + 1.559vw), 40px);
@@ -602,7 +602,7 @@
   }
 
   .newsletter_inner>h2 {
-    font-family: 'Baskervville';
+    font-family: 'Baskervville', Georgia, 'Times New Roman', serif;
     font-size: clamp(21px, calc(17.37px + 0.877vw), 30px);
     font-weight: 400;
     line-height: 39px;
@@ -614,7 +614,7 @@
 
 
   .newsletter_inner>p {
-    font-family: 'Satoshi';
+    font-family: 'Satoshi', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
     font-style: normal;
     font-weight: 400;
     font-size:11px;
@@ -662,7 +662,7 @@
     width: clamp(112.6px, calc(84.74px + 6.729vw), 181.635px);
     height: 53.636px;
     margin-top: 1rem;
-    font-family: 'Baskervville';
+    font-family: 'Baskervville', Georgia, 'Times New Roman', serif;
     font-style: normal;
     font-weight: 400;
     font-size: 11px;
@@ -763,7 +763,7 @@
   }
 
   .slider_first>span {
-    font-family: 'Bellefair';
+    font-family: 'Bellefair', Georgia, 'Times New Roman', serif;
     font-style: normal;
     font-weight: 400;
     font-size: clamp(33.8px, calc(20.16px + 3.296vw), 67.6122px);
@@ -781,7 +781,7 @@
   }
 
   .creator_title>p {
-    font-family: 'Clash Display';
+    font-family: 'Clash Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
     font-style: normal;
     font-weight: 600;
     font-size: clamp(27.5px, calc(16.4px + 2.68vw), 55px);
@@ -797,7 +797,7 @@
   }
 
   .creator_segments>p {
-    font-family: 'Clash Display';
+    font-family: 'Clash Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
     font-style: normal;
     font-weight: 400;
     font-size: clamp(24px, calc(17.54px + 1.559vw), 40px);
@@ -844,7 +844,7 @@
   }
   
   .newsletter_inner>h2 {
-    font-family: 'Baskervville';
+    font-family: 'Baskervville', Georgia, 'Times New Roman', serif;
     font-size: clamp(21px, calc(17.37px + 0.877vw), 30px);
     font-weight: 400;
     line-height: 39px;
@@ -856,7 +856,7 @@
   
   
   .newsletter_inner>p {
-    font-family: 'Satoshi';
+    font-family: 'Satoshi', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
     font-style: normal;
     font-weight: 400;
     font-size: clamp(22.4px, calc(18.53px + 0.936vw), 32px);
@@ -877,7 +877,7 @@
     width: clamp(112.6px, calc(84.75px + 6.728vw), 181.63px);
     height: clamp(43.2px, calc(36.42px + 1.637vw), 60px);
     margin-left: 1rem;
-    font-family: 'Baskervville';
+    font-family: 'Baskervville', Georgia, 'Times New Roman', serif;
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
@@ -923,7 +923,7 @@
 
 @media screen and (min-width: 1024px) {
   .photography>h1 {
-    font-family: 'Clash Display';
+    font-family: 'Clash Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
     font-weight: 600;
     font-size: clamp(40px, calc(23.86px + 3.899vw), 80px);
     line-height: 100px;
@@ -933,7 +933,7 @@
   }
 
   .photography>p {
-    font-family: 'Satoshi';
+    font-family: 'Satoshi', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
     font-style: normal;
     font-weight: 500;
     font-size: clamp(19.6px, calc(16.21px + 0.819vw), 28px);
@@ -954,7 +954,7 @@
   }
 
   .auction__title>h2 {
-    font-family: 'Satoshi';
+    font-family: 'Satoshi', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
     font-style: normal;
     font-weight: 500;
     font-size: clamp(24px, calc(17.54px + 1.559vw), 40px);
@@ -964,7 +964,7 @@
   }
 
   .first_contents>h2 {
-    font-family: 'Bellefair';
+    font-family: 'Bellefair', Georgia, 'Times New Roman', serif;
     font-style: normal;
     font-weight: 400;
     font-size: clamp(20.5px, calc(16.98px + 0.851vw), 29.2313px);
@@ -985,7 +985,7 @@
     border: 1px solid #FFFFFF;
     border-radius: 10px;
     background: transparent;
-    font-family: 'Satoshi';
+    font-family: 'Satoshi', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
     font-style: normal;
     font-weight: 400;
     font-size: clamp(18.7px, calc(16.56px + 0.517vw), 24px);
@@ -1052,7 +1052,7 @@
   }
 
   .footer_inner_one>h1 {
-    font-family: 'Clash Display';
+    font-family: 'Clash Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
     font-style: normal;
     font-weight: 600;
     font-size: clamp(28.8px, calc(21.05px + 1.871vw), 48px);
@@ -1064,7 +1064,7 @@
   .footer_inner_four>p,
   .footer_inner_two>p,
   .footer_inner_three>p {
-    font-family: 'Satoshi';
+    font-family: 'Satoshi', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
     font-style: normal;
     font-weight: 400;
     font-size: clamp(18.2px, calc(15.05px + 0.76vw), 26px);
@@ -1099,7 +1099,7 @@
 
   .footer_end>p {
     text-align: center;
-    font-family: 'Rubik';
+    font-family: 'Rubik', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
     font-style: normal;
     font-weight: 500;
     font-size: clamp(18.7px, calc(16.56px + 0.517vw), 24px);

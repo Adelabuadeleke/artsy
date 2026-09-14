@@ -31,7 +31,7 @@ flex: 1;
  height: 32px;
  background: transparent;
  outline: none;
- border: none;font-family: 'Satoshi';
+ border: none;font-family: 'Satoshi', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
  font-style: normal;
  font-weight: 500;
  font-size: clamp(18.7px, calc(16.56px + 0.517vw), 24px);
@@ -41,7 +41,7 @@ flex: 1;
 }
 
 .search_outter>input::placeholder{
- font-family: 'Satoshi';
+ font-family: 'Satoshi', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
  font-style: normal;
  font-weight: 500;
  font-size: clamp(18.7px, calc(16.56px + 0.517vw), 24px);
@@ -68,7 +68,7 @@ flex: 1;
 }
 
 .marketplace_filter_top>p{
- font-family: 'Satoshi';
+ font-family: 'Satoshi', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
  font-style: normal;
  font-weight: 500;
  font-size: clamp(22.4px, calc(18.53px + 0.936vw), 32px);
@@ -104,7 +104,7 @@ flex: 1;
 }
 
 .category_item>span{
- font-family: 'Satoshi';
+ font-family: 'Satoshi', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
  font-style: normal;
  font-weight: 400;
  font-size: clamp(18.7px, calc(16.56px + 0.517vw), 24px);
@@ -113,7 +113,7 @@ flex: 1;
 }
 
 .by_category_inner>p{
- font-family: 'Satoshi';
+ font-family: 'Satoshi', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
  font-style: normal;
  font-weight: 500;
  font-size: clamp(19.6px, calc(16.21px + 0.819vw), 28px);
@@ -134,7 +134,7 @@ flex: 1;
 }
 
 .by_price_body>p{
- font-family: 'Satoshi';
+ font-family: 'Satoshi', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
  font-style: normal;
  font-weight: 400;
  font-size: clamp(18.7px, calc(16.56px + 0.517vw), 24px);
@@ -149,7 +149,7 @@ flex: 1;
 }
 
 .band_option{
- font-family: 'Satoshi';
+ font-family: 'Satoshi', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
  font-style: normal;
  font-weight: 400;
  font-size: clamp(18.7px, calc(16.56px + 0.517vw), 24px);
@@ -164,7 +164,7 @@ flex: 1;
 
 
 .result_sort>select{
- font-family: 'Satoshi';
+ font-family: 'Satoshi', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
  font-style: normal;
  font-weight: 500;
  font-size: clamp(18.7px, calc(16.56px + 0.517vw), 24px);
@@ -174,7 +174,7 @@ flex: 1;
 }
 
 .result_sort>p{
- font-family: 'Satoshi';
+ font-family: 'Satoshi', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
  font-style: normal;
  font-weight: 400;
  font-size: clamp(18.7px, calc(16.56px + 0.517vw), 24px);
@@ -206,7 +206,7 @@ flex: 1;
 }
 
 .art_item_text>p{
- font-family: 'Satoshi';
+ font-family: 'Satoshi', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
  font-style: normal;
  font-weight: 400;
  font-size: clamp(17.2px, calc(15.26px + 0.468vw), 22px);
@@ -214,7 +214,7 @@ flex: 1;
 }
 
 .art_item_text>h3{
- font-family: 'Satoshi';
+ font-family: 'Satoshi', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
  font-style: normal;
  font-weight: 700;
  font-size: clamp(19.6px, calc(16.21px + 0.819vw), 28px);
@@ -232,7 +232,7 @@ flex: 1;
 .see_more>button{
  border: 1px solid #333333;
  border-radius: 10px;
- font-family: 'Satoshi';
+ font-family: 'Satoshi', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
  font-style: normal;
  font-weight: 500;
  font-size: clamp(21px, calc(17.37px + 0.877vw), 30px);
@@ -290,7 +290,7 @@ flex: 1;
 
   .marketplace_heading_title>h2{
     color: #BCB7B7;
-    font-family: Satoshi;
+    font-family: 'Satoshi', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
     font-size: clamp(15.3px, calc(14.21px + 0.263vw), 18px);
     font-style: normal;
     font-weight: 500;
@@ -303,7 +303,7 @@ flex: 1;
 
   .marketplace_heading_title>p {
     color: #BCB7B7;
-    font-family: Poppins;
+    font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
     font-size: 16px;
     font-style: italic;
     font-weight: 400;
@@ -442,7 +442,7 @@ flex: 1;
   background: none;
   border: 0;
   padding: 4px 0;
-  font-family: 'Satoshi';
+  font-family: 'Satoshi', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
   font-weight: 400;
   font-size: clamp(18.7px, calc(16.56px + 0.517vw), 24px);
   line-height: 32px;
@@ -458,7 +458,7 @@ flex: 1;
 .no_results {
   padding: 48px 0;
   text-align: center;
-  font-family: 'Satoshi';
+  font-family: 'Satoshi', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
   font-size: clamp(16px, calc(14.5px + 0.36vw), 20px);
   color: #616161;
 }
@@ -565,7 +565,7 @@ flex: 1;
   border-radius: 8px;
   background-color: #fff;
   color: #333333;
-  font-family: 'Satoshi';
+  font-family: 'Satoshi', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
   font-size: 16px;
   padding: 10px 38px 10px 14px;
   cursor: pointer;

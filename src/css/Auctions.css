@@ -4,7 +4,7 @@
 
 .auctions_body>h1{
  color: #BCB7B7;
- font-family: Satoshi;
+ font-family: 'Satoshi', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
  font-size: clamp(18.7px, calc(16.56px + 0.517vw), 24px);
  font-style: normal;
  font-weight: 500;
@@ -13,7 +13,7 @@
 
 .auctions_body>h2{
  color: #000;
- font-family: Satoshi;
+ font-family: 'Satoshi', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
  font-size: clamp(19.6px, calc(16.21px + 0.819vw), 28px);
  font-style: normal;
  font-weight: 500;
@@ -23,7 +23,7 @@
 
 .auctions_body>h1>span{
  color: #333;
- font-family: Satoshi;
+ font-family: 'Satoshi', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
  font-size: clamp(18.7px, calc(16.56px + 0.517vw), 24px);
  font-style: normal;
  font-weight: 500;
@@ -64,7 +64,7 @@
 
 .top-bids{
  color: #000;
- font-family: Satoshi;
+ font-family: 'Satoshi', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
  font-size: clamp(21.6px, calc(15.79px + 1.404vw), 36px);
  font-style: normal;
  font-weight: 700;
@@ -86,7 +86,7 @@
 
 .timer{
  color: #FFF;
- font-family: STIX Two Math;
+ font-family: 'STIX Two Text', Georgia, serif;
  font-style: normal;
  font-weight: 400;
  width: 80%;
@@ -138,7 +138,7 @@
 
 .top_bid_title>h2{
  color: #000;
- font-family: Satoshi;
+ font-family: 'Satoshi', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
  font-size: clamp(24px, calc(17.54px + 1.559vw), 40px);
  font-style: normal;
  font-weight: 700;
@@ -148,14 +148,14 @@
 
 .top_bid_texts>p{
  color: #616161;
- font-family: Satoshi;
+ font-family: 'Satoshi', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
  font-style: normal;
  font-weight: 500;
 }
 
 .top_bid_texts>p>span{
  color: #333;
- font-family: Satoshi;
+ font-family: 'Satoshi', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
  font-size: clamp(21px, calc(17.37px + 0.877vw), 30px);
  font-style: normal;
  font-weight: 700;
@@ -173,14 +173,14 @@
 
 .current_bid_text{
  color: #616161;
- font-family: Satoshi;
+ font-family: 'Satoshi', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
  font-style: normal;
  font-weight: 700;
 }
 
 .current_bid_eth{
  color: #000;
- font-family: Satoshi;
+ font-family: 'Satoshi', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
  font-size: clamp(21px, calc(17.37px + 0.877vw), 30px);
  font-style: normal;
  font-weight: 700;
@@ -202,7 +202,7 @@
  background: #272727;
  border: 1px solid #272727;
  color: #FFF;
- font-family: Satoshi;
+ font-family: 'Satoshi', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
  font-style: normal;
  font-weight: 500;
  line-height: normal;
@@ -412,7 +412,7 @@
   border-radius: 10px;
   background: transparent;
   color: #333333;
-  font-family: 'Satoshi';
+  font-family: 'Satoshi', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
   font-weight: 500;
   font-size: clamp(14.5px, calc(13.49px + 0.244vw), 17px);
   line-height: 1;

@@ -1,5 +1,5 @@
 .itemdetails_body>h1{
- font-family: 'Satoshi';
+ font-family: 'Satoshi', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
  font-style: normal;
  font-weight: 500;
  font-size: clamp(18.7px, calc(16.56px + 0.517vw), 24px);
@@ -30,7 +30,7 @@
 .details_cart>small{
  color: #000;
  font-size: clamp(18.7px, calc(16.56px + 0.517vw), 24px);
- font-family: Satoshi;
+ font-family: 'Satoshi', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
  font-style: normal;
  font-weight: 400;
 }
@@ -38,7 +38,7 @@
 .details_cart>p{
  color: #616161;
  font-size: clamp(21px, calc(17.37px + 0.877vw), 30px);
- font-family: Satoshi;
+ font-family: 'Satoshi', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
  font-style: normal;
  font-weight: 400;
 }
@@ -46,7 +46,7 @@
 .details_cart>p>span{
  color: #4693ED;
  font-size: clamp(21px, calc(17.37px + 0.877vw), 30px);
- font-family: Satoshi;
+ font-family: 'Satoshi', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
  font-style: normal;
  font-weight: 500;
 }
@@ -54,7 +54,7 @@
 .details_cart>h4{
  color: #000;
  font-size: clamp(19.6px, calc(16.21px + 0.819vw), 28px);
- font-family: Satoshi;
+ font-family: 'Satoshi', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
  font-style: normal;
  font-weight: 500;
 }
@@ -69,7 +69,7 @@
 .count{
  color: #333;
  font-size: clamp(21.6px, calc(15.79px + 1.404vw), 36px);
- font-family: Satoshi;
+ font-family: 'Satoshi', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
  font-style: normal;
  font-weight: 500;
 }
@@ -98,7 +98,7 @@
  border: 1px solid #272727;
  color: #FFF;
  font-size: clamp(18.2px, calc(15.05px + 0.76vw), 26px);
- font-family: Inter;
+ font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
  font-style: normal;
  font-weight: 500;
  line-height: normal;
@@ -116,7 +116,7 @@
 
 .drop_item>p{
  color: #333;
- font-family: Satoshi;
+ font-family: 'Satoshi', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
  font-style: normal;
  font-weight: 500;
 }
@@ -133,7 +133,7 @@
 
 .item_detail_explore>h2{
  color: #333;
- font-family: Satoshi;
+ font-family: 'Satoshi', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
  font-style: normal;
  font-weight: 500;
 }
@@ -186,7 +186,7 @@ min-width: 500px;
  justify-content: space-between;
  width: 80%;
  margin-top: 10px;
- font-family: Satoshi;
+ font-family: 'Satoshi', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
  font-size: clamp(22.4px, calc(18.53px + 0.936vw), 32px);
  font-style: normal;
  font-weight: 500;
@@ -278,7 +278,7 @@ min-width: 500px;
   }
 
   .details_title>h2 {
-    font-family: 'Satoshi';
+    font-family: 'Satoshi', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
     font-style: normal;
     font-weight: 700;
     font-size: clamp(18.2px, calc(15.05px + 0.76vw), 26px);
@@ -287,7 +287,7 @@ min-width: 500px;
   .details_title>p {
     display: flex;
     align-items: center;
-    font-family: 'STIX Two Text';
+    font-family: 'STIX Two Text', Georgia, 'Times New Roman', serif;
     font-style: normal;
     font-weight: 500;
     font-size: clamp(17px, calc(15.79px + 0.292vw), 20px);
@@ -324,7 +324,7 @@ min-width: 500px;
     border-radius: 16px;
     border: 2px solid #272727;
     color: #272727;
-    font-family: Satoshi;
+    font-family: 'Satoshi', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
     font-size: clamp(17.5px, calc(14.47px + 0.731vw), 25px);
     font-style: normal;
     font-weight: 500;
@@ -344,7 +344,7 @@ min-width: 500px;
   }
 
   .details_title>h2 {
-    font-family: 'Satoshi';
+    font-family: 'Satoshi', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
     font-style: normal;
     font-weight: 700;
     font-size: clamp(27.6px, calc(20.18px + 1.793vw), 46px);
@@ -353,7 +353,7 @@ min-width: 500px;
   .details_title>p {
     display: flex;
     align-items: center;
-    font-family: 'STIX Two Text';
+    font-family: 'STIX Two Text', Georgia, 'Times New Roman', serif;
     font-style: normal;
     font-weight: 500;
     font-size: clamp(24px, calc(17.54px + 1.559vw), 40px);
@@ -390,7 +390,7 @@ min-width: 500px;
     border-radius: 16px;
     border: 2px solid #272727;
     color: #272727;
-    font-family: Satoshi;
+    font-family: 'Satoshi', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
     font-size: clamp(21.6px, calc(15.79px + 1.404vw), 36px);
     font-style: normal;
     font-weight: 500;
