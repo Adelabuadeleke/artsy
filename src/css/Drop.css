@@ -1,7 +1,7 @@
 .drop_body>h2>span{
  color: #333;
  font-family: Satoshi;
- font-size: 24px;
+ font-size: clamp(18.7px, calc(16.56px + 0.517vw), 24px);
  font-style: normal;
  font-weight: 500;
  line-height: 51.5px;
@@ -101,7 +101,7 @@ button.notify{
 .item_first>h2{
  color: #000;
  font-family: Satoshi;
- font-size: 24px;
+ font-size: clamp(18.7px, calc(16.56px + 0.517vw), 24px);
  font-style: normal;
  font-weight: 500;
  line-height: 30px;
@@ -111,7 +111,7 @@ button.notify{
 .item_second>h2>span{
  color: #006CA2;
   font-family: Satoshi;
-  font-size: 24px;
+  font-size: clamp(18.7px, calc(16.56px + 0.517vw), 24px);
   font-style: normal;
   font-weight: 500;
   line-height: 30px;
@@ -149,7 +149,7 @@ button.notify{
   .drop_body>.drop_intro>h1 {
     color: #000;
     font-family: Satoshi;
-    font-size: 30px;
+    font-size: clamp(21px, calc(17.37px + 0.877vw), 30px);
     font-style: normal;
     font-weight: 700;
     line-height: 51.5px;
@@ -166,7 +166,7 @@ button.notify{
   .drop_body>.drop_intro>p {
     color: #616161;
     font-family: Satoshi;
-    font-size: 18px;
+    font-size: clamp(15.3px, calc(14.21px + 0.263vw), 18px);
     font-style: normal;
     font-weight: 400;
     line-height: 28px;
@@ -174,11 +174,11 @@ button.notify{
   }
 
   button.notify {
-    width: 200px;
+    width: clamp(124px, calc(93.33px + 7.407vw), 200px);
     height: 52.4px;
     color: #000;
     font-family: Satoshi;
-    font-size: 22.457px;
+    font-size: clamp(17.5px, calc(15.5px + 0.483vw), 22.457px);
     font-style: normal;
     font-weight: 500;
     line-height: 39.924px
@@ -199,7 +199,7 @@ button.notify{
   }  
   
   .time_details>p {
-    font-size: 22px;
+    font-size: clamp(17.2px, calc(15.26px + 0.468vw), 22px);
   }
 
   .second_tag {
@@ -224,7 +224,7 @@ button.notify{
   .item_second>h2 {
     color: #000;
     font-family: Satoshi;
-    font-size: 24px;
+    font-size: clamp(18.7px, calc(16.56px + 0.517vw), 24px);
     font-style: normal;
     font-weight: 500;
     line-height: normal;
@@ -242,7 +242,7 @@ button.notify{
 
   h2.creator,
   h2.creator>span {
-    font-size: 20px;
+    font-size: clamp(17px, calc(15.79px + 0.292vw), 20px);
   }
 
   .item_second>a {
@@ -257,11 +257,11 @@ button.notify{
   }
 
   .see_more_drops>button {
-    width: 200px;
+    width: clamp(124px, calc(93.33px + 7.407vw), 200px);
     height: 52.4px;
     color: #333;
     font-family: Satoshi;
-    font-size: 22px;
+    font-size: clamp(17.2px, calc(15.26px + 0.468vw), 22px);
     font-style: normal;
     font-weight: 500;
     line-height: normal;
@@ -280,7 +280,7 @@ button.notify{
   .drop_body>.drop_intro>p {
     color: #616161;
     font-family: Satoshi;
-    font-size: 32px;
+    font-size: clamp(22.4px, calc(18.53px + 0.936vw), 32px);
     font-style: normal;
     font-weight: 400;
     line-height: 64px;
@@ -288,20 +288,20 @@ button.notify{
 
   .see_more_drops>button,
   button.notify {
-    width: 320px;
-    height: 74px;
+    width: clamp(198.4px, calc(149.33px + 11.852vw), 320px);
+    height: clamp(53.3px, calc(44.95px + 2.018vw), 74px);
     color: #000;
     font-family: Satoshi;
-    font-size: 36px;
+    font-size: clamp(21.6px, calc(15.79px + 1.404vw), 36px);
     font-style: normal;
     font-weight: 500;
-    line-height: 64px;
+    line-height: clamp(46.1px, calc(38.88px + 1.745vw), 64px);
   }
 
   .drop_timer>small {
     color: #FFF;
     font-family: Satoshi;
-    font-size: 22px;
+    font-size: clamp(17.2px, calc(15.26px + 0.468vw), 22px);
     font-style: normal;
     font-weight: 400;
     /* line-height: 49px; */
@@ -309,7 +309,7 @@ button.notify{
   }
 
   .time_details>p{
-    font-size: 36px;
+    font-size: clamp(21.6px, calc(15.79px + 1.404vw), 36px);
   }
 
   .item_first {
@@ -326,7 +326,7 @@ button.notify{
   .item_second>p {
     color: #000;
     font-family: Satoshi;
-    font-size: 20px;
+    font-size: clamp(17px, calc(15.79px + 0.292vw), 20px);
     font-style: normal;
     font-weight: 400;
     line-height: normal;
@@ -335,7 +335,7 @@ button.notify{
   .item_second>h2 {
     color: #000;
     font-family: Satoshi;
-    font-size: 36px;
+    font-size: clamp(21.6px, calc(15.79px + 1.404vw), 36px);
     font-style: normal;
     font-weight: 500;
     line-height: normal;
@@ -343,13 +343,13 @@ button.notify{
 
   h2.creator,
   h2.creator>span {
-    font-size: 36px;
+    font-size: clamp(21.6px, calc(15.79px + 1.404vw), 36px);
   }
 
   .item_second>small {
     color: #616161;
     font-family: Satoshi;
-    font-size: 20px;
+    font-size: clamp(17px, calc(15.79px + 0.292vw), 20px);
     font-style: normal;
     font-weight: 400;
     line-height: 31px;
@@ -359,7 +359,7 @@ button.notify{
   .item_second>a {
     color: #006CA2;
     font-family: Satoshi;
-    font-size: 20px;
+    font-size: clamp(17px, calc(15.79px + 0.292vw), 20px);
     font-style: normal;
     font-weight: 400;
     line-height: 31px;
@@ -372,7 +372,7 @@ button.notify{
   .drop_body>.drop_intro>h1 {
     color: #000;
     font-family: Satoshi;
-    font-size: 48px;
+    font-size: clamp(28.8px, calc(21.05px + 1.871vw), 48px);
     font-style: normal;
     font-weight: 500;
     line-height: 84.24px;
@@ -380,8 +380,8 @@ button.notify{
   }
 
   button.notify{
-    width: 420px;
-    height: 84px;
+    width: clamp(260.4px, calc(196px + 15.556vw), 420px);
+    height: clamp(60.5px, calc(51.02px + 2.29vw), 84px);
   }
 
   .time_details>button {
@@ -390,11 +390,11 @@ button.notify{
     border: 1px solid #4693ED;
     color: #FFF;
     font-family: Satoshi;
-    font-size: 24px;
+    font-size: clamp(18.7px, calc(16.56px + 0.517vw), 24px);
     font-style: normal;
     font-weight: 500;
     line-height: 22.92px;
-    width: 107px;
+    width: clamp(66.3px, calc(49.88px + 3.967vw), 107px);
     height: 35px;
     /* 22.92px */
   }
@@ -409,11 +409,11 @@ button.notify{
   }
 
   .see_more_drops>button {
-    width: 249px;
-    height: 73px;
+    width: clamp(154.4px, calc(116.23px + 9.22vw), 249px);
+    height: clamp(52.6px, calc(44.37px + 1.988vw), 73px);
     color: #333;
     font-family: Satoshi;
-    font-size: 30px;
+    font-size: clamp(21px, calc(17.37px + 0.877vw), 30px);
     font-style: normal;
     font-weight: 500;
     line-height: normal;
@@ -440,7 +440,7 @@ button.notify{
     display: block;
     color: #BCB7B7;
     font-family: Satoshi;
-    font-size: 24px;
+    font-size: clamp(18.7px, calc(16.56px + 0.517vw), 24px);
     font-style: normal;
     font-weight: 500;
     line-height: 51.5px;
@@ -449,7 +449,7 @@ button.notify{
   .second_tag{
     width: 189px;
     height: 43px;
-    font-size: 18px;
+    font-size: clamp(15.3px, calc(14.21px + 0.263vw), 18px);
   }
 
   .item_second>.second_tag {
@@ -471,3 +471,363 @@ button.notify{
     justify-content: center;
   }
 }
+/* ---------------------------------------------------------------
+   Data-driven markup: the pill on the image and the CTA are now <button>s
+   (they toggle state), so they need the styling the old <button>/<a> had.
+   --------------------------------------------------------------- */
+
+/* Figma: 107x35 pill, 15px radius, #4693ed live/upcoming, #b8babc ended. */
+.drop_pill {
+  border: 0;
+  border-radius: 15px;
+  color: #ffffff;
+  font-family: 'Satoshi';
+  font-weight: 500;
+  font-size: clamp(13px, calc(12.19px + 0.195vw), 15px);
+  line-height: 1;
+  padding: 0 16px;
+  height: clamp(28px, calc(25.6px + 0.58vw), 35px);
+  min-width: clamp(80px, calc(69.2px + 2.63vw), 107px);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.drop_pill.upcoming,
+.drop_pill.live_drop { background: #4693ed; }
+.drop_pill.ended { background: #b8babc; }
+.drop_pill:hover { filter: brightness(1.08); }
+
+/* CTA was an <a>; keep the same underlined link look. */
+.drop_cta {
+  background: none;
+  border: 0;
+  padding: 0;
+  color: #006ca2;
+  font-family: 'Satoshi';
+  font-weight: 400;
+  font-size: clamp(15px, calc(13.79px + 0.292vw), 18px);
+  line-height: 1.8;
+  text-decoration: underline;
+  cursor: pointer;
+  text-align: left;
+}
+
+.drop_cta:hover { color: #004e75; }
+.drop_cta.is_on { color: #3ea03b; }
+
+/* ---------------------------------------------------------------
+   Desktop sizing pass — same rationale as Marketplace/Auctions.
+   --------------------------------------------------------------- */
+
+.drop_intro > h1 {
+  font-size: clamp(24px, calc(18.3px + 1.38vw), 38px);
+  line-height: 1.3;
+}
+
+.drop_intro > p {
+  font-size: clamp(15px, calc(13.79px + 0.292vw), 18px);
+  line-height: 1.6;
+}
+
+.notify {
+  font-size: clamp(15px, calc(13.79px + 0.292vw), 18px);
+  line-height: 1;
+  height: clamp(44px, calc(39.2px + 1.17vw), 56px);
+  min-width: clamp(200px, calc(176.6px + 5.7vw), 260px);
+  padding: 0 26px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.item_second > h2 {
+  font-size: clamp(19px, calc(16.18px + 0.682vw), 26px);
+  line-height: 1.3;
+}
+
+.item_second > h2.creator {
+  font-size: clamp(15px, calc(13.79px + 0.292vw), 18px);
+}
+
+.item_second > small {
+  font-size: clamp(14px, calc(13.19px + 0.195vw), 16px);
+  line-height: 1.6;
+}
+
+.item_second > p {
+  font-size: clamp(14px, calc(13.19px + 0.195vw), 16px);
+}
+
+.drop_timer > small {
+  font-size: clamp(14px, calc(13.19px + 0.195vw), 16px);
+}
+
+.time_details > p {
+  font-size: clamp(16px, calc(14.39px + 0.39vw), 20px);
+  font-variant-numeric: tabular-nums;
+}
+
+.see_more_drops > button {
+  font-size: clamp(14.5px, calc(13.49px + 0.244vw), 17px);
+  line-height: 1;
+  height: clamp(40px, calc(36.8px + 0.78vw), 48px);
+  min-width: clamp(140px, calc(128.8px + 2.73vw), 168px);
+  padding: 0 30px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+/* ---------------------------------------------------------------
+   Row proportions. Figma: 683x441 image (57% of the 1200px content column)
+   + 42px gap + 433px text column. The old rules pinned a 400x400 square.
+   min-width:0 is required — with an aspect-ratio, min-width:auto resolves to
+   height x ratio and overrides the width, which is what blew up the Auctions
+   carousel slide.
+   --------------------------------------------------------------- */
+@media screen and (min-width: 1024px) {
+  .drops_item {
+    flex-wrap: nowrap;
+    align-items: flex-start;
+    gap: 42px;
+  }
+
+  .item_first {
+    flex: 0 0 57%;
+    width: 57%;
+    min-width: 0;
+    height: auto;
+    aspect-ratio: 683 / 441;
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-end;
+    justify-content: center;
+    margin-bottom: 0;
+  }
+
+  .item_second {
+    flex: 1 1 0;
+    width: auto;
+    min-width: 0;
+  }
+}
+
+/* ---------------------------------------------------------------
+   Sizing pass, take two. The earlier block was outranked:
+     .drop_body>.drop_intro>h1  (0,3,1)  beat  .drop_intro>h1   (0,1,1)
+     button.notify              (0,1,1)  beat  .notify          (0,1,0)
+     .time_details>button       (0,1,1)  beat  .drop_pill       (0,1,0)
+   These match or exceed those, and sit last in the file.
+   --------------------------------------------------------------- */
+
+.drop_body > .drop_intro > h1 {
+  font-size: clamp(24px, calc(19.97px + 0.97vw), 34px);
+  line-height: 1.25;
+  margin: 0 0 10px;
+}
+
+.drop_body > .drop_intro > p {
+  font-size: clamp(15px, calc(13.79px + 0.292vw), 18px);
+  line-height: 1.6;
+  margin: 0 0 22px;
+}
+
+button.notify {
+  font-size: clamp(15px, calc(13.79px + 0.292vw), 17px);
+  line-height: 1;
+  height: clamp(44px, calc(40.8px + 0.78vw), 52px);
+  min-width: clamp(190px, calc(171.8px + 4.42vw), 236px);
+  width: auto;
+  padding: 0 26px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  white-space: nowrap;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.time_details > button.drop_pill {
+  font-size: clamp(12.5px, calc(11.9px + 0.146vw), 14px);
+  height: clamp(28px, calc(26.4px + 0.39vw), 32px);
+  min-width: clamp(76px, calc(70.3px + 1.36vw), 94px);
+  padding: 0 14px;
+  border-radius: 15px;
+}
+
+/* Status badge: Figma 189x43 @18px Inter — scaled with the rest of the chrome. */
+.item_second > .second_tag {
+  font-size: clamp(11px, calc(10.2px + 0.195vw), 13px);
+  height: clamp(28px, calc(26.4px + 0.39vw), 32px);
+  width: auto;
+  min-width: clamp(110px, calc(101.9px + 1.95vw), 135px);
+  border-radius: 10px;
+  letter-spacing: 0.04em;
+}
+
+/* ---------------------------------------------------------------
+   Vertical rhythm: rows were 80px apart via margin on every item.
+   --------------------------------------------------------------- */
+.drop_items {
+  display: flex;
+  flex-direction: column;
+  gap: 44px;
+}
+
+.drops_item {
+  margin-bottom: 0;
+}
+
+.item_second > h2 {
+  margin: 10px 0;
+}
+
+.item_second > p {
+  margin: 6px 0;
+}
+
+.item_second > h2.creator {
+  margin: 12px 0 6px;
+}
+
+.drop_intro {
+  margin-bottom: 28px;
+}
+
+.see_more_drops {
+  padding: 8px 0 40px;
+}
+
+/* Earlier blocks set an explicit `width` on this button (up to 249px); my pass
+   only set min-width, so the old width still won. Let content + padding size it,
+   matching the See more on Marketplace/Auctions. */
+.see_more_drops > button {
+  width: auto;
+}
+
+/* The creator NAME had its own clamp up to 36px (h2.creator>span), so it
+   rendered far larger than its "Creator :" label. */
+.item_second > h2.creator > span {
+  font-size: inherit;
+  font-weight: 500;
+  color: #006ca2;
+}
+
+/* .item_second is a flex column, so the badge stretched to the full column
+   width. Figma sizes it to its label (189px). */
+.item_second > .second_tag {
+  align-self: flex-start;
+  padding: 0 16px;
+  justify-content: center;
+}
+
+/* ---------------------------------------------------------------
+   Controls that had no wiring now need states to show it: the status
+   filter, the reminder toggles and the newsletter confirmation.
+   --------------------------------------------------------------- */
+
+.drop_filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: clamp(18px, 2.5vw, 30px) 0 clamp(8px, 1.5vw, 16px);
+}
+
+.drop_filter {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  height: clamp(36px, calc(32.8px + 1vw), 44px);
+  padding: 0 clamp(12px, 1.6vw, 18px);
+  border: 1px solid #dcdcdc;
+  border-radius: 40px;
+  background: transparent;
+  color: #6b6b6b;
+  font-family: 'Satoshi', sans-serif;
+  font-size: clamp(13px, calc(12.2px + 0.29vw), 16px);
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+
+.drop_filter:hover { border-color: #333; color: #333; }
+
+.drop_filter.is_active {
+  background: #272727;
+  border-color: #272727;
+  color: #fff;
+}
+
+.drop_filter_count {
+  display: inline-grid;
+  place-items: center;
+  min-width: 20px;
+  height: 20px;
+  padding: 0 6px;
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.07);
+  font-size: 11.5px;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.drop_filter.is_active .drop_filter_count {
+  background: rgba(255, 255, 255, 0.22);
+  color: #fff;
+}
+
+.drop_empty {
+  padding: 48px 0;
+  color: #888;
+  font-family: 'Satoshi', sans-serif;
+  font-size: clamp(14px, calc(12.8px + 0.39vw), 18px);
+}
+
+/* Reminder is on — mirror the per-card CTA's confirmed state. */
+button.notify.is_on {
+  background: #272727;
+  border-color: #272727;
+  color: #fff;
+}
+
+button.notify.is_on:hover { background: #000; }
+
+.newsletter_done {
+  margin: 12px 0 0;
+  color: #3ea03b;
+  font-family: 'Satoshi', sans-serif;
+  font-size: clamp(13px, calc(12.2px + 0.29vw), 16px);
+}
+
+/* Footer nav entries became real links; they were <p> before, and every
+   footer rule in Home.css still targets `.footer_inner_two > p`. */
+.footer_inner_two > a {
+  display: block;
+  color: #333;
+  font-family: 'Satoshi', sans-serif;
+  font-weight: 400;
+  font-size: clamp(13px, calc(12.2px + 0.29vw), 16px);
+  line-height: 1.6;
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+
+.footer_inner_two > a:hover { color: #000; text-decoration: underline; }
+
+/* Breadcrumb entries became links, so they picked up the UA underline. */
+.drop_body > h2 a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.drop_body > h2 a:hover { color: #8d8989; }
